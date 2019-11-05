@@ -14,7 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string  :website
       t.string  :instagram_username
       t.string  :facebook_address
-      t.string  :twitter_string
+      t.string  :twitter
 
       t.timestamps
     end
@@ -24,3 +24,13 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, :follows_id
   end
 end
+
+# Terminal Command (in one line):
+=begin
+rails g model user user_name:string:uniq password_digest 
+session_token:string:uniq library_id:integer:index follows_id:integer:index 
+first_name last_name location_city location_country about:text website 
+instagram_username facebook_address twitter
+
+=end
+# Then added manually: null: false 
