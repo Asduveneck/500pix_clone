@@ -6,7 +6,7 @@ import {
 const _defaultSession = Object.freeze({
   id: null
 });
-
+// Handles session login logout stuff
 const sessionReducer = (state = _defaultSession, action) => {
   Object.freeze(state);
   switch (action.type) {
