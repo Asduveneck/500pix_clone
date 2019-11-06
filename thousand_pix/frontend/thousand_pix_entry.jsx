@@ -31,13 +31,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.user1 = {  // Already exists from previous tests
       user_name: "user_01",
       password: 'password',
-
+      
     };
+    /* 
+      In console, run:
+        dispatch(login(user1));
+        dispatch(logout()); // clears id, but not USERS! // FAILS RN
+    
+      Succeeds as expected.
+      // if I dispatch login(user1) twice in a row, I can't fully logout...
+    */
+
     // Negative Controls:
     window.user2 = {
       user_name: "user_02",
       password: 'invalid password'
-  };
+    };
+
+    // dispatch(login(user2)); // fails as expected
+
 
   // Testing Signup Route Ajax method in session_util
   window.user4 = {  // test
@@ -48,5 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     last_name: 'lastname_04',
   };
 
+  
 })
 
