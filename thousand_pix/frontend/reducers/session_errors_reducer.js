@@ -7,8 +7,7 @@ const sessionErrorReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      debugger;
-      return action.errors;
+      return action.errors; 
     case RECEIVE_CURRENT_USER: // clear errors away upon a successful login:
       return [];
     default:
