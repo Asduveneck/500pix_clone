@@ -22,8 +22,7 @@ export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => ( // Look into the error handling here; may need to tinker it more. 
-    // dispatch(receiveErrors(err.responseJSON)) // changes error messages to responseJSON
-    dispatch(receiveErrors(err)) // changes error messages to responseJSON
+    dispatch(receiveErrors(err.responseJSON)) 
   ))
 );
 
@@ -32,7 +31,6 @@ export const login = user => dispatch => (
     dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-    // dispatch(receiveErrors(err))
   ))
 );
 
