@@ -65,12 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Negative Control
   window.user4_invalid = {  // test invalid signup
-    user_name: "user_04",
+    user_name: "user_04_invalid", 
     password: 'password',
     // email: 'user_04_email',
     // first_name: 'firstname_04',
-    last_name: 'lastname_04',
-  };
+    // last_name: 'lastname_04',
+  }; 
+  // dispatch(login(user4)); // fails since username already taken 
+  // dispatch(signup(user4_invalid)); // missing things
+
 
 
 })
