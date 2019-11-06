@@ -2,8 +2,15 @@ import React from "react";
 
 const App = () => (
   <div>
-    <h2> Within the App File </h2>
-    <h2> Within the App File </h2>
+    <header>
+      <h2> Within the App File </h2>
+
+    </header>
+
+    {/* Routes to use */}
+    <Route path="/login" component={LoginFormContainer} />
+    <Route path="/signup" component={SignupFormContainer} />
+
   </div>
 
 );
