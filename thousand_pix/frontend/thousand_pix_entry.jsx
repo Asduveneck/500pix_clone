@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Testing Signup Route Ajax method in session_util
+  // Positive Control
   window.user4 = {  // test
     user_name: "user_04",
     password: 'password',
@@ -58,7 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
     first_name: 'firstname_04',
     last_name: 'lastname_04',
   };
-
+  // dispatch(login(user4)); // fails as expected 
+  // dispatch(signup(user4)); // Works and am signed in 
+  // dispatch(logout());
   
+  // Negative Control
+  window.user4_invalid = {  // test invalid signup
+    user_name: "user_04",
+    password: 'password',
+    // email: 'user_04_email',
+    // first_name: 'firstname_04',
+    last_name: 'lastname_04',
+  };
+
+
 })
 
