@@ -36,10 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* 
       In console, run:
         dispatch(login(user1));
-        dispatch(logout()); // clears id, but not USERS! // FAILS RN
+        dispatch(logout()); // success now
     
-      Succeeds as expected.
-      // if I dispatch login(user1) twice in a row, I can't fully logout...
+      // Both of the above succeed as intended.
     */
 
     // Negative Controls:
