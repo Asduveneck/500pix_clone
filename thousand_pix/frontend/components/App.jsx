@@ -2,7 +2,7 @@
 import React from "react";
 import { Route } from 'react-router-dom'
 
-// Routes 
+// Routes
 import { AuthRoute, ProtectedRouted } from '../util/route_util'
 
 // Dependencies within this project (containers)
