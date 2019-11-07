@@ -16,8 +16,9 @@
  // CSS Reset
  @import "base/reset.scss";
  /*
-  @import "base/config.scss";
-*/
- // Core  
+ */
+ // Core/Config (one file sufficient for now)  
+ @import "base/config.scss";
 
  // Components
+ @import "components/login_signup_all";
