@@ -3,10 +3,21 @@ import React from 'react';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      user_name: '',
-      password: ''
-    };
+    if(props.formType === 'signup') { // If signup form, more parameters in state.
+      this.state = {
+        user_name: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        email: '',
+      };
+    } else {
+      this.state = {
+        user_name: '',
+        password: ''
+      };
+    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,7 +34,7 @@ class SessionForm extends React.Component {
       .then( () => this.setState({user_name: '', password: ''}));
   }
 
-  renderErrors() {
+  renderErrors() { // Perhaps I'll need to do something different than a list of li. Maybe have it pop up at top or beneath the broken field
     return (
       <ul>
         {this.props.errors.map((error, i) => (
@@ -35,6 +46,26 @@ class SessionForm extends React.Component {
     );
   }
 
+  // Helper function to create additional inputs as part of our state if we're in a signup form
+  signupFormExtras(labelName, stateName){
+    if (this.props.formType === 'signup') {
+      // console.log(this.state.user_name); 
+      let modStateName = `this.state.` + stateName
+      return (
+        <div>
+          <label>{labelName}</label> 
+            <input type="text"
+              value={eval(modStateName)}
+              onChange={this.update(stateName)}
+              className="login-input"
+            />
+          <br />
+        </div>
+      )
+    }
+  }
+
+
   render() {
     return (
       <div className="login-form-container">
@@ -42,9 +73,14 @@ class SessionForm extends React.Component {
           Welcome to thousand pix!
           <br />
           Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
+          {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
           <div className="login-form">
-            <br />
+            <br /> 
+
+            {this.signupFormExtras("First Name:", 'first_name')}
+            {this.signupFormExtras("Last Name:", 'last_name')}
+          
+
             <label>Username:
               <input type="text"
                 value={this.state.user_name}
@@ -52,6 +88,9 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
+
+            {this.signupFormExtras("Email:", 'email')}
+
             <br />
             <label>Password:
               <input type="password"
