@@ -14,4 +14,22 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
+// Protected route: user should NOT be logged in:
+const Protected = ({ component: Component, path, loggedIn, exact }) => (
+  <Route path={path} exact={exact} render={(props) => (
+    loggedIn ? (
+      <Component {...props} />
+    ) : (
+        <Redirect to="/login" />
+      )
+  )} />
+);
 
+// Threading the login status:
+const mapStateToProps = state => (
+  { loggedIn: Boolean(state.session.id) } // Boolean so we return `true` or `false`...
+);
+
+// Exports
+export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
