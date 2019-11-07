@@ -1,8 +1,23 @@
 .login_signup_form_page {
-  background-color: #71767a;
-
+  // background-color: #71767a; // border?
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F8FA;
+    height: 100vh; // Do I want this?
 }
 
 .login_signup_form_box {
   background-color: $background_white;
+  width: 400px;
+  
+  label {
+    color: #71767A; // Maybe make this a default text color?
+  }
+  input {
+    background-color: #E8F0FE;
+  }
 }
+
+// Label Input form... #E8F0FE
