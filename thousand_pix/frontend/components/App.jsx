@@ -12,16 +12,24 @@ import LoginFormContainer from './session_form/login_form_container';
 
 
 const App = () => (
-  <div>
+  <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
+    <h1>App File</h1>
     <header>
-      <h2> Within the App File </h2>
-      <GreetingContainer />
+      <h2> Within header. Nav Bar? </h2>
+
+
     </header>
+    <div className="login_signup_form">  {/* Should be grey everywhere... */}
+      New Div around GreetingContainer
+      <GreetingContainer />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute path="/signup" component={SignupFormContainer} />
+      Testing this greeting Container
+    </div>
+
 
     {/* Routes to use */}
 
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
 
   </div>
 
