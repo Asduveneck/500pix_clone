@@ -20,17 +20,13 @@ const App = () => (
 
     </header>
     <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
-      FINDME Div className: login_signup_form_page
 
       <div className="login_signup_form_box">
-        FINDME Div className: login_signup_form_box
         <GreetingContainer />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-        FINDME Div className: login_signup_form_box
       </div>
 
-      FINDME Div className: login_signup_form_page
     </div>
 
 
