@@ -72,6 +72,9 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
+# Ignoring the Guardfile created when updating the gem. 
+Guardfile
+
 # JS, React/Redux, and Webpack -------------------------------------------------
 node_modules
 dist
