@@ -2,6 +2,9 @@
 import React from "react";
 import { Route } from 'react-router-dom'
 
+// Routes 
+import { AuthRoute, ProtectedRouted } from '../util/route_util'
+
 // Dependencies within this project (containers)
 import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
@@ -16,8 +19,9 @@ const App = () => (
     </header>
 
     {/* Routes to use */}
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
+
+    <AuthRoute exact path="/login" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SignupFormContainer} />
 
   </div>
 
