@@ -30,22 +30,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user) 
-      .then( () => { 
-        if(this.props.formType === 'signup'){
-          // hideous: These objects could've been defined in the container, and then threaded down into this.state and in the following.
-          // Attempt to refactor hit a `null` bug. componentDidMount? 
-          this.setState({ 
-            user_name: '',
-            password: '',
-            first_name: '',
-            last_name: '',
-            email: '', 
-          })
-        } else {
-          this.setState({ user_name: '', password: '' })
-        }
-     })
+    this.props.processForm(user)
   }
 
   renderErrors() { // Perhaps I'll need to do something different than a list of li. Maybe have it pop up at top or beneath the broken field
