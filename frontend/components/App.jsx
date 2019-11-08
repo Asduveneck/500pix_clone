@@ -31,4 +31,4 @@ const App = () => (
 
 );
 
-export default App;ππ
+export default App
