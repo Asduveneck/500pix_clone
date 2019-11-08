@@ -23,20 +23,13 @@
     display: flex;
     align-items: center;
     flex-direction: column; // done so the top navLink don't get pushed to left
-    // Doesn't work:
-    // flex-direction: row;
-    // justify-content: center;
-    // justify-content: space-between; // other behavior I don't want
     width: 360px;
-    // background-color: magenta;
+
 
     .session_form {
       display: flex;
       flex-direction: column;
-      // background-color: magenta; // Commented no worky
-      // justify-content: stretch;
-      // align-content: stretch;
-      // align-items: stretch;
+
       h2 {
         align-self: center;
         font-size: 24px;
@@ -57,17 +50,16 @@
         color: #71767A; // Maybe make this a default text color?
       }
       input {
-        // display: flex;
         flex-direction: row;
-        align-self: stretch; // Not actually stretching... // stretching in a column QQ
+        // align-self: stretch; // Not actually stretching... // stretching in a column QQ
         background-color: #E8F0FE;
       }
 
       button {
-        align-self: stretch;
+        // align-self: stretch;
         padding: 0px 10px;
         background-color: #34BF49;
-        color: #F7F8FA; // standard white?
+        color: #F7F8FA; 
       }
     }
 
