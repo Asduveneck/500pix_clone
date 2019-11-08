@@ -9,7 +9,7 @@ import { AuthRoute, ProtectedRouted } from '../util/route_util'
 import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
-
+import SplashPageContainer from './splash_page/splash_page_container';
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
@@ -18,6 +18,7 @@ const App = () => (
       <h2> Within header. Nav Bar? </h2>
     </header>
       <GreetingContainer />
+      <AuthRoute exact path="/" component={SplashPageContainer}/>
       <br />
     {/* Routes to use */}
       <AuthRoute exact path="/login" component={LoginFormContainer} />
