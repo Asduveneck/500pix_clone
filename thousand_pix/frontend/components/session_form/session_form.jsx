@@ -52,7 +52,8 @@ class SessionForm extends React.Component {
       let modStateName = `this.state.` + stateName
       return (
         <div>
-          <label>{labelName}</label> 
+          <label>{labelName}</label>
+            <br /> 
             <input type="text"
               value={eval(modStateName)}
               onChange={this.update(stateName)}
@@ -67,39 +68,48 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session_page__content_region">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to thousand pix!
+          
           <br />
-          Please {this.props.formType} or {this.props.navLink}
+          <h2>{this.props.headerMain}</h2>
+          <h3>{this.props.headerSub}</h3>
           {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
           <div className="login-form">
             <br /> 
 
-            {this.signupFormExtras("First Name:", 'first_name')}
-            {this.signupFormExtras("Last Name:", 'last_name')}
+            {this.signupFormExtras("First Name", 'first_name')}
+            {this.signupFormExtras("Last Name", 'last_name')}
           
 
-            <label>Username:
+            <label>Username</label>
+            <br /> 
               <input type="text"
                 value={this.state.user_name}
                 onChange={this.update('user_name')}
                 className="login-input"
               />
-            </label>
+            <br /> 
 
-            {this.signupFormExtras("Email:", 'email')}
+            {this.signupFormExtras("Email", 'email')}
 
-            <br />
-            <label>Password:
+            <label>Password</label>
+            <br /> 
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            </label>
+            
             <br />
+            <br /> 
             <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <br />
+            <br />
+            {this.props.navPrompt}
+            {this.props.navLink}
+
           </div>
         </form>
       </div>

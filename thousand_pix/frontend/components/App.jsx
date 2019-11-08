@@ -19,12 +19,14 @@ const App = () => (
 
 
     </header>
-    <div className="login_signup_form">  {/* Should be grey everywhere... */}
-      New Div around GreetingContainer
-      <GreetingContainer />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-      Testing this greeting Container
+    <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
+
+      <div className="login_signup_form_box">
+        <GreetingContainer />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+      </div>
+
     </div>
 
 

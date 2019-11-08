@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
+    // Will remove later on. Not needed later. FINDME
     <nav className="login-signup">
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
