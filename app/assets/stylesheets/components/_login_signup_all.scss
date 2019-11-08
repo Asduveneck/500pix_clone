@@ -42,6 +42,7 @@
 
       h4 {
         align-self: center;
+        text-align: center; // Needed to center text itself.
         font-size: 13.5px;
         color: #71767A;
       }
@@ -51,12 +52,12 @@
       }
       input {
         flex-direction: row;
-        // align-self: stretch; // Not actually stretching... // stretching in a column QQ
+        width: 100%;
         background-color: #E8F0FE;
       }
 
       button {
-        // align-self: stretch;
+        width: 100%;
         padding: 0px 10px;
         background-color: #34BF49;
         color: #F7F8FA; 
