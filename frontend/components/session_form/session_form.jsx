@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
   // Helper function to create additional inputs as part of our state if we're in a signup form
   signupFormExtras(labelName, stateName){
     if (this.props.formType === 'signup') {
-      // console.log(this.state.user_name); 
       let modStateName = `this.state.` + stateName
       return (
         <div>
@@ -68,7 +67,12 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session_page__content_region">
+      <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
+        <div className="login_signup_form_box">
+          <div className="session_form_inner"> 
+
+
+      {/* <div className="session_page__content_region"> */}
         <form onSubmit={this.handleSubmit} className="session_form">   
             <br />
             <h2>{this.props.headerMain}</h2>
@@ -109,10 +113,16 @@ class SessionForm extends React.Component {
               <h4>
                 {this.props.navPrompt} {this.props.navLink}
               </h4>
-
             </div>
           </form>
+      {/* </div> */}
+
+          </div>
+        </div>
       </div>
+
+
+
     );
   }
 }

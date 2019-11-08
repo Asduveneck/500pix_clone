@@ -16,21 +16,14 @@ const App = () => (
     <h1>App File</h1>
     <header>
       <h2> Within header. Nav Bar? </h2>
-
-
     </header>
-    <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
-
-      <div className="login_signup_form_box">
-        <div className="session_form_inner"> 
           <GreetingContainer />
           <br />
+
+
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
-        </div>
-      </div>
 
-    </div>
 
 
     {/* Routes to use */}
