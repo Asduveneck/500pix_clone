@@ -22,9 +22,12 @@ const App = () => (
     <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
 
       <div className="login_signup_form_box">
-        <GreetingContainer />
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <div className="session_form_inner"> 
+          <GreetingContainer />
+          <br />
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute path="/signup" component={SignupFormContainer} />
+        </div>
       </div>
 
     </div>
