@@ -70,9 +70,10 @@ class SessionForm extends React.Component {
     return (
       <div className="session_page__content_region">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to thousand pix!
+          
           <br />
-          Please {this.props.formType} or {this.props.navLink}
+          <h2>{this.props.headerMain}</h2>
+          <h3>{this.props.headerSub}</h3>
           {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
           <div className="login-form">
             <br /> 
@@ -103,6 +104,12 @@ class SessionForm extends React.Component {
             <br />
             <br /> 
             <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <br />
+            <br />
+            {this.props.navPrompt}
+            {this.props.navLink}
+
           </div>
         </form>
       </div>
