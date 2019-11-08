@@ -5,6 +5,8 @@ const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     // Will remove later on. Not needed later. FINDME
     <nav className="login-signup">
+      <Link to="/">Home</Link>
+      &nbsp;
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
       <Link to="/signup">Sign up!</Link>
