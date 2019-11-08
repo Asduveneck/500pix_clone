@@ -22,17 +22,22 @@
   .session_form_inner {
     display: flex;
     align-items: center;
-    // justify-content: center;
     flex-direction: column; // done so the top navLink don't get pushed to left
+    // Doesn't work:
+    // flex-direction: row;
+    // justify-content: center;
+    // justify-content: space-between; // other behavior I don't want
     width: 360px;
     // background-color: magenta;
 
     .session_form {
       display: flex;
       flex-direction: column;
-
+      // background-color: magenta; // Commented no worky
+      // justify-content: stretch;
+      // align-content: stretch;
+      // align-items: stretch;
       h2 {
-        flex-direction: row;
         align-self: center;
         font-size: 24px;
         color: #525558;
@@ -69,5 +74,3 @@
   };
 
 }
-
-// Label Input form... #E8F0FE
