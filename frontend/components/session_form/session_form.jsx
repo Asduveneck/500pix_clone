@@ -48,7 +48,6 @@ class SessionForm extends React.Component {
   // Helper function to create additional inputs as part of our state if we're in a signup form
   signupFormExtras(labelName, stateName){
     if (this.props.formType === 'signup') {
-      // console.log(this.state.user_name); 
       let modStateName = `this.state.` + stateName
       return (
         <div>
@@ -68,51 +67,62 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session_page__content_region">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          
-          <br />
-          <h2>{this.props.headerMain}</h2>
-          <h3>{this.props.headerSub}</h3>
-          {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
-          <div className="login-form">
-            <br /> 
+      <div className="login_signup_form_page">  {/* Should be grey everywhere... */}
+        <div className="login_signup_form_box">
+          <div className="session_form_inner"> 
 
-            {this.signupFormExtras("First Name", 'first_name')}
-            {this.signupFormExtras("Last Name", 'last_name')}
-          
 
-            <label>Username</label>
-            <br /> 
-              <input type="text"
-                value={this.state.user_name}
-                onChange={this.update('user_name')}
-                className="login-input"
-              />
-            <br /> 
+      {/* <div className="session_page__content_region"> */}
+        <form onSubmit={this.handleSubmit} className="session_form">   
+            <br />
+            <h2>{this.props.headerMain}</h2>
+            <h3>{this.props.headerSub}</h3>
+            {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
+            <div className="login-form">
+              <br /> 
 
-            {this.signupFormExtras("Email", 'email')}
-
-            <label>Password</label>
-            <br /> 
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
+              {this.signupFormExtras("First Name", 'first_name')}
+              {this.signupFormExtras("Last Name", 'last_name')}
             
-            <br />
-            <br /> 
-            <input className="session-submit" type="submit" value={this.props.formType} />
 
-            <br />
-            <br />
-            {this.props.navPrompt}
-            {this.props.navLink}
+              <label>Username</label>
+              <br /> 
+                <input type="text"
+                  value={this.state.user_name}
+                  onChange={this.update('user_name')}
+                  className="login-input"
+                />
+              <br /> 
+
+              {this.signupFormExtras("Email", 'email')}
+
+              <label>Password</label>
+              <br /> 
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              
+              <br />
+              <br /> 
+             <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
+
+              <br />
+              <br />
+              <h4>
+                {this.props.navPrompt} {this.props.navLink}
+              </h4>
+            </div>
+          </form>
+      {/* </div> */}
 
           </div>
-        </form>
+        </div>
       </div>
+
+
+
     );
   }
 }
