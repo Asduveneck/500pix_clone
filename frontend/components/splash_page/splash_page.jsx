@@ -55,7 +55,7 @@ class SplashPage extends React.Component{
           </div>
         </div>
 
-        <div className="sp_join">
+        <div className="sp_join_row">
           <h1>Join our photography community today</h1>
           <h2>We want fresh, creative talent like you. Join our global network of like-minded creators to be inspired by incredible photos daily, and get rewarded for your talents</h2>
           <button>Sign Up</button> 
