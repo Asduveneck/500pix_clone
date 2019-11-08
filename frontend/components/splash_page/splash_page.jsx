@@ -1,9 +1,9 @@
 import React from 'react';
 
 class SplashPage extends React.Component{
-  constructor(props) {
-    super(props);
-  };
+  // constructor(props) { // Probably won't use.
+  //   super(props);
+  // };
 
   render(){
     return(
