@@ -7,13 +7,14 @@
       color: $background_white; // #FFFFFF ;
   }
 
+  h2 {
+    font-size: 18px
+  }
+
   .sp_discover_row{
     background-color: magenta;
     h1 {
       font-size: 48px;
-    }
-    h2 {
-      font-size: 18px
     }
 
     // button styling here same as everywhere else BUT join.
@@ -27,8 +28,8 @@
     }
 
     // May need to nest these under a flex container `sp_d_3_cols` 
-    h2 {
-      font-size: 24px; // FINDME. only h2 that's a 24px... May replace this with h3 later.
+    h3 {
+      font-size: 24px; 
     }
     p {
       font-size: 18px;
@@ -43,10 +44,6 @@
       font-size: 64px;
       color: $background_white;
     }
-    h2 {
-      font-size: 18px; 
-    }
-
 
   }
 
@@ -55,9 +52,6 @@
     color: $background_white;
     h1 {
       font-size: 36px; // one other 
-    }
-    h2 {
-      font-size: 18px;
     }
 
     button {

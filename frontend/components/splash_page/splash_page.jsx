@@ -21,17 +21,17 @@ class SplashPage extends React.Component{
           <div className="sp_d_3_cols">
 
             <div className="sp_d_col"> {/*Column 1*/}
-              <h2>Grow as a photographer</h2>
+              <h3>Grow as a photographer</h3>
               <p>Get immediate exposure with your first upload. Our algorithms give you feedback starting from day one.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 2 */}
-              <h2>Build your career</h2>
+              <h3>Build your career</h3>
               <p>Present yourself as a professional. Our platform lets you showcase your galleries, services, and workshops.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 3*/}
-              <h2>Measure your growth</h2>
+              <h3>Measure your growth</h3>
               <p>With advanced statistics, receive valuable insights in how you and your photos rank within the community.</p>
             </div>
 
