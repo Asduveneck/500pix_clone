@@ -10,7 +10,7 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SplashPageContainer from './splash_page/splash_page_container';
-import NavBarContainer from './nav_bars/nav_bars_container'; 
+import NavBarContainer from './nav_bars/nav_bar_container'; 
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
