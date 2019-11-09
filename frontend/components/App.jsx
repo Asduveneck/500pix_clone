@@ -10,12 +10,14 @@ import GreetingContainer from './greeting/greeting_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import LoginFormContainer from './session_form/login_form_container';
 import SplashPageContainer from './splash_page/splash_page_container';
+import NavBarContainer from './nav_bars/nav_bars_container'; 
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
     <h1>App File</h1>
     <header>
       <h2> Within header. Nav Bar? </h2>
+      <NavBarContainer />
     </header>
       <GreetingContainer />
       <AuthRoute exact path="/" component={SplashPageContainer}/>
