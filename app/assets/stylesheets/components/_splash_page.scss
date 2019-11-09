@@ -1,29 +1,40 @@
 .splash_page{
+  // Container flex styling
+  display: flex;
+  flex-direction: column;
 
   color: #222222;
+
+  // Almost all buttons styling:
   button {
       font-size: 24px;
       background-color: #222222; // new variable?
       color: $background_white; // #FFFFFF ;
-  }
+      border-radius: 25px;
+      border-style: none;
+      margin: 32px 0px 0px;
+      padding: 0px 32px;
+  } // All have a hover over effect. All but join become transparent
 
   h2 {
     font-size: 18px
   }
+
+  // Div row styling.
 
   .sp_discover_row{
     background-color: magenta;
     h1 {
       font-size: 48px;
     }
-
-    // button styling here same as everywhere else BUT join.
+    // May need to account for the wave thing. 
   }
 
   .sp_difference_row{
     background-color: mediumaquamarine;
 
     h1 {
+      text-align: center;
       font-size: 36px;
     }
 
@@ -41,15 +52,17 @@
     background-color: mediumorchid;
 
     h1 {
+      text-align: center;
       font-size: 64px;
       color: $background_white;
     }
 
   }
 
-  .sp_join_row{
+  .sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.
     background-color: #45457C;
     color: $background_white;
+    text-align: center;
     h1 {
       font-size: 36px; // one other 
     }
