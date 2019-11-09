@@ -6,7 +6,9 @@ const NavBar = ({ currentUser, logout}) => {
   const leftSide = () => (
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
       <nav>
-        <Link to="/">"Logo"</Link> {/* Works since in Routes we can switch or modulate what / hits... */}
+        <Link to="/">"Logo"</Link> {/* Works since in Routes we can switch or modulate what / hits...
+          BUT I need to change the action to be a refresh if we're logged in. So... I'll need something similar to lines 21.
+        */}
         <a href="https://github.com/Asduveneck">"Github Icon"</a>
         <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/">"Linkedin Icon"</a>
       </nav>
@@ -37,8 +39,8 @@ const NavBar = ({ currentUser, logout}) => {
 
   const mainBar = () => (
     <div className="nav_bar_outer">
-      <div className="nb_l">Pass in or replace with const leftSide  </div>
-      <div className="nb_r">Pass in the right side here. </div>
+      {leftSide()}
+      {rightSide()}
     </div>
   )
 
