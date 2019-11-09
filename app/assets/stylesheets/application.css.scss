@@ -15,13 +15,14 @@
 
  // CSS Reset
 
-  @import "base/reset.scss";
+  @import 'base/reset.scss';
 
  // Core/Config (one file sufficient for now)  
 
-  @import "base/config.scss";
+  @import 'base/config.scss';
 
  // Components
  
-  @import "components/login_signup_all";
-  @import "components/splash_page";
+  @import 'components/login_signup_all';
+  @import 'components/splash_page';
+  @import 'components/navbar';
