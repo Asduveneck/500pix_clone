@@ -1,0 +1,15 @@
+.nav_bar_outer {
+  // background-color: mediumorchid;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .nb_l {
+    background-color: lightcoral;
+  }
+
+  .nb_r {
+    background-color: lightseagreen;
+  }
+}
