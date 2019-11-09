@@ -26,33 +26,43 @@
     background-color: magenta;
     h1 {
       font-size: 48px;
+      margin: 0px 0px 16px;
+
     }
     // May need to account for the wave thing. 
   }
 
   .sp_difference_row{
     background-color: mediumaquamarine;
+    margin: 32px 0px 0px;
+    padding: 16px 64px 0px;
 
     h1 {
       text-align: center;
       font-size: 36px;
     }
 
-    // May need to nest these under a flex container `sp_d_3_cols` 
-    h3 {
-      font-size: 24px; 
-    }
-    p {
-      font-size: 18px;
+    .sp_d_3_cols {
+      display: flex;
+      flex-direction: row;
+      align-content: space-between;
+      padding: 0px 16px 32px;
+
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 18px;
+      }
     }
 
   }
 
   .sp_editors_choice_row{
     background-color: mediumorchid;
+    text-align: center;
 
     h1 {
-      text-align: center;
       font-size: 64px;
       color: $background_white;
     }
@@ -63,6 +73,7 @@
     background-color: #45457C;
     color: $background_white;
     text-align: center;
+    padding: 64px;
     h1 {
       font-size: 36px; // one other 
     }
