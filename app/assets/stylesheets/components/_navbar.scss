@@ -1,6 +1,7 @@
 .nav_bar_outer {
-  // background-color: mediumorchid;
+  position: fixed;
   width: 100%;
+  background-color: $background_white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
