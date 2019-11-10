@@ -9,8 +9,8 @@ const NavBar = ({ currentUser, logout}) => {
         <Link to="/">"Logo"</Link> {/* Works since in Routes we can switch or modulate what / hits...
           BUT I need to change the action to be a refresh if we're logged in. So... I'll need something similar to lines 21.
         */}
-        <a href="https://github.com/Asduveneck">"Github Icon"</a>
-        <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/">"Linkedin Icon"</a>
+        <a href="https://github.com/Asduveneck" target="_blank" className="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="fab fa-linkedin-in"></a>
       </nav>
     </div>
   )
@@ -20,14 +20,14 @@ const NavBar = ({ currentUser, logout}) => {
 
     if(!currentUser) { // If there is a current user,
       rsContents=[
-        <Link to="/login">Login</Link>,
-        <Link to="/signup">Sign up!</Link>
+        <Link to="/login" key="navk1">Login</Link>,
+        <Link to="/signup" key="navk2">Sign up!</Link>
       ]
     } else {
       rsContents=[
-        <h3>Profile Icon</h3>, // Will be a link placeholder
-        <h3>Add Photo option </h3>,
-        <button onClick={logout}>Log Out</button>
+        <div key="navk3"><i className="fad fa-user-circle"></i></div>, // Will be a link placeholder
+        <div key="navk4"><i className="far fa-plus"></i></div>,
+        <button onClick={logout} key="navk5">Log Out</button>
       ]
     }
     return(
