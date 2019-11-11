@@ -21,6 +21,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -71,13 +75,13 @@ class SessionForm extends React.Component {
         <div className="login_signup_form_box">
           <div className="session_form_inner"> 
 
-
-      {/* <div className="session_page__content_region"> */}
         <form onSubmit={this.handleSubmit} className="session_form">   
             <br />
             <h2>{this.props.headerMain}</h2>
             <h3>{this.props.headerSub}</h3>
-            {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
+            <ul className="session_errors">
+              {this.renderErrors()} {/* 500pix has this as a popup notification alert */}
+            </ul>
             <div className="login-form">
               <br /> 
 
@@ -115,7 +119,6 @@ class SessionForm extends React.Component {
               </h4>
             </div>
           </form>
-      {/* </div> */}
 
           </div>
         </div>
