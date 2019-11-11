@@ -1,12 +1,11 @@
+// Universal Splash Page Styling
 .splash_page{
-  // Container flex styling
   display: flex;
   flex-direction: column;
-
   color: #222222;
 
   h2 {
-    font-size: 18px
+    font-size: 18px;
   }
 
   .pseudoButton{ // link Class pseudo-button styling:
@@ -19,14 +18,11 @@
     margin: 32px 0px 0px;
     padding: 0px 32px;
   } // All have a hover over effect. All but join become transparent
-
-
 }
+// Div row styling:
 
-// Div row styling.
 .sp_discover_row{
   // background-color: #668aa6; // Need to touch up the picture
-
   .sp_dscvr_cnt{
     display: flex;
     flex-direction: row;
@@ -37,31 +33,30 @@
     }
   } 
 }
-    .sp_dscvr_l {
-      align-self: center;
-      margin: 0 2vw 0 0;
-      h1 {
-        font-size: 48px;
-        margin: 0px 0px 16px;
-      }
-      p {
-        font-size: 18px;
-        margin-bottom: 16px;
-      }
-    }
 
-    .sp_dscvr_r {
-      background-image: url("discover");
-      background-size: cover;
-      width: 40vw;
-      height: 40vh;
-      margin: 0 2vw 0 1vw; 
-    }
+.sp_dscvr_l {
+  align-self: center;
+  margin: 0 2vw 0 0;
 
-  // }
+  h1 {
+    font-size: 48px;
+    margin: 0px 0px 16px;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+}
+
+.sp_dscvr_r {
+  background-image: url("discover");
+  background-size: cover;
+  width: 40vw;
+  height: 40vh;
+  margin: 0 2vw 0 1vw;
+}
 
   // May need to account for the wave thing. 
-// }
 
 .sp_difference_row{
   // background-color: mediumaquamarine;
@@ -73,41 +68,51 @@
     font-size: 36px;
     margin: 0px 0px 64px
   }
+}
 
-  .sp_d_3_cols {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
+.sp_d_3_cols {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  padding: 0px 16px 32px;
+
+  .sp_d_col { // to target fontAwesome
+    font-size: 36px;
     padding: 0px 16px 32px;
-
-    .sp_d_col { // to target fontAwesome
-      font-size: 36px;
-      padding: 0px 16px 32px;
-    }
-    h3 {
-      font-size: 24px;
-      margin: 0px 0px 8px;
-    }
-    p {
-      font-size: 18px;
-    }
-    i {
-      padding-bottom: 24px;
-    }
+  }
+  h3 {
+    font-size: 24px;
+    margin: 0px 0px 8px;
+  }
+  p {
+    font-size: 18px;
+  }
+  i {
+    padding-bottom: 24px;
   }
 }
 
+
 .sp_editors_choice_row{
-  background-color: mediumorchid;
   text-align: center;
 
-  background-image: url("editor_choice");
-  background-size: cover;
   h1 {
+    background-image: url("editor_choice");
+    background-size: cover;
     font-size: 64px;
     color: $background_white;
+    padding: 80px;
   }
+  h2 {
+    padding-top: 32px;
+    margin-bottom: 16px;
+  }
+}
 
+.sp_ed_p_r { // May switch to flex-wrap if easy enough
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.
@@ -115,10 +120,16 @@
   color: $background_white;
   text-align: center;
   padding: 64px;
+
   h1 {
     font-size: 36px; // one other 
+    line-height: 40px;
+    margin-bottom: 16px;
   }
-
+  h2 {
+    margin-bottom: 32px;
+    font-style: none;
+  }
   .pseudoButton {
     background-color: $background_white;
     color: #45457C;

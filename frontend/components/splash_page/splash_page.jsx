@@ -58,14 +58,18 @@ class SplashPage extends React.Component{
          
           {this.signUpButton("View Editors' Choice")}
           <div className="sp_ed_photos_ALL_rows">
-            <div className="sp_ed_p_r_1"> 
+            <div className="sp_ed_p_r"> 
               {/* 3 Photos here */}
-              3 columns of pictures here spaced evenly.
+              <li>picture1 r1</li>
+              <li>picture2 r1</li>
+              <li>picture3 r1</li>
             </div>
 
-            <div className="sp_ed_p_r_2"> 
+            <div className="sp_ed_p_r"> 
               {/* 3 photos here */}
-              3 columns of pictures here spaced evenly.
+              <li>picture1 r2</li>
+              <li>picture2 r2</li>
+              <li>picture3 r2</li>
              </div>
 
           </div>
