@@ -29,7 +29,7 @@
     justify-content: space-between;
 
     div {
-      padding: 10px 0 0 0;
+      margin: 10px;
     }
   } 
 }
@@ -37,14 +37,18 @@
 .sp_dscvr_l {
   align-self: center;
   margin: 0 2vw 0 0;
-
+  
   h1 {
     font-size: 48px;
-    margin: 0px 0px 16px;
+    margin: 0px 0px 16px 80px;
   }
   p {
     font-size: 18px;
-    margin-bottom: 16px;
+    margin: 0px 0px 16px 80px;
+  }
+
+  .pseudoButton {
+    margin-left: 80px;
   }
 }
 
@@ -113,6 +117,38 @@
   display: flex;
   justify-content: center;
   text-align: center;
+
+  .picture {
+    list-style-type: none;
+    width: 30%;
+    height: 20vh;
+    margin: 1.5% 1.5% 1.5% 1.5%;
+  }
+
+  #p1_1 {
+    background-image: url("ed_6_pics/DSC_0053_e1");
+    background-size: cover;
+  }
+  #p2_1 {
+    background-image: url("ed_6_pics/DSC_0059_e1_kc");
+    background-size: cover;
+  }
+  #p3_1 {
+    background-image: url("ed_6_pics/DSC_0035_e1");
+    background-size: cover;
+  }
+  #p1_2 {
+    background-image: url("ed_6_pics/DSC_0025_e1");
+    background-size: cover;
+  }
+  #p2_2 {
+    background-image: url("ed_6_pics/DSC_0018_e2");
+    background-size: cover;
+  }
+  #p3_2 {
+    background-image: url("ed_6_pics/DSC_0138_kc");
+    background-size: cover;
+  }
 }
 
 .sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.

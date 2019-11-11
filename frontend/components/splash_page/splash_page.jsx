@@ -60,16 +60,16 @@ class SplashPage extends React.Component{
           <div className="sp_ed_photos_ALL_rows">
             <div className="sp_ed_p_r"> 
               {/* 3 Photos here */}
-              <li>picture1 r1</li>
-              <li>picture2 r1</li>
-              <li>picture3 r1</li>
+              <li className="picture" id="p1_1"></li> {/* ID can NOT start with a number... */}
+              <li className="picture" id="p2_1"></li>
+              <li className="picture" id="p3_1"></li>
             </div>
 
             <div className="sp_ed_p_r"> 
               {/* 3 photos here */}
-              <li>picture1 r2</li>
-              <li>picture2 r2</li>
-              <li>picture3 r2</li>
+              <li className="picture" id="p1_2"></li>
+              <li className="picture" id="p2_2"></li>
+              <li className="picture" id="p3_2"></li>
              </div>
 
           </div>
