@@ -21,22 +21,25 @@ class SplashPage extends React.Component{
           </div>
         </div>
 
+
         <div className="sp_difference_row">
           <h1> What makes us different? </h1>
           <div className="sp_d_3_cols">
 
             <div className="sp_d_col"> {/*Column 1*/}
-              <i class="fas fa-seedling"></i>
+              <i className="fas fa-seedling"></i>
               <h3>Grow as a photographer</h3>
               <p>Get immediate exposure with your first upload. Our algorithms give you feedback starting from day one.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 2 */}
+              <i className="fas fa-pencil-ruler"></i> {/* https://fontawesome.com/icons/pencil-ruler?style=solid */}
               <h3>Build your career</h3>
               <p>Present yourself as a professional. Our platform lets you showcase your galleries, services, and workshops.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 3*/}
+              <i className="fas fa-chart-line"></i> {/* https://fontawesome.com/icons/chart-line?style=solid */}
               <h3>Measure your growth</h3>
               <p>With advanced statistics, receive valuable insights in how you and your photos rank within the community.</p>
             </div>
