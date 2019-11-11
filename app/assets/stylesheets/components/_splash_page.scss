@@ -5,20 +5,22 @@
 
   color: #222222;
 
-  // Almost all buttons styling:
-  button {
-      font-size: 24px;
-      background-color: #222222; // new variable?
-      color: $background_white; // #FFFFFF ;
-      border-radius: 25px;
-      border-style: none;
-      margin: 32px 0px 0px;
-      padding: 0px 32px;
-  } // All have a hover over effect. All but join become transparent
-
   h2 {
     font-size: 18px
   }
+
+  .pseudoButton{ // link Class pseudo-button styling:
+    text-decoration: none;
+    font-size: 24px;
+    background-color: #222222; // new variable?
+    color: $background_white; // #FFFFFF ;
+    border-radius: 25px;
+    border-style: none;
+    margin: 32px 0px 0px;
+    padding: 0px 32px;
+  } // All have a hover over effect. All but join become transparent
+
+
 }
 
 // Div row styling.
@@ -115,7 +117,7 @@
     font-size: 36px; // one other 
   }
 
-  button {
+  .pseudoButton {
     background-color: $background_white;
     color: #45457C;
   }

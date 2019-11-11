@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SplashPage extends React.Component{
   // constructor(props) { // Probably won't use.
   //   super(props);
   // };
+
+  signUpButton(text="Sign Up") {
+    return(<Link to="/signup" className="pseudoButton">{text}</Link>);
+  }
 
   render(){
     return(
@@ -14,7 +19,7 @@ class SplashPage extends React.Component{
             <div className ="sp_dscvr_l">
               <h1>Discover and share the world's finest photos</h1>
               <p>Be inspired with incredible photos from diverse styles and genres around the world. We're not guided by fads-just great photography</p>
-              <button>Sign Up</button>
+              {this.signUpButton()}
             </div>
             <div className ="sp_dscvr_r"></div>
             
@@ -51,8 +56,7 @@ class SplashPage extends React.Component{
           <h1>Editor's Choice</h1> 
           <h2>Discover fresh inspiration daily. Your photos can even be featured in our handpicked Editors' Choice Gallery</h2>
          
-          <button>View Editors' Choice</button>
-
+          {this.signUpButton("View Editors' Choice")}
           <div className="sp_ed_photos_ALL_rows">
             <div className="sp_ed_p_r_1"> 
               {/* 3 Photos here */}
@@ -70,7 +74,7 @@ class SplashPage extends React.Component{
         <div className="sp_join_row">
           <h1>Join our photography community today</h1>
           <h2>We want fresh, creative talent like you. Join our global network of like-minded creators to be inspired by incredible photos daily, and get rewarded for your talents</h2>
-          <button>Sign Up</button> 
+          {this.signUpButton()}
           {/* FINDME consolidate the two button actions as one? */}
         </div>
 
