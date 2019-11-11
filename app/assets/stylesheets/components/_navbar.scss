@@ -1,19 +1,48 @@
 .nav_bar_outer {
   position: fixed;
   width: 100%;
+  // margin: 0px 64px;
+  padding: 22px 0px;
   background-color: $background_white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  .nb_l {
-    // background-color: lightcoral;
-    a {
-      color: #222222;
-    }
-  }
+}
 
-  .nb_r {
-    // background-color: lightseagreen;
+// Left Side
+.nb_l {
+  // background-color: lightcoral;
+  // padding-left: 64px;
+  // margin-left: 64px;
+  nav {
+    font-size: 24px;
+    
+    // background-color: maroon;
+  }
+  a {
+    color: #71767A;
+    text-decoration: none;
+    margin: 0px 16px;
+  }
+}
+// Right Side
+.nb_r {
+  // background-color: lightseagreen;
+  margin-right: 64px;
+  a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 18px
+  }
+  .navk_log{
+    margin: 0px 24px;
+  }
+  .navk_sign{
+    margin: 0px 16px;
+    padding: 0px 16px;
+    border: 1.5px;
+    border-radius: 25px;
+    border-style: solid;
   }
 }

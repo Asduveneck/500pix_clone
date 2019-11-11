@@ -2,24 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
-  const sessionLinks = () => (
-    // Will remove later on. Not needed later. FINDME
-    <nav className="login-signup">
-      <Link to="/">Home</Link>
-      &nbsp;
-      <Link to="/login">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
-    </nav>
-  );
   const personalGreeting = () => (
     <hgroup className="header-group">
       <h2 className="header-name">Welcome {currentUser.user_name}</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
     </hgroup>
   );
-
-  return currentUser ? personalGreeting() : sessionLinks();
+  // if (currentUser) return personalGreeting(); // Imperfect
+  return currentUser ? personalGreeting() : null //sessionLinks(); // Done in navbar
 };
 
 export default Greeting;

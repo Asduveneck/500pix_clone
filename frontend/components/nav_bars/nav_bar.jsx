@@ -6,7 +6,7 @@ const NavBar = ({ currentUser, logout}) => {
   const leftSide = () => (
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
       <nav>
-        <Link to="/">"Logo"</Link> {/* Works since in Routes we can switch or modulate what / hits...
+        <Link to="/">1000 px</Link> {/* Works since in Routes we can switch or modulate what / hits...
           BUT I need to change the action to be a refresh if we're logged in. So... I'll need something similar to lines 21.
         */}
         <a href="https://github.com/Asduveneck" target="_blank" className="fab fa-github"></a>
@@ -20,8 +20,8 @@ const NavBar = ({ currentUser, logout}) => {
 
     if(!currentUser) { // If there is a current user,
       rsContents=[
-        <Link to="/login" key="navk1">Login</Link>,
-        <Link to="/signup" key="navk2">Sign up!</Link>
+        <Link to="/login" key="navk1" className="navk_log" >Login</Link>,
+        <Link to="/signup" key="navk2" className="navk_sign">Sign up</Link>
       ]
     } else {
       rsContents=[
