@@ -18,10 +18,15 @@ export const receiveErrors = errors => ({
   errors
 });
 
+export const clearSessionErrors = () => ({
+  type: RECEIVE_SESSION_ERRORS,
+  errors: [], // Return an empty array, wiping away errors.
+});
+
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (
     dispatch(receiveCurrentUser(user))
-  ), err => ( // Look into the error handling here; may need to tinker it more. 
+  ), err => (
     dispatch(receiveErrors(err.responseJSON)) 
   ))
 );
