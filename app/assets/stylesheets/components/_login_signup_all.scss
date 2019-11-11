@@ -24,56 +24,62 @@
     align-items: center;
     flex-direction: column; // done so the top navLink don't get pushed to left
     width: 360px;
+  }  
+  .session_form {
+    display: flex;
+    flex-direction: column;
 
-
-    .session_form {
-      display: flex;
-      flex-direction: column;
-
-      .session_errors {
-        margin-top: 8px;
-      }
-      
-      li { 
-        margin-top: 2px;
-        color: red;
-        list-style-type: none;
-      }
-
-      h2 {
-        align-self: center;
-        font-size: 24px;
-        color: #525558;
-      }
-      h3 {
-        font-size: 12px;
-        color: #71767A; // Start putting these as variables?
-      }
-
-      h4 {
-        align-self: center;
-        text-align: center; // Needed to center text itself.
-        font-size: 13.5px;
-        color: #71767A;
-      }
-      label {
-        font-size: 14px;
-        color: #71767A; // Maybe make this a default text color?
-      }
-      input {
-        flex-direction: row;
-        width: 100%;
-        background-color: #E8F0FE;
-      }
-
-      button {
-        width: 100%;
-        padding: 0px 10px;
-        background-color: #34BF49;
-        color: #F7F8FA; 
-      }
+    .session_errors {
+      margin-top: 8px;
+    }
+    
+    li { 
+      margin-top: 2px;
+      color: red;
+      list-style-type: none;
     }
 
-  };
+    h2 {
+      align-self: center;
+      font-size: 24px;
+      color: #525558;
+    }
+    h3 {
+      font-size: 12px;
+      color: #71767A; // Start putting these as variables?
+    }
 
-}
+    h4 {
+      align-self: center;
+      text-align: center; // Needed to center text itself.
+      font-size: 13.5px;
+      color: #71767A;
+    }
+    label {
+      font-size: 14px;
+      color: #71767A; // Maybe make this a default text color?
+    }
+    input {
+      flex-direction: row;
+      width: 100%;
+      background-color: #E8F0FE;
+    }
+
+    .session-submit {
+      width: 100%;
+      padding: 0px 10px;
+      background-color: #34BF49;
+      color: #F7F8FA; 
+    }
+
+    #demo_button {
+      margin: 0 30%;
+      border-style: none;
+      background-color: $background_white;
+      color: #71767A;
+    }
+
+  }
+};
+
+
