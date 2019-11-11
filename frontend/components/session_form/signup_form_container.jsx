@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
     clearErrors: () => dispatch(clearSessionErrors()), // Wipes out errors...
-    demo: (user) => dispatch(login(user)),
+    demo: (demoUser) => dispatch(login(demoUser)),
   };
 };
 

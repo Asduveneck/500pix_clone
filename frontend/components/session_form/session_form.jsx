@@ -38,7 +38,8 @@ class SessionForm extends React.Component {
     this.props.processForm(user)
   } 
 
-  handleDemo() { // Sign in a demo user
+  handleDemo(e) { // Sign in a demo user
+    e.preventDefault();
     let user = { user_name: 'guest', password: '!Password' };
     this.props.demo(user); // still has errors showing up
   }
@@ -126,7 +127,7 @@ class SessionForm extends React.Component {
               <br/>
               <br/>
                 {this.signupOnly(<h4>Interested in trying 1000px?</h4>)} 
-                {this.signupOnly(<button onClick={() => this.handleDemo()} id="demo_button" >Guest Account</button>)}
+                {this.signupOnly(<button onClick={this.handleDemo} id="demo_button" >Guest Account</button>)}
               <br />
               <h4>
                 {this.props.navPrompt} {this.props.navLink}
