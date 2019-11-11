@@ -19,72 +19,101 @@
   h2 {
     font-size: 18px
   }
+}
 
-  // Div row styling.
+// Div row styling.
+.sp_discover_row{
+  // background-color: #668aa6; // Need to touch up the picture
 
-  .sp_discover_row{
-    background-color: magenta;
-    h1 {
-      font-size: 48px;
-      margin: 0px 0px 16px;
+  .sp_dscvr_cnt{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    div {
+      padding: 10px 0 0 0;
     }
-    // May need to account for the wave thing. 
-  }
-
-  .sp_difference_row{
-    background-color: mediumaquamarine;
-    margin: 32px 0px 0px;
-    padding: 16px 64px 0px;
-
-    h1 {
-      text-align: center;
-      font-size: 36px;
-    }
-
-    .sp_d_3_cols {
-      display: flex;
-      flex-direction: row;
-      align-content: space-between;
-      padding: 0px 16px 32px;
-
-      h3 {
-        font-size: 24px;
+  } 
+}
+    .sp_dscvr_l {
+      margin: 0 2vw 0 0;
+      h1 {
+        font-size: 48px;
+        margin: 0px 0px 16px;
       }
       p {
         font-size: 18px;
       }
     }
 
-  }
+    .sp_dscvr_r {
+      background-image: url("discover");
+      background-size: cover;
+      width: 40vw;
+      height: 40vh;
+      margin: 0 2vw 0 1vw; 
+    }
 
-  .sp_editors_choice_row{
-    background-color: mediumorchid;
+  // }
+
+  // May need to account for the wave thing. 
+// }
+
+.sp_difference_row{
+  background-color: mediumaquamarine;
+  margin: 32px 0px 0px;
+  padding: 16px 64px 0px;
+
+  h1 {
     text-align: center;
-
-    background-image: url("editor_choice");
-    background-size: cover;
-    h1 {
-      font-size: 64px;
-      color: $background_white;
-    }
-
+    font-size: 36px;
   }
 
-  .sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.
-    background-color: #45457C;
-    color: $background_white;
-    text-align: center;
-    padding: 64px;
-    h1 {
-      font-size: 36px; // one other 
-    }
+  .sp_d_3_cols {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding: 0px 16px 32px;
 
-    button {
-      background-color: $background_white;
-      color: #45457C;
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px;
+    }
+    i {
+      align-self: center;
     }
   }
-
 
 }
+
+.sp_editors_choice_row{
+  background-color: mediumorchid;
+  text-align: center;
+
+  background-image: url("editor_choice");
+  background-size: cover;
+  h1 {
+    font-size: 64px;
+    color: $background_white;
+  }
+
+}
+
+.sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.
+  background-color: #45457C;
+  color: $background_white;
+  text-align: center;
+  padding: 64px;
+  h1 {
+    font-size: 36px; // one other 
+  }
+
+  button {
+    background-color: $background_white;
+    color: #45457C;
+  }
+}
+
+

@@ -10,10 +10,15 @@ class SplashPage extends React.Component{
       <div className="splash_page">
 
         <div className="sp_discover_row">
-          <h1>Discover and share the world's finest photos</h1>
-          <p>Be inspired with incredible photos from diverse styles and genres around the world. We're not guided by fads-just great photography</p>
-          <div> Link to a photo here? Or make this background a photo and add the curly wave... </div>
-          <button>Sign Up</button>
+          <div className="sp_dscvr_cnt">
+            <div className ="sp_dscvr_l">
+              <h1>Discover and share the world's finest photos</h1>
+              <p>Be inspired with incredible photos from diverse styles and genres around the world. We're not guided by fads-just great photography</p>
+              <button>Sign Up</button>
+            </div>
+            <div className ="sp_dscvr_r"></div>
+            
+          </div>
         </div>
 
         <div className="sp_difference_row">
@@ -21,6 +26,7 @@ class SplashPage extends React.Component{
           <div className="sp_d_3_cols">
 
             <div className="sp_d_col"> {/*Column 1*/}
+              <i class="fas fa-seedling"></i>
               <h3>Grow as a photographer</h3>
               <p>Get immediate exposure with your first upload. Our algorithms give you feedback starting from day one.</p>
             </div>
