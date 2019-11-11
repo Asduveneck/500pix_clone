@@ -19,9 +19,10 @@ class SessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount(){ // Clear errors upon loading the form.
     this.props.clearErrors();
   }
 
@@ -31,11 +32,21 @@ class SessionForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) { // Sign someone in...
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
+  } 
+
+  handleDemo() { // Sign in a demo user
+    let user = { user_name: 'guest', password: '!Password' };
+    this.props.demo(user); // still has errors showing up
   }
+
+  signupOnly(object){
+    if (this.props.formType === 'signup') return (object)
+  }
+
 
   renderErrors() { // Perhaps I'll need to do something different than a list of li. Maybe have it pop up at top or beneath the broken field
     return (
@@ -112,7 +123,10 @@ class SessionForm extends React.Component {
               <br /> 
              <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
 
-              <br />
+              <br/>
+              <br/>
+                {this.signupOnly(<h4>Interested in trying 1000px?</h4>)} 
+                {this.signupOnly(<button onClick={() => this.handleDemo()} id="demo_button" >Guest Account</button>)}
               <br />
               <h4>
                 {this.props.navPrompt} {this.props.navLink}

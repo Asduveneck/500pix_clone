@@ -13,6 +13,6 @@ ActiveRecord:: Base.transaction do
 
 
   # Seeds:
-  demo = User.create(username: 'guest', password: 'NotPassword', first_name: 'Guest', last_name: 'User'. email: 'demo_user@1000pix.com' )
+  demo = User.create(user_name: 'guest', password: '!Password', first_name: 'Guest', last_name: 'User', email: 'demo_user@1000pix.com' )
 
 end
