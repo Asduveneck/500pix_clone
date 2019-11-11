@@ -53,7 +53,7 @@
 }
 
 .sp_dscvr_r {
-  background-image: url("discover");
+  background-image: image-url("discover");
   background-size: cover;
   width: 40vw;
   height: 40vh;
@@ -101,7 +101,7 @@
   text-align: center;
 
   h1 {
-    background-image: url("editor_choice");
+    background-image: image-url("editor_choice");
     background-size: cover;
     font-size: 64px;
     color: $background_white;
@@ -126,27 +126,27 @@
   }
 
   #p1_1 {
-    background-image: url("ed_6_pics/DSC_0053_e1");
+    background-image: image-url("ed_6_pics/DSC_0053_e1");
     background-size: cover;
   }
   #p2_1 {
-    background-image: url("ed_6_pics/DSC_0059_e1_kc");
+    background-image: image-url("ed_6_pics/DSC_0059_e1_kc");
     background-size: cover;
   }
   #p3_1 {
-    background-image: url("ed_6_pics/DSC_0035_e1");
+    background-image: image-url("ed_6_pics/DSC_0035_e1");
     background-size: cover;
   }
   #p1_2 {
-    background-image: url("ed_6_pics/DSC_0025_e1");
+    background-image: image-url("ed_6_pics/DSC_0025_e1");
     background-size: cover;
   }
   #p2_2 {
-    background-image: url("ed_6_pics/DSC_0018_e2");
+    background-image: image-url("ed_6_pics/DSC_0018_e2");
     background-size: cover;
   }
   #p3_2 {
-    background-image: url("ed_6_pics/DSC_0138_kc");
+    background-image: image-url("ed_6_pics/DSC_0138_kc");
     background-size: cover;
   }
 }
