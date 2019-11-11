@@ -7,10 +7,13 @@
   justify-content: space-between;
 
   .nb_l {
-    background-color: lightcoral;
+    // background-color: lightcoral;
+    a {
+      color: #222222;
+    }
   }
 
   .nb_r {
-    background-color: lightseagreen;
+    // background-color: lightseagreen;
   }
 }

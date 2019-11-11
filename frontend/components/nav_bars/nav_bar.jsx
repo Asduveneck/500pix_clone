@@ -25,7 +25,7 @@ const NavBar = ({ currentUser, logout}) => {
       ]
     } else {
       rsContents=[
-        <div key="navk3"><i className="fad fa-user-circle"></i></div>, // Will be a link placeholder
+        <div key="navk3" className="fad fa-user-circle"></div>, // Will be a link placeholder
         <div key="navk4"><i className="far fa-plus"></i></div>,
         <button onClick={logout} key="navk5">Log Out</button>
       ]
