@@ -124,11 +124,11 @@ class SessionForm extends React.Component {
               <br /> 
              <button className="session-submit" type="submit" value={this.props.formType}>{this.props.formType}</button>
 
-              <br/>
-              <br/>
-                <h4>Interested in trying 1000px?</h4>
-                <button onClick={this.handleDemo} id="demo_button" >Guest Account</button> {/* Make an 'a' tag instead? */}
-              <br />
+                <div className="demo_user"> 
+                  <h5>Interested in trying 1000px?</h5>
+                  <button onClick={this.handleDemo} id="demo_button" >Guest Account</button> {/* Make an 'a' tag instead? */}
+                </div>
+
               <h4>
                 {this.props.navPrompt} {this.props.navLink}
               </h4>
