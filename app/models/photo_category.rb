@@ -10,6 +10,13 @@
 #
 
 class PhotoCategory < ApplicationRecord
-  belongs_to :category
+  # --------------- Associations ----------------
+
+  belongs_to :category # Automatically made during migration
   belongs_to :photo
+
+  # --------------- Validations ------------------ 
+  
+  # ---------------    Code     ------------------ 
+  
 end

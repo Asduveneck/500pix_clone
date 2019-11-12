@@ -23,16 +23,26 @@
 #
 
 class User < ApplicationRecord
-  attr_reader :password
 
+  # --------------- Associations ----------------
+
+  has_many :photos, dependent: :delete_all 
+  has_many :galleries, dependent: :delete_all  
+
+
+  # --------------- Validations ------------------ 
+  
+  attr_reader :password
+  
   validates :user_name, :password_digest, :session_token, presence: true
   validates :user_name, :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
-
   validates :first_name, :last_name, :email, presence: true 
+  
+  # ---------------    Code     ------------------ 
 
   after_initialize :ensure_session_token
-
+  
   def self.find_by_credentials(username, password)
     user = User.find_by(user_name: username)
     return nil unless user
