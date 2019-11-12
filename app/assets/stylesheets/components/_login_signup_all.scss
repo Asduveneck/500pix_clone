@@ -79,7 +79,10 @@
     }
 
     #demo_button {
-      margin: 0 30%;
+      // margin: 0 15%;
+      margin: 0 auto;
+      // align-self: center; // Not working
+      width: 100%;
       border-style: none;
       background-color: $background_white;
       color: $light_grey;
