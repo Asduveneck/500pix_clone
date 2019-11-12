@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_231632) do
+ActiveRecord::Schema.define(version: 2019_11_12_055505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.string "gallery"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", null: false
@@ -39,4 +53,5 @@ ActiveRecord::Schema.define(version: 2019_11_06_231632) do
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
+  add_foreign_key "galleries", "users"
 end
