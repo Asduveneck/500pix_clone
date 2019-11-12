@@ -19,8 +19,11 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 
+# Stuff I'm adding
 gem 'bcrypt'
 gem 'jquery-rails'
+gem "aws-sdk-s3"
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5' // Not actually using
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -38,6 +41,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
