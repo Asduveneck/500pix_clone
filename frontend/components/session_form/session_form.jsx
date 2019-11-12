@@ -126,8 +126,8 @@ class SessionForm extends React.Component {
 
               <br/>
               <br/>
-                {this.signupOnly(<h4>Interested in trying 1000px?</h4>)} 
-                {this.signupOnly(<button onClick={this.handleDemo} id="demo_button" >Guest Account</button>)}
+                <h4>Interested in trying 1000px?</h4>
+                <button onClick={this.handleDemo} id="demo_button" >Guest Account</button>
               <br />
               <h4>
                 {this.props.navPrompt} {this.props.navLink}
