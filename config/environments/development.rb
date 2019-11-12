@@ -1,7 +1,12 @@
 Rails.application.configure do
+
+  # ------------------ Stuff I manually made --------------------------
   # Adding guard live reload
   config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
+  # AWS S3
+  config.active_storage.service = :amazon_dev
 
+  # -------------------- Stuff automatically made ----------------------------
 
   # Settings specified here will take precedence over those in config/application.rb.
 

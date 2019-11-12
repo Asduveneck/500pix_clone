@@ -1,4 +1,11 @@
 Rails.application.configure do
+  
+  # ------------------ Stuff I manually made --------------------------
+  # AWS S3:
+  config.active_storage.service = :amazon_prod
+
+  # -------------------- Stuff automatically made ----------------------------
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
