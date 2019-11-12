@@ -1,3 +1,27 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer          not null, primary key
+#  user_name          :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  library_id         :integer
+#  follows_id         :integer
+#  first_name         :string           not null
+#  last_name          :string           not null
+#  location_city      :string
+#  location_country   :string
+#  about              :text
+#  website            :string
+#  instagram_username :string
+#  facebook_address   :string
+#  twitter            :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  email              :string           not null
+#
+
 class User < ApplicationRecord
   attr_reader :password
 
