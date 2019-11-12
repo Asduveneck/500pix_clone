@@ -17,7 +17,8 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
   return { // May implicitly return later...
     processForm: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(clearSessionErrors())  // thread down error clearing
+    clearErrors: () => dispatch(clearSessionErrors()),  // thread down error clearing
+    demo: (demoUser) => dispatch(login(demoUser)),// Consistency between containers
   };
 };
 

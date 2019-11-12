@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
   handleDemo(e) { // Sign in a demo user
     e.preventDefault();
     let user = { user_name: 'guest', password: '!Password' };
-    this.props.demo(user); // still has errors showing up
+    this.props.demo(user);
   }
 
   signupOnly(object){
