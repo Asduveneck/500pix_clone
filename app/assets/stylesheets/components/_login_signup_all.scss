@@ -5,14 +5,14 @@
     justify-content: center;
     align-items: center;
     background-color: #F7F8FA;
-    height: 100vh; // Do I want this?
+    height: 100vh; 
 }
 
 
 
 .login_signup_form_box {
   background-color: $background_white;
-  width: 400px;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     flex-direction: column; // done so the top navLink don't get pushed to left
-    width: 360px;
+    width: 36vw;
   }  
   .session_form {
     display: flex;
@@ -41,33 +41,38 @@
 
     h2 {
       align-self: center;
-      font-size: 24px;
+      font-size: 3vh;
       color: #525558;
+      margin-bottom: 8px;
     }
     h3 {
-      font-size: 12px;
-      color: #71767A; // Start putting these as variables?
+      font-size: 1.5vh;
+      color: $light_grey; // Start putting these as variables?
     }
 
     h4 {
       align-self: center;
       text-align: center; // Needed to center text itself.
       font-size: 13.5px;
-      color: #71767A;
+      color: $light_grey;
     }
     label {
-      font-size: 14px;
-      color: #71767A; // Maybe make this a default text color?
+      font-size: 2vh;
+      color: $light_grey; // Maybe make this a default text color?
     }
     input {
       flex-direction: row;
-      width: 100%;
+      height: 3vh;
+      padding: 0 3%;
+      margin-bottom: 3%;
+      width: 94%;
       background-color: #E8F0FE;
     }
 
     .session-submit {
       width: 100%;
-      padding: 0px 10px;
+      height: 5vh;
+      font-size: 3vh;
       background-color: #34BF49;
       color: #F7F8FA; 
     }
@@ -76,7 +81,7 @@
       margin: 0 30%;
       border-style: none;
       background-color: $background_white;
-      color: #71767A;
+      color: $light_grey;
     }
 
   }
