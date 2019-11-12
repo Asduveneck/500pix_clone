@@ -26,8 +26,18 @@ class User < ApplicationRecord
 
   # --------------- Associations ----------------
 
-  has_many :photos, dependent: :delete_all 
-  has_many :galleries, dependent: :delete_all  
+  # library_id: Might remove later since gallery references user already...
+  
+  has_many :photos, 
+    foreign_key: :user_id, 
+    class_name: :Photo, 
+    dependent: :delete_all 
+
+  has_many :galleries, 
+    foreign_key: :user_id, 
+    class_name: :Gallery, 
+    dependent: :delete_all  
+
 
 
   # --------------- Validations ------------------ 

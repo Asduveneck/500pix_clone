@@ -12,8 +12,13 @@
 class PhotoCategory < ApplicationRecord
   # --------------- Associations ----------------
 
-  belongs_to :category # Automatically made during migration
-  belongs_to :photo
+  belongs_to :category, 
+    foreign_key: :category_id,
+    class_name: :Category
+
+  belongs_to :photo, 
+    foreign_key: :photo_id,
+    class_name: :Photo, 
 
   # --------------- Validations ------------------ 
   

@@ -11,11 +11,14 @@
 
 class Gallery < ApplicationRecord
   # --------------- Associations ----------------
-  belongs_to :user
+  belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User 
+  
 
   # --------------- Validations ------------------ 
 
-  validates :gallery, presence: true # If you create a gallery, you should give it a name...
+  validates :gallery, :user_id, presence: true # If you create a gallery, it must have a name and belong to a user
 
   # ---------------    Code     ------------------ 
   

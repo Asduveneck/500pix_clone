@@ -14,17 +14,31 @@
 
 class Photo < ApplicationRecord
   # --------------- Associations ----------------
-  has_one_attached :photo # AWS. May rename later to 'file' or 'pic'...
+
+  # AWS. May rename later to 'file' or 'pic'...
+  has_one_attached :photo
 
   # To other models
-  has_many :galleries
+  belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User 
 
-  # has_many :categories, through: 
+  has_many :photo_categories, 
+    foreign_key: :photo_id,
+    class_name: :PhotoCategory
+    
+  # through associations:
+
+  # has_many :galleries, foreign_key: // another through association
+  has_many :categories, 
+    through: :photo_categories,
+    source: :category
 
   # --------------- Validations ------------------ 
 
-  validates :title, presence: true
+  validates :title, :user_id, presence: true # photos must belong to a USER and have a title
   
   # ---------------    Code     ------------------ 
+
   
 end
