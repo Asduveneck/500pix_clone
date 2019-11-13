@@ -16,7 +16,7 @@ class Photo < ApplicationRecord
   # --------------- Associations ----------------
 
   # AWS. May rename later to 'file' or 'pic'...
-  has_one_attached :photo
+  has_one_attached :file
 
   # To other models
   belongs_to :user,
