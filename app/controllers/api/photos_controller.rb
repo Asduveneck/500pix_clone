@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
   
   def index
     @photos = Photo.all
-    render @photos # we want infinite scroll so probably not yet...
+    render :index # we want infinite scroll so probably not yet...
   end
     
   def new # form to get or post a photo
