@@ -3,7 +3,7 @@ import React from "react";
 import { Route } from 'react-router-dom'
 
 // Routes
-import { AuthRoute, ProtectedRouted } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
 
 // Dependencies within this project (containers)
 import GreetingContainer from './greeting/greeting_container';
@@ -24,7 +24,7 @@ const App = () => (
     {/* Routes to use */}
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRouted path="/index" component={IndexPageContainer} />
+      <ProtectedRoute path="/index" component={IndexPageContainer} />
   </div>
 
 );
