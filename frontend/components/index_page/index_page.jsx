@@ -11,18 +11,8 @@ class IndexPage extends React.Component {
     this.fetchPhotos = this.fetchPhotos.bind(this);
   }
 
-  fetchPhotos() { // Ripping off tutorial vid https://vimeo.com/278727054 
-    // For now... Will need to do all of this in a reducer LATER!
-    $.ajax({
-      url: `/api/photos`
-    }).then(photos => {
-      // debugger;
-      this.setState({photos})
-    })
-  }
-
   componentDidMount() {
-    this.fetchPhotos()
+    // this.props.fetchPhotos() // in container mSTP.
   }
 
 
