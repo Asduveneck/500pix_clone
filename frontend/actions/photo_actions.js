@@ -31,7 +31,7 @@ export const receivePhotos = photos => ({
 
 // updatePhoto action handled in receivePhotos; has own Thunk
 
-export const deletePhoto = photoId => ({ // Thunk component needed too.
+const deletePhoto = photoId => ({ // Thunk component needed too. 
   type: DELETE_PHOTO,
   photoId,
 })

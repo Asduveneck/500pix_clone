@@ -16,7 +16,7 @@ const photosReducer = (state = _defaultSession, action) => {
   let nextState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_PHOTO:
-      nextState = merge(nextState, [action.photo.id]: action.photo)
+      nextState = merge(nextState, {[action.photo.id]: action.photo})
       return nextState;
     case RECEIVE_PHOTOS:
       return action.photos;
