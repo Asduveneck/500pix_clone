@@ -31,7 +31,7 @@ export const receivePhotos = photos => ({
 
 // updatePhoto action handled in receivePhotos; has own Thunk
 
-const deletePhoto = photoId => ({ // Thunk component needed too. 
+const delPhoto = photoId => ({ // Thunk component needed too. 
   type: DELETE_PHOTO,
   photoId,
 })
@@ -85,7 +85,7 @@ export const updatePhoto = photo => dispatch(
 
 export const deletePhoto = photoId => dispatch(
   APIUtil.deletePhoto(photoId)
-    .then(() => (dispatch(deletePhoto(photoId))
+    .then(() => (dispatch(delPhoto(photoId)) // matches our action creator...
     ), err => (
       dispatch(receiveErrors(err.responseJson))
     ))

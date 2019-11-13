@@ -8,7 +8,7 @@ class IndexPage extends React.Component {
     }
 
     // Binding Functions
-    this.fetchPhotos = this.fetchPhotos.bind(this);
+    // this.fetchPhotos = this.fetchPhotos.bind(this);
   }
 
   componentDidMount() {
