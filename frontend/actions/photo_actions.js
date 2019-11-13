@@ -8,8 +8,8 @@
 
 import * as APIUtil from '../util/photo_api_util';
 
-export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
+export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
 export const DELETE_PHOTO = "DELETE_PHOTO";
 
