@@ -19,31 +19,31 @@ export const DELETE_PHOTO = "DELETE_PHOTO";
 // ------- CRUD --------
 
 // createPhoto action handled in receivePhotos; has own Thunk
-
-const receivePhoto = photo => ({
+// actions will be tied to buttons or loading stuff in upcoming forms later...
+export const receivePhoto = photo => ({
   type: RECEIVE_PHOTO,
   photo
 });
-const receivePhotos = photos => ({
+export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
   photos
 });
 
 // updatePhoto action handled in receivePhotos; has own Thunk
 
-const deletePhoto = photoId => ({ // Thunk component needed too.
+export const deletePhoto = photoId => ({ // Thunk component needed too.
   type: DELETE_PHOTO,
   photoId,
 })
 
 
 // --------- Errors --------
-const receiveErrors = errors => ({
+export const receiveErrors = errors => ({
   type: RECEIVE_PHOTO_ERRORS,
   errors
 });
 
-const clearPhotoErrors = () => ({
+export const clearPhotoErrors = () => ({
   type: RECEIVE_PHOTO_ERRORS,
   errors: [], // Return an empty array, wiping away errors.
 });
