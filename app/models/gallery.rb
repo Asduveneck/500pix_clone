@@ -15,10 +15,11 @@ class Gallery < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User 
   
+  # I should make a connector table for galleries later...
 
   # --------------- Validations ------------------ 
 
-  validates :gallery, :user_id, presence: true # If you create a gallery, it must have a name and belong to a user
+  validates :gallery, :user_id, presence: true # If you create a gallery, it must have a name and belong to a user 
 
   # ---------------    Code     ------------------ 
   

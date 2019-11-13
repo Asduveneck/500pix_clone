@@ -36,7 +36,7 @@ class Photo < ApplicationRecord
 
   # --------------- Validations ------------------ 
 
-  validates :title, :user_id, presence: true # photos must belong to a USER and have a title
+  validates :title, :user_id, presence: true # photos must belong to a user AND have a title
   
   # ---------------    Code     ------------------ 
 
