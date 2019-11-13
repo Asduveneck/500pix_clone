@@ -29,7 +29,7 @@ class Photo < ApplicationRecord
     
   # through associations:
 
-  # has_many :galleries, foreign_key: // another through association
+    # has_many :galleries LATER
   has_many :categories, 
     through: :photo_categories,
     source: :category
