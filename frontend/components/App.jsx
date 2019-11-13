@@ -22,9 +22,9 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashPageContainer}/>
       <br />
     {/* Routes to use */}
+      <ProtectedRoute exact path="/" component={IndexPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/index" component={IndexPageContainer} />
   </div>
 
 );
