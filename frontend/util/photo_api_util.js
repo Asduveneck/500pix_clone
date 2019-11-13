@@ -4,19 +4,19 @@
     - In our Active.Storage, we call the association `file`, so I will stick to that convention here
  */
 
-export const createPhoto = (file) => (
+export const createPhoto = (photo) => (
   $.ajax({
     method: 'post',
     url: `/api/photos/`,
-    file
+    data: photo,
   })
 ); 
 
-export const fetchPhotos = (files) => (
+export const fetchPhotos = (photos) => (
   $.ajax({
     method: 'get',
     url: `/api/photos`,
-    files
+    data: photos,
   })
 ); 
 
@@ -27,11 +27,11 @@ export const fetchPhoto = (id) => (
   })
 ); 
 
-export const updatePhoto = (file) => (
+export const updatePhoto = (photo) => (
   $.ajax({
     method: 'patch',
-    url: `/api/photos/${file.id}`,
-    file
+    url: `/api/photos/${photo.id}`,
+    data: photo,
   })
 ); 
 
