@@ -6,12 +6,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-//Window Tests:
-// import {createPhoto, fetchPhoto, fetchPhotos, updatePhoto, deletePhoto } from './util/photo_api_util';  // ajax not tested yet
-// import { fetchPhoto } from './util/photo_api_util';  // ajax not tested yet
-import { receivePhoto, receivePhotos, delPhoto, createPhoto, 
-  fetchPhoto, 
-  fetchPhotos, updatePhoto, deletePhoto} from './actions/photo_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -30,49 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   ReactDOM.render( <Root store={store}/> , root);
-
-  // ========================= Testing on Window ===============================
-  
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-
-
-  // window.receivePhoto = receivePhoto; 
-  // window.receivePhotos = receivePhotos; 
-  // window.delPhoto = delPhoto; 
-
-  window.createPhoto = createPhoto; 
-  window.fetchPhoto = fetchPhoto;
-  window.fetchPhotos = fetchPhotos;
-  window.updatePhoto = updatePhoto; 
-  window.deletePhoto = deletePhoto;
-
-  // window.RECEIVE_PHOTO = "RECEIVE_PHOTO";
-  // window.RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
-  // window.RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
-  // window.DELETE_PHOTO = "DELETE_PHOTO";
-
-
-  
-  window.photo1 =  {photo: {title: 'photo1', user_id: 1 }};
-  window.photo2 =  {photo: {title: 'photo2', user_id: 1 }};
-  // by destructuring our prop object, we don't need to nest within a photo key! 
-  window.photo3 =  {photo: {title: 'photo3', user_id: 1 }};
-
-  window.photo4 =  {photo: {title: 'photo4', user_id: 1 }};
-
-  window.photo_invalid = {};  // not worried with url yet
-  
-  // fetchPhoto(4).then(
-  //   () => console.log("successs"),
-  //   () => console.log("fail")
-  // )
-
-  // // fetchPhoto({photo: {id: 4}}).then(
-  // //   () => console.log("successs"),
-  // //   () => console.log("fail")
-  // // )
-
 
 })
 
