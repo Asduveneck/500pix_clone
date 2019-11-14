@@ -53,7 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   window.photo1 =  {photo: {title: 'photo1', user_id: 1 }};
   window.photo2 =  {photo: {title: 'photo2', user_id: 1 }};
+  // by destructuring our prop object, we don't need to nest within a photo key! 
   window.photo3 =  {photo: {title: 'photo3', user_id: 1 }};
+
   window.photo4 =  {photo: {title: 'photo4', user_id: 1 }};
 
   window.photo_invalid = {};  // not worried with url yet
