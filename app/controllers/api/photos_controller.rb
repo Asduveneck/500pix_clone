@@ -11,16 +11,16 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new (photo_params)
+    @photo = Photo.new(photo_params)
     if @photo.save
       render :show   # Could also be the edit form right after too...
     else
-      render json: @photo.errors.full_messages, status: 400 # :bad_request, but could be anything else too...
+      render json: @photo.errors.full_messages, status: 422 # :bad_request, but could be anything else too...
     end
   end
     
   def show
-    @ohoto = Photo.find(params[:id])
+    @photo = Photo.find(params[:id])
     render :show
   end
   
@@ -28,6 +28,8 @@ class Api::PhotosController < ApplicationController
   end 
 
   def update 
+    @photo = Photo.find(params[:id])
+
   end
 
   def destroy 
