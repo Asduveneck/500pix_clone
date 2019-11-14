@@ -7,7 +7,7 @@ require 'open-uri'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ActiveRecord:: Base.transaction do
+ActiveRecord::Base.transaction do
 
   # Clear Tables:
   User.destroy_all 
@@ -47,116 +47,43 @@ ActiveRecord:: Base.transaction do
 
   # ================================= Photos ==================================  
   # ----------------------------- Pre-AWS seeding -----------------------------
-  photo1	 = Photo.create(title: 	'Zion 1',	              description: 	'',	
-                          user_id: 	1)
-
-  photo2	 = Photo.create(title: 	'Zion 2',	              description: 	'',	
-                          user_id: 	3)
-
-  photo3	 = Photo.create(title: 	'angel landing',	      description: 	'Scenic View',	
-                          user_id: 	2)
-
-  photo4	 = Photo.create(title: 	'Zion chipmunk 1',	    description: 	'Humanized chipmunk in Zion',	
-                          user_id: 	4)
-
-  photo5	 = Photo.create(title: 	'Zion chipmunk 2',	    description: 	'',	
-                          user_id: 	5)
-
-  photo6	 = Photo.create(title: 	'angel landing 2',	    description: 	'',	
-                          user_id: 	2)
-
-  photo7	 = Photo.create(title: 	'Bryce 1',	            description: 	'Snowy Canyons',	
-                          user_id: 	6)
-
-  photo8	 = Photo.create(title: 	'Bryce 2',	            description: 	'',	
-                          user_id: 	4)
-
-  photo9	 = Photo.create(title: 	'Bryce 3',	            description: 	'',	
-                          user_id: 	2)
-
-  photo10	 = Photo.create(title: 	'preyes elk1',	        description: 	'',	
-                          user_id: 	3)
-
-  photo11	 = Photo.create(title: 	'Fluffers',	            description: 	'',	
-                          user_id: 	1)
-
-  photo12	 = Photo.create(title: 	'Demolished Sculpture',	description: 	'Now a parking lot',	
-                          user_id: 	1)
-
-  photo13	 = Photo.create(title: 	'hotel parrots',	      description: 	'',	
-                          user_id: 	1)
-
-  photo14	 = Photo.create(title: 	'abstract 1',	          description: 	'',	
-                          user_id: 	1)
-
-  photo15	 = Photo.create(title: 	'abstract 2',	          description: 	'',	
-                          user_id: 	2)
-
-  photo16	 = Photo.create(title: 	'preyes elk2',	        description: 	'',	
-                          user_id: 	4)
-
-  photo17	 = Photo.create(title: 	'Effie Yeaw b1',	      description: 	'',	
-                          user_id: 	3)
-
-  photo18	 = Photo.create(title: 	'Effie Yeaw b2',	      description: 	'',	
-                          user_id: 	5)
-
-  photo19	 = Photo.create(title: 	'Effie Yeaw b3',	      description: 	'',	
-                          user_id: 	6)
-
-  photo20	 = Photo.create(title: 	'Effie Yeaw geese',	    description: 	'',	
-                          user_id: 	2)
-
-  photo21	 = Photo.create(title: 	'woodpecker 2',	        description: 	'Beautiful woodpecker in Effie Yeaw',	
-                          user_id: 	3)
-
-  photo22	 = Photo.create(title: 	'woodpecker 1',	        description: 	'',	
-                          user_id: 	5)
-
-  photo23	 = Photo.create(title: 	'Davis sunflower 1',	  description: 	'Sunflowers in sunset',	
-                          user_id: 	6)
-
-  photo24	 = Photo.create(title: 	'Davis sunflower 2',	  description: 	'',	
-                          user_id: 	4)
-
-  photo25	 = Photo.create(title: 	'Davis sunflower 3',	  description: 	'',	
-                          user_id: 	1)
-
-  photo26	 = Photo.create(title: 	'Davis sunflower 4',	  description: 	'',	
-                          user_id: 	2)
-
-  photo27	 = Photo.create(title: 	'Davis sunflower 5',	  description: 	'',	
-                          user_id: 	5)
-
-  photo28	 = Photo.create(title: 	'torr 1',	              description: 	'',	
-                          user_id: 	4)
-
-  photo29	 = Photo.create(title: 	'Taiwan f1',	          description: 	'The blue hour',	
-                          user_id: 	6)
-
-  photo30	 = Photo.create(title: 	'Taiwan port1',	        description: 	'',	
-                          user_id: 	4)
-
-  photo31	 = Photo.create(title: 	'Taiwan port2',	        description: 	'',	
-                          user_id: 	6)
-
-  photo32	 = Photo.create(title: 	'Taiwan port3',	        description: 	'',	
-                          user_id: 	5)
-
-  photo33	 = Photo.create(title: 	'Taiwan port4',	        description: 	'',	
-                          user_id: 	3)
-
-  photo34	 = Photo.create(title: 	'Davis shadows',	      description: 	'',	
-                          user_id: 	1)
-
-  photo35	 = Photo.create(title: 	'random trees',	        description: 	'',	
-                          user_id: 	2)
-
-  photo36	 = Photo.create(title: 	'squirrel 2',	          description: 	'Squirrels in Davis',	
-                          user_id: 	2)
-
-  photo37	 = Photo.create(title: 	'squirrels 1',	        description: 	'',	
-                          user_id: 2)
+  photo1	 = Photo.create(title: 'Zion 1', description: '',	user_id: user1.id)
+  photo2	 = Photo.create(title: 'Zion 2', description: '',	user_id: user3.id)
+  photo3	 = Photo.create(title: 'angel landing',	description: 	'Scenic V w',	user_id: user2.id)
+  photo4	 = Photo.create(title: 'Zion chipmunk 1',	description: 	'Humanized chipmunk in Z n',	user_id: user4.id)
+  photo5	 = Photo.create(title: 'Zion chipmunk 2', description: '',	user_id: user5.id)
+  photo6	 = Photo.create(title: 'angel landing 2', description: '',	user_id: user2.id)
+  photo7	 = Photo.create(title: 'Bryce 1',	description: 	'Snowy Cany s',	user_id: user6.id)
+  photo8	 = Photo.create(title: 'Bryce 2',	description: '',	user_id: user4.id)
+  photo9	 = Photo.create(title: 'Bryce 3',	description: '',	user_id: user2.id)
+  photo10	 = Photo.create(title: 'preyes elk1',	description: '',	user_id: user3.id)
+  photo11	 = Photo.create(title: 'Fluffers',	description: '',	user_id: user1.id)
+  photo12	 = Photo.create(title: 'Demolished Sculpture', description: 'Now a parking lot',	user_id: user1.id)
+  photo13	 = Photo.create(title: 'hotel parrots',	description: '',	user_id: user1.id)
+  photo14	 = Photo.create(title: 'abstract 1', description: '',	user_id: user1.id)
+  photo15	 = Photo.create(title: 'abstract 2', description: '',	user_id: user2.id)
+  photo16	 = Photo.create(title: 'preyes elk2',	description: '',	user_id: user4.id)
+  photo17	 = Photo.create(title: 'Effie Yeaw b1',	description: '',	user_id: user3.id)
+  photo18	 = Photo.create(title: 'Effie Yeaw b2',	description: '',	user_id: user5.id)
+  photo19	 = Photo.create(title: 'Effie Yeaw b3',	description: '',	user_id: user6.id)
+  photo20	 = Photo.create(title: 'Effie Yeaw geese', description: '',	user_id: user2.id)
+  photo21	 = Photo.create(title: 'woodpecker 2', description: 'Beautiful woodpecker in Effie Yeaw',	user_id: user3.id)
+  photo22	 = Photo.create(title: 'woodpecker 1', description: '',	user_id: user5.id)
+  photo23	 = Photo.create(title: 'Davis sunflower 1',	description: 	'Sunflowers in sun t',	user_id: user6.id)
+  photo24	 = Photo.create(title: 'Davis sunflower 2',	description: '',	user_id: user4.id)
+  photo25	 = Photo.create(title: 'Davis sunflower 3',	description: '',	user_id: user1.id)
+  photo26	 = Photo.create(title: 'Davis sunflower 4',	description: '',	user_id: user2.id)
+  photo27	 = Photo.create(title: 'Davis sunflower 5',	description: '',	user_id: user5.id)
+  photo28	 = Photo.create(title: 'torr 1',	description: '',	user_id: user4.id)
+  photo29	 = Photo.create(title: 'Taiwan f1', description: 'The blue hour',	user_id: user6.id)
+  photo30	 = Photo.create(title: 'Taiwan port1',	description: '',	user_id: user4.id)
+  photo31	 = Photo.create(title: 'Taiwan port2', description: '',	user_id: user6.id)
+  photo32	 = Photo.create(title: 'Taiwan port3', description: '',	user_id: user5.id)
+  photo33	 = Photo.create(title: 'Taiwan port4', description: '',	user_id: user3.id)
+  photo34	 = Photo.create(title: 'Davis shadows',	description: '',	user_id: user1.id)
+  photo35	 = Photo.create(title: 'random trees', description: '',	user_id: user2.id)
+  photo36	 = Photo.create(title: 'squirrel 2', description: 'Squirrels in Davis',	user_id: user2.id)
+  photo37	 = Photo.create(title: 'squirrels 1',	description: '', user_id: user2.id)
   # ---------------------------------- Files ----------------------------------
 
 file1	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/zion_1.jpg')

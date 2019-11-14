@@ -6,12 +6,12 @@ import {
 } from '../actions/photo_actions'
 
 const _defaultPhoto = Object.freeze({
-  description: null,
-  fileUrl: "",
-  id: null,
-  rating: null,
-  title: "",
-  views: 0,
+  // description: null,
+  // fileUrl: "",
+  // id: null,
+  // rating: null,
+  // title: "",
+  // views: 0,
 });
 
 
@@ -20,7 +20,7 @@ const _defaultPhoto = Object.freeze({
 
 // Handles shape for all the photos
 
-const photosReducer = (state = _defaultPhoto, action) => {
+const photosReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)
   switch (action.type) {

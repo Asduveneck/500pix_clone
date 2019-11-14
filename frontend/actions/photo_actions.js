@@ -20,13 +20,10 @@ export const DELETE_PHOTO = "DELETE_PHOTO";
 
 // createPhoto action handled in receivePhotos; has own Thunk
 // actions will be tied to buttons or loading stuff in upcoming forms later...
-export const receivePhoto = photo => {
-  // debugger;
-  return ({
+export const receivePhoto = photo => ({
     type: RECEIVE_PHOTO,
     photo
-  })
-};
+  });
 
 export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
@@ -63,8 +60,8 @@ export const createPhoto = formPhoto => dispatch => (
     ))
 );
 
-export const fetchPhotos = photos => dispatch => ( // FETCH
-  APIUtil.fetchPhoto(photos)
+export const fetchPhotos = () => dispatch => ( 
+  APIUtil.fetchPhotos()
     .then(photos => (dispatch(receivePhotos(photos))
       ), err => (
         dispatch(receiveErrors(err.responseJSON))

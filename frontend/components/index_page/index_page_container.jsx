@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { login, clearSessionErrors } from '../../actions/session_actions';
+import {fetchPhotos} from '../../actions/photo_actions';
 import IndexPage from './index_page';
 
-const mSTP = () => ({
-
+const mSTP = (state) => ({
+  photos: Object.values(state.entities.photos)
 });
 
-const mDTP = () => ({
-
+const mDTP = (dispatch) => ({
+  fetchPhotos: () => dispatch(fetchPhotos()),
 });
 
 export default connect(mSTP, mDTP)(IndexPage);
