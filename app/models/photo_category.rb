@@ -18,7 +18,7 @@ class PhotoCategory < ApplicationRecord
 
   belongs_to :photo, 
     foreign_key: :photo_id,
-    class_name: :Photo, 
+    class_name: :Photo
 
   # --------------- Validations ------------------ 
   
