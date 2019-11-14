@@ -8,7 +8,7 @@ import {
 const _defaultPhoto = Object.freeze({
   description: null,
   fileUrl: "",
-  id: 2,
+  id: null,
   rating: null,
   title: "",
   views: 0,
@@ -32,7 +32,7 @@ const photosReducer = (state = _defaultPhoto, action) => {
       return action.photos;
 
     case DELETE_PHOTO:
-      delete nextState(action.photoId);
+      delete nextState[action.photoId];
       return nextState;
 
     default:
