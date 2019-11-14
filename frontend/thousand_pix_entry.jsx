@@ -7,8 +7,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //Window Tests:
-// import {createPhoto, fetchPhotos, fetchPhoto, updatePhoto, deletePhoto } from './util/photo_api_util';  // ajax not tested yet
-import {createPhoto, fetchPhoto, updatePhoto, deletePhoto} from './actions/photo_actions'
+// import {createPhoto, fetchPhoto, fetchPhotos, updatePhoto, deletePhoto } from './util/photo_api_util';  // ajax not tested yet
+import { receivePhoto, receivePhotos, delPhoto, createPhoto, fetchPhoto, fetchPhotos, updatePhoto, deletePhoto} from './actions/photo_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -33,14 +33,30 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  window.createPhoto = createPhoto 
-  window.fetchPhoto = fetchPhoto 
-  window.updatePhoto = updatePhoto 
-  window.deletePhoto = deletePhoto
+
+  window.receivePhoto = receivePhoto; 
+  window.receivePhotos = receivePhotos; 
+  window.delPhoto = delPhoto; 
+
+  window.createPhoto = createPhoto; 
+  window.fetchPhoto = fetchPhoto;
+  window.fetchPhotos = fetchPhotos;
+  window.updatePhoto = updatePhoto; 
+  window.deletePhoto = deletePhoto;
+
+  // window.RECEIVE_PHOTO = "RECEIVE_PHOTO";
+  // window.RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
+  // window.RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
+  // window.DELETE_PHOTO = "DELETE_PHOTO";
+
 
   
-  window.photo1 = {title: "fluffy_banana"};
-  window.photo2_invalid = {}; 
+  window.photo1 =  {photo: {title: 'photo1', user_id: 1 }};
+  window.photo2 =  {photo: {title: 'photo2', user_id: 1 }};
+  window.photo3 =  {photo: {title: 'photo3', user_id: 1 }};
+  window.photo4 =  {photo: {title: 'photo4', user_id: 1 }};
+
+  window.photo_invalid = {};  // not worried with url yet
   
 
 
