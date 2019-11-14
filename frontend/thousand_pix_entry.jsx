@@ -8,7 +8,10 @@ import configureStore from './store/store';
 
 //Window Tests:
 // import {createPhoto, fetchPhoto, fetchPhotos, updatePhoto, deletePhoto } from './util/photo_api_util';  // ajax not tested yet
-import { receivePhoto, receivePhotos, delPhoto, createPhoto, fetchPhoto, fetchPhotos, updatePhoto, deletePhoto} from './actions/photo_actions'
+// import { fetchPhoto } from './util/photo_api_util';  // ajax not tested yet
+import { receivePhoto, receivePhotos, delPhoto, createPhoto, 
+  fetchPhoto, 
+  fetchPhotos, updatePhoto, deletePhoto} from './actions/photo_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -34,9 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
 
 
-  window.receivePhoto = receivePhoto; 
-  window.receivePhotos = receivePhotos; 
-  window.delPhoto = delPhoto; 
+  // window.receivePhoto = receivePhoto; 
+  // window.receivePhotos = receivePhotos; 
+  // window.delPhoto = delPhoto; 
 
   window.createPhoto = createPhoto; 
   window.fetchPhoto = fetchPhoto;
@@ -60,7 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.photo_invalid = {};  // not worried with url yet
   
+  // fetchPhoto(4).then(
+  //   () => console.log("successs"),
+  //   () => console.log("fail")
+  // )
 
+  // // fetchPhoto({photo: {id: 4}}).then(
+  // //   () => console.log("successs"),
+  // //   () => console.log("fail")
+  // // )
 
 
 })

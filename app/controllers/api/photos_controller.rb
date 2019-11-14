@@ -24,15 +24,22 @@ class Api::PhotosController < ApplicationController
     render :show
   end
   
-  def edit 
-  end 
+  # def edit  # will we have this form?
+  # end
 
-  def update 
+  def update
     @photo = Photo.find(params[:id])
-
+    if @photo.update_attributes(photo_params)
+      render :show
+    else
+      render json: @photo.errors.full_messages, status:422
+    end
   end
 
-  def destroy 
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    render json: @photo
   end
 
 
