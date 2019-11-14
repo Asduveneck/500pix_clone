@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'; // Eventually make clicking on each pho
 class IndexIndvPhoto extends React.Component{
 
   render() {
-    let title = this.props.title
-    
-    
+    let title = this.props.title;
+    let url = this.props.url;
 
     return (
       <div>
