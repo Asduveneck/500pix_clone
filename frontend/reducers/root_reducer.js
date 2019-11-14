@@ -4,12 +4,14 @@ import { combineReducers } from 'redux';
 /*
 We will import:
   1. entities_reducer, which imports:
-    users_reducer 
+    users_reducer
+    photos_reducer 
 
   2. session_reducer, which does not import anything
   
   3. errors_reducer, which imports:
-    session_error_reducer
+    session_errors_reducer
+    photos_errors_reducer
 */
 
 // Start importing all of your reducers, but check sample state too! 
@@ -30,7 +32,8 @@ export default rootReducer;
 Current state slice:
   {
     entities: {
-      users: {}
+      users: {},
+      photos: {},
     },
     session: {
       id: null

@@ -21,7 +21,7 @@ export const DELETE_PHOTO = "DELETE_PHOTO";
 // createPhoto action handled in receivePhotos; has own Thunk
 // actions will be tied to buttons or loading stuff in upcoming forms later...
 export const receivePhoto = photo => {
-  debugger;
+  // debugger;
   return ({
     type: RECEIVE_PHOTO,
     photo
@@ -59,7 +59,7 @@ export const createPhoto = formPhoto => dispatch => (
   APIUtil.createPhoto(formPhoto)
     .then(photo => (dispatch(receivePhoto(photo))
       ), err => (
-        dispatch(receiveErrors(err.responseJson))
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
@@ -67,7 +67,7 @@ export const fetchPhotos = photos => dispatch => ( // FETCH
   APIUtil.fetchPhoto(photos)
     .then(photos => (dispatch(receivePhotos(photos))
       ), err => (
-        dispatch(receiveErrors(err.responseJson))
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
@@ -75,7 +75,7 @@ export const fetchPhoto = photoId => dispatch =>(
   APIUtil.fetchPhoto(photoId)
     .then(photo => (dispatch(receivePhoto(photo))
       ), err => (
-        dispatch(receiveErrors(err.responseJson))
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
@@ -83,7 +83,7 @@ export const updatePhoto = photo => dispatch =>(
   APIUtil.updatePhoto(photo)
     .then(updatedPhoto => (dispatch(receivePhoto(updatedPhoto))
       ), err => (
-        dispatch(receiveErrors(err.responseJson))
+        dispatch(receiveErrors(err.responseJSON))
     ))
 );
 
@@ -91,6 +91,6 @@ export const deletePhoto = photoId => dispatch =>(
   APIUtil.deletePhoto(photoId)
     .then(() => (dispatch(delPhoto(photoId)) // matches our action creator...
     ), err => (
-      dispatch(receiveErrors(err.responseJson))
+      dispatch(receiveErrors(err.responseJSON))
     ))
 );

@@ -5,13 +5,22 @@ import {
   DELETE_PHOTO,
 } from '../actions/photo_actions'
 
-const _defaultSession = Object.freeze({});
+const _defaultPhoto = Object.freeze({
+  description: null,
+  fileUrl: "",
+  id: 2,
+  rating: null,
+  title: "",
+  views: 0,
+});
+
+
 
 // Default state would be... no pictures?
 
 // Handles shape for all the photos
 
-const photosReducer = (state = _defaultSession, action) => {
+const photosReducer = (state = _defaultPhoto, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)
   switch (action.type) {
