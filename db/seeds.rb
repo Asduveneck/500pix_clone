@@ -18,31 +18,31 @@ ActiveRecord:: Base.transaction do
   # ================================= Users ==================================  
   demo   = User.create(user_name: 'guest',        password: '!Password', 
                       first_name: 'Guest',        last_name: 'User', 
-                      email: 'demo_user@1000pix.com'
+                      email: 'demo_user@1000pix.com')
                       
   user1  = User.create(user_name: 'kbear',        password: 'baccano', 
                       first_name: 'Kara',         last_name: 'Chang', 
-                      email: 'og@neopets.com'
+                      email: 'og@neopets.com')
                       
   user2	 = User.create(user_name:'realYoungJun',  password: '!youngjun', 
                       first_name: 'Phillip',        last_name: 'Zhang', 
-                      email: 'realyj@yjfandom.org'
+                      email: 'realyj@yjfandom.org')
                       
   user3	 = User.create(user_name:'abyeet',        password: 'purplepenguin', 
                       first_name: 'Albert',         last_name: 'Yang', 
-                      email: 'atyang@gmail.com'
+                      email: 'atyang@gmail.com')
                       
   user4	 = User.create(user_name: 'jrose',        password: 'password1', 
                       first_name: 'Jeremy',         last_name: 'Rofl', 
-                      email: 'jrose@yahoo.com'
+                      email: 'jrose@yahoo.com')
                       
   user5	 = User.create(user_name: 'jpham',        password: 'hunter12', 
                       first_name: 'James',        last_name: 'Phung', 
-                      email: 'jpham@gmail.com'
+                      email: 'jpham@gmail.com')
                       
-  user6	 = User.create(user_name: 'jbubba',       password: 'horse'!staple2gun, 
+  user6	 = User.create(user_name: 'jbubba',       password: 'horse!staple2gun', 
                       first_name: 'Joseph',         last_name: 'Bubba', 
-                      email: 'jbubba@gmail.com'
+                      email: 'jbubba@gmail.com')
                       
 
   # ================================= Photos ==================================  
@@ -159,43 +159,43 @@ ActiveRecord:: Base.transaction do
                           user_id: 2)
   # ---------------------------------- Files ----------------------------------
 
-  file1	   = open('https://s3.amazonaws.com/1k-pix-seeds/zion_1.jpg')
-  file2	   = open('https://s3.amazonaws.com/1k-pix-seeds/zion_2.jpg')
-  file3	   = open('https://s3.amazonaws.com/1k-pix-seeds/angel_landing.jpg')
-  file4	   = open('https://s3.amazonaws.com/1k-pix-seeds/zion_chipmunk_1.jpg')
-  file5	   = open('https://s3.amazonaws.com/1k-pix-seeds/zion_chipmunk_2.jpg')
-  file6	   = open('https://s3.amazonaws.com/1k-pix-seeds/angel_landing_2.jpg')
-  file7	   = open('https://s3.amazonaws.com/1k-pix-seeds/bryce_1.jpg')
-  file8	   = open('https://s3.amazonaws.com/1k-pix-seeds/bryce_2.jpg')
-  file9	   = open('https://s3.amazonaws.com/1k-pix-seeds/bryce_3.jpg')
-  file10	 = open('https://s3.amazonaws.com/1k-pix-seeds/preyes_elk1.jpg')
-  file11	 = open('https://s3.amazonaws.com/1k-pix-seeds/fluffers.jpg')
-  file12	 = open('https://s3.amazonaws.com/1k-pix-seeds/demolished_sculpt.jpg')
-  file13	 = open('https://s3.amazonaws.com/1k-pix-seeds/hotel_parrots.jpg')
-  file14	 = open('https://s3.amazonaws.com/1k-pix-seeds/abstract_1.jpg')
-  file15	 = open('https://s3.amazonaws.com/1k-pix-seeds/abstract_2.jpg')
-  file16	 = open('https://s3.amazonaws.com/1k-pix-seeds/preyes_elk2.jpg')
-  file17	 = open('https://s3.amazonaws.com/1k-pix-seeds/eff_b1.jpg')
-  file18	 = open('https://s3.amazonaws.com/1k-pix-seeds/eff_b2.jpg')
-  file19	 = open('https://s3.amazonaws.com/1k-pix-seeds/eff_b3.jpg')
-  file20	 = open('https://s3.amazonaws.com/1k-pix-seeds/eff_geese.jpg')
-  file21	 = open('https://s3.amazonaws.com/1k-pix-seeds/woodpecker_2.jpg')
-  file22	 = open('https://s3.amazonaws.com/1k-pix-seeds/woodpecker_1.jpg')
-  file23	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_sunflower_1.jpg')
-  file24	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_sunflower_2.jpg')
-  file25	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_sunflower_3.jpg')
-  file26	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_sunflower_4.jpg')
-  file27	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_sunflower_5.jpg')
-  file28	 = open('https://s3.amazonaws.com/1k-pix-seeds/torr_1.jpg')
-  file29	 = open('https://s3.amazonaws.com/1k-pix-seeds/tai_f1.jpg')
-  file30	 = open('https://s3.amazonaws.com/1k-pix-seeds/tai_port1.jpg')
-  file31	 = open('https://s3.amazonaws.com/1k-pix-seeds/tai_port2.JPG')
-  file32	 = open('https://s3.amazonaws.com/1k-pix-seeds/tai_port3.JPG')
-  file33	 = open('https://s3.amazonaws.com/1k-pix-seeds/tai_port4.JPG')
-  file34	 = open('https://s3.amazonaws.com/1k-pix-seeds/dav_shadows.JPG')
-  file35	 = open('https://s3.amazonaws.com/1k-pix-seeds/random_trees.jpg')
-  file36	 = open('https://s3.amazonaws.com/1k-pix-seeds/squirrel_2.JPG')
-  file37	 = open('https://s3.amazonaws.com/1k-pix-seeds/squirrels_1.JPG')
+file1	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/zion_1.jpg')
+file2	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/zion_2.jpg')
+file3	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/angel_landing.jpg')
+file4	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/zion_chipmunk_1.jpg')
+file5	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/zion_chipmunk_2.jpg')
+file6	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/angel_landing_2.jpg')
+file7	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/bryce_1.jpg')
+file8	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/bryce_2.jpg')
+file9	   = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/bryce_3.jpg')
+file10	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/preyes_elk1.jpg')
+file11	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/fluffers.jpg')
+file12	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/demolished_sculpt.jpg')
+file13	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/hotel_parrots.jpg')
+file14	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/abstract_1.jpg')
+file15	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/abstract_2.jpg')
+file16	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/preyes_elk2.jpg')
+file17	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/eff_b1.jpg')
+file18	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/eff_b2.jpg')
+file19	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/eff_b3.jpg')
+file20	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/eff_geese.jpg')
+file21	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/woodpecker_2.jpg')
+file22	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/woodpecker_1.jpg')
+file23	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_sunflower_1.jpg')
+file24	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_sunflower_2.jpg')
+file25	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_sunflower_3.jpg')
+file26	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_sunflower_4.jpg')
+file27	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_sunflower_5.jpg')
+file28	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/torr_1.jpg')
+file29	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/tai_f1.jpg')
+file30	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/tai_port1.jpg')
+file31	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/tai_port2.JPG')
+file32	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/tai_port3.JPG')
+file33	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/tai_port4.JPG')
+file34	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/dav_shadows.JPG')
+file35	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/random_trees.jpg')
+file36	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/squirrel_2.JPG')
+file37	 = open('https://1k-pix-seeds.s3-us-west-1.amazonaws.com/squirrels_1.JPG')
 
   # ------------------------ Connecting Photos to Files ------------------------
 
