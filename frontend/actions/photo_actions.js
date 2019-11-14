@@ -20,10 +20,14 @@ export const DELETE_PHOTO = "DELETE_PHOTO";
 
 // createPhoto action handled in receivePhotos; has own Thunk
 // actions will be tied to buttons or loading stuff in upcoming forms later...
-export const receivePhoto = photo => ({
-  type: RECEIVE_PHOTO,
-  photo
-});
+export const receivePhoto = photo => {
+  debugger;
+  return ({
+    type: RECEIVE_PHOTO,
+    photo
+  })
+};
+
 export const receivePhotos = photos => ({
   type: RECEIVE_PHOTOS,
   photos
@@ -31,7 +35,7 @@ export const receivePhotos = photos => ({
 
 // updatePhoto action handled in receivePhotos; has own Thunk
 
-const delPhoto = photoId => ({ // Thunk component needed too. 
+export const delPhoto = photoId => ({ // Thunk component needed too.
   type: DELETE_PHOTO,
   photoId,
 })
@@ -51,15 +55,15 @@ export const clearPhotoErrors = () => ({
 
 // ========================== Thunk Actions  ===================================
 
-export const createPhoto = photo => dispatch(
-  APIUtil.createPhoto(photo)
+export const createPhoto = formPhoto => dispatch => (
+  APIUtil.createPhoto(formPhoto)
     .then(photo => (dispatch(receivePhoto(photo))
       ), err => (
         dispatch(receiveErrors(err.responseJson))
     ))
 );
 
-export const fetchPhotos = photos => dispatch( // FETCH
+export const fetchPhotos = photos => dispatch => ( // FETCH
   APIUtil.fetchPhoto(photos)
     .then(photos => (dispatch(receivePhotos(photos))
       ), err => (
@@ -67,7 +71,7 @@ export const fetchPhotos = photos => dispatch( // FETCH
     ))
 );
 
-export const fetchPhoto = photoId => dispatch(
+export const fetchPhoto = photoId => dispatch =>(
   APIUtil.fetchPhoto(photoId)
     .then(photo => (dispatch(receivePhoto(photo))
       ), err => (
@@ -75,7 +79,7 @@ export const fetchPhoto = photoId => dispatch(
     ))
 );
 
-export const updatePhoto = photo => dispatch(
+export const updatePhoto = photo => dispatch =>(
   APIUtil.updatePhoto(photo)
     .then(updatedPhoto => (dispatch(receivePhoto(updatedPhoto))
       ), err => (
@@ -83,7 +87,7 @@ export const updatePhoto = photo => dispatch(
     ))
 );
 
-export const deletePhoto = photoId => dispatch(
+export const deletePhoto = photoId => dispatch =>(
   APIUtil.deletePhoto(photoId)
     .then(() => (dispatch(delPhoto(photoId)) // matches our action creator...
     ), err => (

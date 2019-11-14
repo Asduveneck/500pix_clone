@@ -6,6 +6,8 @@ class Api::PhotosController < ApplicationController
   end
     
   def new # form to get or post a photo
+    @photo = Photo.new
+    render :new
   end
 
   def create

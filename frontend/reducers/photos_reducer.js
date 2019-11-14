@@ -18,11 +18,14 @@ const photosReducer = (state = _defaultSession, action) => {
     case RECEIVE_PHOTO:
       nextState = merge(nextState, {[action.photo.id]: action.photo})
       return nextState;
+
     case RECEIVE_PHOTOS:
       return action.photos;
+
     case DELETE_PHOTO:
       delete nextState(action.photoId);
       return nextState;
+
     default:
       return state;
   }
