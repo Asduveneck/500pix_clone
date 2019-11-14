@@ -15,11 +15,11 @@ const mapStateToProps = ({ errors }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    processForm: (user) => dispatch(signup(user)),
+    processForm: (user) => dispatch(signup(user)).then(() => ownProps.history.push('/index')),
     clearErrors: () => dispatch(clearSessionErrors()), // Wipes out errors...
-    demo: (demoUser) => dispatch(login(demoUser)),
+    demo: (demoUser) => dispatch(login(demoUser)).then(() => ownProps.history.push('/index')),
   };
 };
 

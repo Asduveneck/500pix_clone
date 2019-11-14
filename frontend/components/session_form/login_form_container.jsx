@@ -14,11 +14,11 @@ const mapStateToProps = ({ errors }) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return { // May implicitly return later...
-    processForm: (user) => dispatch(login(user)),
+    processForm: (user) => dispatch(login(user)).then( () => ownProps.history.push('/index')),
     clearErrors: () => dispatch(clearSessionErrors()),  // thread down error clearing
-    demo: (demoUser) => dispatch(login(demoUser)),// Consistency between containers
+    demo: (demoUser) => dispatch(login(demoUser)).then(() => ownProps.history.push('/index')),// Consistency between containers
   };
 };
 

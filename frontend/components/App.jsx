@@ -22,7 +22,7 @@ const App = () => (
       <AuthRoute exact path="/" component={SplashPageContainer}/>
       <br />
     {/* Routes to use */}
-      <ProtectedRoute exact path="/" component={IndexPageContainer} />
+      <ProtectedRoute exact path="/index" component={IndexPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
