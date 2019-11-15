@@ -1,20 +1,20 @@
 .nav_bar_outer {
   position: fixed;
   width: 100%;
-  // margin: 0px 64px;
   padding: 22px 0px;
   background-color: $background_white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
+  nav {
+      font-size: 24px;
+      color: $light_grey;
+      margin: 0px 16px;
+    }
 }
 
 // Left Side
 .nb_l {
-  nav {
-    font-size: 24px;
-  }
   a {
     color: $light_grey;
     text-decoration: none;
@@ -39,4 +39,8 @@
     border-radius: 25px;
     border-style: solid;
   }
+  div {
+    margin: 0px 16px;
+  }
+
 }

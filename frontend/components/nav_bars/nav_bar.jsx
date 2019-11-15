@@ -18,21 +18,23 @@ const NavBar = ({ currentUser, logout}) => {
   const rightSide = () => {
     let rsContents = [];
 
-    if(!currentUser) { // If there is a current user,
+    if(!currentUser) { // If there is no current user,
       rsContents=[
         <Link to="/login" key="navk1" className="navk_log" >Login</Link>,
         <Link to="/signup" key="navk2" className="navk_sign">Sign up</Link>
       ]
     } else {
       rsContents=[
-        <div key="navk3" className="fad fa-user-circle"></div>, // Will be a link placeholder
-        <div key="navk4"><i className="far fa-plus"></i></div>,
+        <div key="navk3" className="far fa-user-circle"></div>, // Will be a link placeholder
+        <div key="navk4" className="fas fa-plus"></div>,
         <button onClick={logout} key="navk5">Log Out</button>
       ]
     }
     return(
       <div className="nb_r"> {/* Refactor or replace the other `.nb_r` with this const... */}
+        <nav>
           {rsContents.map(el => el)} {/* Iterate through each element. splat maybe? */}
+        </nav>
       </div>
     )
   }
