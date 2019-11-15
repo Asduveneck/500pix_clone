@@ -62,7 +62,14 @@ const NavBar = ({ currentUser, logout}) => {
       $("#nav_bar_outer").removeClass("navScroll");
       console.log("scrolling stopped")
     }
+
+    // if ($("#nav_bar_outer").bottom < $("#index_page_navbar")) {
+    //   console.log("overlap has occurred")
+    // }
+
   })
+
+  
 
   // Works but a bit nasty and clunky:
 
