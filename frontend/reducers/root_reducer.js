@@ -12,6 +12,9 @@ We will import:
   3. errors_reducer, which imports:
     session_errors_reducer
     photos_errors_reducer
+
+  4. ui_reducer, which imports
+     modal_reducer
 */
 
 // Start importing all of your reducers, but check sample state too! 
@@ -19,10 +22,12 @@ We will import:
 import entities from './entities_reducer';
 import session from './session_reducer'; 
 import errors from './errors_reducer'; 
+import ui from './ui_reducer';
 
 const rootReducer = combineReducers({
   entities,
   session,
+  ui,
   errors,
 });
 
@@ -38,6 +43,9 @@ Current state slice:
     session: {
       id: null
     },
+    ui: {
+      modal: {},
+    }
     errors: {
       session: []
     }

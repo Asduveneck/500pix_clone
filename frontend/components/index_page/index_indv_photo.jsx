@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Eventually make clicking on each photo a link or render a container...
-import { Z_ASCII } from 'zlib';
+
 // import { AuthRoute } from '../../util/route_util'; // Will probably not use
 
 class IndexIndvPhoto extends React.Component{
