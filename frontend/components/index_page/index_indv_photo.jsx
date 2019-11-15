@@ -15,9 +15,9 @@ class IndexIndvPhoto extends React.Component{
       height: '250px',
       width: 'auto',
     }
-
+// onClick={() => openModal('login')}>Login</button> // cannot be passed through yet...
     return (
-      <div className="indvPhoto" style={nonHover} onClick={this.handleEnlarge} >
+      <div className="indvPhoto" style={nonHover}  >
         <div className="i_p_gradient">
           <div className="top">
             {/* <h1>Placeholder Top</h1> */}
