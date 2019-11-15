@@ -2,6 +2,21 @@ import React from 'react';
 import IndvPhoto from './index_indv_photo';
 import InfiniteScroll from '../infinitescroll';
 
+
+
+// $(window).scroll(function () {
+//   let scroll = $(window).scrollTop();
+//   if (scroll >= 95) {
+//     console.log("hit target");
+//     $("#index_page_navBar").addClass("navBarNow");
+//   } else {
+//     $("#index_page_navBar").removeClass("navBarNow");
+//     console.log("no longer a nav bar")
+//   }
+// });
+
+
+
 class IndexPage extends React.Component {
 
   constructor(props) {
@@ -27,11 +42,17 @@ class IndexPage extends React.Component {
     // in container mSTP.
   }
 
-
-
   render() {
     if(!this.state.photos) return null; //
     return(
+      <div className="index_page_all">
+        <div className="index_page_header"> 
+          <h1>What's popular today</h1>
+          <h2>See recently added photos with the highest reviews.</h2>
+        </div>
+        <div id="index_page_navBar">
+          <h3 id="placeholderNav">Placeholder NavBar</h3>
+        </div>
       <div className="index_page_grid">
         {this.state.photos.map( (photo, idx) => (
             <IndvPhoto
@@ -41,6 +62,7 @@ class IndexPage extends React.Component {
             />
         ))
         }
+      </div>
       </div>
     );
   }
