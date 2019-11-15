@@ -32,14 +32,12 @@ class IndexPage extends React.Component {
     if(!this.state.photos) return null; //
     return(
       <div className="index_page_page">
-          <h2>Can you see me?</h2>
         {this.state.photos.map( (photo, idx) => (
-          <div className="ipp_contents">
             <IndvPhoto
             title={photo.title}
-            url={photo.fileUrl} 
+            url={photo.fileUrl}
+            key= {`photo_${idx}`} 
             />
-          </div>
         ))
         }
       </div>
