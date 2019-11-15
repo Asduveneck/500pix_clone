@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
   render() {
     if(!this.state.photos) return null; //
     return(
-      <div className="index_page_page">
+      <div className="index_page_grid">
         {this.state.photos.map( (photo, idx) => (
             <IndvPhoto
             title={photo.title}
