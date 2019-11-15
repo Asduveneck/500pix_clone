@@ -1,5 +1,6 @@
 import React from 'react';
 import IndvPhoto from './index_indv_photo';
+import InfiniteScroll from '../infinitescroll';
 
 class IndexPage extends React.Component {
 
