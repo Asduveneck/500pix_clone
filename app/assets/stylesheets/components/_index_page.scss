@@ -1,28 +1,3 @@
- //Flex
-// .index_page_page{
-//   // background-color: magenta;
-//   display: flex;
-//   height: 95vh;
-//   width: 100vh;
-//   flex-wrap: wrap;
-
-//   .indvPhoto{
-//     align-self: center;
-//     background-color: magenta;
-//     border: black;
-//     border-style: solid;
-//     img{
-//       align-self: center;
-//       margin: 2vh;
-//       width: 29vw;
-//       // height: 100px;
-
-//     }
-//   }
-// }
-
-
-
 .index_page_page{
   border: 1px;
   margin: 12px;
@@ -47,19 +22,15 @@
     color: $background_white;
     size: 1.5vh;
 
-    .bottom {
-      margin: 0px 2% 2%;
+    .top {
+      padding: 2% 0 20%;
+      box-shadow: inset 0 75px 75px -75px #000000;
     }
 
-    box-shadow: inset 0 20px 20px -20px #000000;
+    .bottom {
+      padding: 20% 2% 2%;
+      box-shadow: inset 0 -75px 75px -75px #000000;
+    }
   }
 
 } 
-
-/*
-box-shadow: inset 15px 0 15px -15px black;//left 
-box-shadow: inset -15px 0 15px -15px black;//right 
-box-shadow: inset 0 15px 15px -15px black;//top 
-box-shadow: inset 0 -15px 15px -15px black;//bottom
-
-*/
