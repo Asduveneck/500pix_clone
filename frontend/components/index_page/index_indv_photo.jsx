@@ -1,3 +1,4 @@
+// FINDME CARLOS AND ALEX COMMENTED OUT THE JSX INLINE STYLE AND USED img URL here! WORKS LOCALLY
 import React from 'react';
 import { Link } from 'react-router-dom'; // Eventually make clicking on each photo a link
 import { AuthRoute } from '../../util/route_util';
