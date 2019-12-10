@@ -21,7 +21,7 @@ class IndexIndvPhoto extends React.Component{
       <div className="indvPhoto" style={nonHover}>
         <div className="i_p_gradient">
           <div className="top">
-            <h1>Placeholder Top</h1>
+            {/* <h1>Placeholder Top</h1> */}
           </div>
           <div className="bottom">
             <h4>{title}</h4> 
