@@ -53,16 +53,16 @@ class IndexPage extends React.Component {
         <div id="index_page_navBar">
           <h3 id="placeholderNav">Placeholder NavBar</h3>
         </div>
-      <div className="index_page_grid">
-        {this.state.photos.map( (photo, idx) => (
+        <div className="index_page_page">
+          {this.state.photos.map((photo, idx) => (
             <IndvPhoto
-            title={photo.title}
-            url={photo.fileUrl}
-            key= {`photo_${idx}`} 
+              title={photo.title}
+              url={photo.fileUrl}
+              key={`photo_${idx}`}
             />
-        ))
-        }
-      </div>
+          ))
+          }
+        </div>
       </div>
     );
   }

@@ -27,7 +27,7 @@ class IndexIndvPhoto extends React.Component{
             <h4>{title}</h4> 
           </div>
         </div>
-        <img src={url} alt={title}/>
+        {/* <img src={url} alt={title}/> */}
       </div>
     )
   }
