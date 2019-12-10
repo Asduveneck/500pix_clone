@@ -40,11 +40,75 @@ const NavBar = ({ currentUser, logout}) => {
   }
 
   const mainBar = () => (
-    <div className="nav_bar_outer">
+    <div id="nav_bar_outer">
       {leftSide()}
       {rightSide()}
     </div>
   )
+
+  $(window).scroll(function(){
+    let scroll = $(window).scrollTop();
+//     if(scroll>0) {
+//       console.log("We have hit this!")
+//       $("#nav_bar_outer").addClass("navScroll");
+//     } else if ($("#nav_bar_outer").bottom < $("#index_page_navbar")) {
+// $("#nav_bar_outer").removeClass("navScroll");
+//     }
+
+    if (scroll > 0) {
+      console.log(scroll);
+      $("#nav_bar_outer").addClass("navScroll");
+    } else {
+      $("#nav_bar_outer").removeClass("navScroll");
+      console.log("scrolling stopped")
+    }
+
+    // if ($("#nav_bar_outer").bottom < $("#index_page_navbar")) {
+    //   console.log("overlap has occurred")
+    // }
+
+  })
+
+  
+
+  // Works but a bit nasty and clunky:
+
+  // let scrollStop = (callback) => {
+  //   // Make sure a valid callback was provided
+  //   if (!callback || typeof callback !== 'function') return;
+  //   // Setup scrolling variable
+  //   let isScrolling;
+  //   // Listen for scroll events
+  //   window.addEventListener('scroll', function (event) {
+  //     // Clear our timeout throughout the scroll
+  //     window.clearTimeout(isScrolling);
+  //     // Set a timeout to run after scrolling ends
+  //     isScrolling = setTimeout(function () {
+  //       // Run the callback
+  //       callback();
+  //     }, 75);
+  //   }, false);
+  // };
+
+
+  // const navScrollAddShadow = () => {
+  //   // console.log("scrolling now");
+  //   $("#nav_bar_outer").addClass("navScroll");
+  //   $("#nav_bar_outer.navScroll").fadeIn();
+  // };
+  // const navScrollRemoveShadow = () => {
+  //   // console.log("scrolling stopped");
+  //   // $("#nav_bar_outer.navScroll").fadeOut()
+  //   $("#nav_bar_outer").removeClass("navScroll");
+  // };
+
+  // // $(window).scroll(function(){
+  // //   $("#nav_bar_outer").addClass("navScroll");
+  // // })
+
+  // $(window).on("scroll", navScrollAddShadow);
+  // // $(window).off("scroll",navScrollRemoveShadow); // only removes listener...
+  // scrollStop(navScrollRemoveShadow);
 
   return mainBar();
 }; 

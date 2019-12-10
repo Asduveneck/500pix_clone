@@ -1,8 +1,9 @@
-.nav_bar_outer {
+#nav_bar_outer {
   position: fixed;
   width: 100%;
-  padding: 22px 0px;
+  padding: 16px 64px;
   background-color: $background_white;
+  // background-color: lightcoral;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,7 +12,15 @@
       color: $light_grey;
       margin: 0px 16px;
     }
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);  
 }
+
+#nav_bar_outer.navScroll {
+  // background-color: lightcoral;
+
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
 
 // Left Side
 .nb_l {

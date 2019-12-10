@@ -4,7 +4,7 @@ Rails.application.configure do
   # Adding guard live reload
   config.middleware.insert_after(ActionDispatch::Static, Rack::LiveReload)
   # AWS S3
-  config.active_storage.service = :amazon_dev
+  # config.active_storage.service = :amazon_dev
 
   # -------------------- Stuff automatically made ----------------------------
 
@@ -37,7 +37,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :amazon_dev
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
