@@ -4,6 +4,13 @@
   flex-direction: column;
   color: #222222;
 
+  .svg {
+    padding-bottom: 24px;
+    height: 64px;
+    width: 64px;
+    background-repeat: no-repeat;
+  }
+
   h2 {
     font-size: 18px;
   }
@@ -91,8 +98,15 @@
   p {
     font-size: 18px;
   }
-  i {
-    padding-bottom: 24px;
+  .seedling {
+    background-image: image-url("svg_splash/leaf");
+  }
+  
+  .penpaper {
+    background-image: image-url("svg_splash/penpaper.svg");
+  }
+  .graph {
+    background-image: image-url("svg_splash/graph.svg");
   }
 }
 

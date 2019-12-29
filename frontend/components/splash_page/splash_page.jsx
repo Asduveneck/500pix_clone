@@ -32,19 +32,20 @@ class SplashPage extends React.Component{
           <div className="sp_d_3_cols">
 
             <div className="sp_d_col"> {/*Column 1*/}
-              <i className="fas fa-seedling"></i>
+              <div className="svg seedling"> </div>
+              
               <h3>Grow as a photographer</h3>
               <p>Get immediate exposure with your first upload. Our algorithms give you feedback starting from day one.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 2 */}
-              <i className="fas fa-pencil-ruler"></i> {/* https://fontawesome.com/icons/pencil-ruler?style=solid */}
+            <div className="svg penpaper"> </div>
               <h3>Build your career</h3>
               <p>Present yourself as a professional. Our platform lets you showcase your galleries, services, and workshops.</p>
             </div>
 
             <div className="sp_d_col"> {/*Column 3*/}
-              <i className="fas fa-chart-line"></i> {/* https://fontawesome.com/icons/chart-line?style=solid */}
+              <div className="svg graph"></div>
               <h3>Measure your growth</h3>
               <p>With advanced statistics, receive valuable insights in how you and your photos rank within the community.</p>
             </div>
@@ -60,7 +61,7 @@ class SplashPage extends React.Component{
           <div className="sp_ed_photos_ALL_rows">
             <div className="sp_ed_p_r"> 
               {/* 3 Photos here */}
-              <li className="picture" id="p1_1"></li> {/* ID can NOT start with a number... */}
+              <li className="picture" id="p1_1"></li> {/* ID can NOT start with a number in html5! */}
               <li className="picture" id="p2_1"></li>
               <li className="picture" id="p3_1"></li>
             </div>
