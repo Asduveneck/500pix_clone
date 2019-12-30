@@ -66,8 +66,8 @@ class SplashPage extends React.Component{
             <div className="sp_ed_p_r"> 
               {/* 3 Photos here */}
               <div className="picture p1_1">
-                <div className = "caption">
-                  </div>
+                <div className = "caption">Photo by
+                </div>
               </div> 
               <div className="picture p2_1">
                 <div className = "caption">
