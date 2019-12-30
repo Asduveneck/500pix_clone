@@ -54,10 +54,14 @@ class SplashPage extends React.Component{
         </div>
 
         <div className="sp_editors_choice_row">
-          <h1>Editor's Choice</h1> 
+          <div className="headpic edchoice">
+            <div className="svg edchoice-icon"></div>
+              <h1>Editors' Choice</h1> 
+            </div>
           <h2>Discover fresh inspiration daily. Your photos can even be featured in our handpicked Editors' Choice Gallery</h2>
          
           {this.signUpButton("View Editors' Choice")}
+
           <div className="sp_ed_photos_ALL_rows">
             <div className="sp_ed_p_r"> 
               {/* 3 Photos here */}

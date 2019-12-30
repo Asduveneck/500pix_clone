@@ -23,7 +23,7 @@
     border-radius: 25px;
     border-style: none;
     margin: 32px 0px 0px;
-    padding: 0px 32px;
+    padding: 8px 32px;
   } // All have a hover over effect. All but join become transparent
 }
 // Div row styling:
@@ -113,18 +113,40 @@
 
 .sp_editors_choice_row{
   text-align: center;
-
-  h1 {
+  
+  .headpic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+  }
+  .edchoice {
     background-image: image-url("editor_choice");
     background-size: cover;
+    padding: 80px;
+    height: 120px;
+  }
+  .edchoice-icon {
+    background-image: image-url("svg_splash/editor_choice.svg");
+    margin-left: 96px;
+    padding: 48px;
+    align-self: center;
+  }
+
+  h1 {
+    margin-top: 0px;
     font-size: 64px;
     color: $background_white;
-    padding: 80px;
   }
   h2 {
     padding-top: 32px;
     margin-bottom: 16px;
   }
+  .sp_ed_photos_ALL_rows {
+    margin-top: 16px;
+  }
+
+
 }
 
 .sp_ed_p_r { // May switch to flex-wrap if easy enough
@@ -184,6 +206,14 @@
     background-color: $background_white;
     color: #45457C;
   }
+
+  .pseudoButton:hover {
+    color: #1890ff;
+  }
+
 }
 
+.sp_dscvr_l>.pseudoButton:hover, .sp_editors_choice_row>.pseudoButton:hover {
+  background-color: rgba(0,0,0,0.65);
+}
 
