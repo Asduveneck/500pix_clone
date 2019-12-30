@@ -159,12 +159,35 @@
     width: 30%;
     height: 20vh;
     margin: 1.5% 1.5% 1.5% 1.5%;
-    display: flex;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-content: flex-end;
+    position: relative;
+  }
+  .caption {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+  }
+
+  .picture:hover {
+    box-shadow: inset 0 -75px 75px -75px #000000;
+  }
+
+  .caption:hover {
+    opacity: 1;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
   }
 
   .p1_1 {
     background-image: image-url("ed_6_pics/DSC_0053_e1");
     background-size: cover;
+
   }
   .p2_1 {
     background-image: image-url("ed_6_pics/DSC_0059_e1_kc");
@@ -187,9 +210,6 @@
     background-size: cover;
   }
 
-  .picture:hover {
-    box-shadow: inset 0 -75px 75px -75px #000000;
-  }
 }
 
 .sp_join_row{ // COLORS ARE CORRECT HERE. DO NOT EDIT YET.
