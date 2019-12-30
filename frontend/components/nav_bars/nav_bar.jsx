@@ -20,8 +20,8 @@ const NavBar = ({ currentUser, logout}) => {
 
     if(!currentUser) { // If there is no current user,
       rsContents=[
-        <Link to="/login" key="navk1" className="navk_log" >Login</Link>,
-        <Link to="/signup" key="navk2" className="navk_sign">Sign up</Link>
+        <Link to="/login" key="navk1" className="navk log" >Login</Link>,
+        <Link to="/signup" key="navk2" className="navk sign">Sign up</Link>
       ]
     } else {
       rsContents=[
