@@ -64,6 +64,7 @@
   
   h1 {
     font-size: 48px;
+    line-height: 52px;
     margin: 0px 0px 16px 80px;
   }
   p {
@@ -80,9 +81,9 @@
 .sp_dscvr_r {
   background-image: image-url("discover");
   background-size: cover;
-  width: 40vw;
-  height: 40vh;
-  margin: 0 2vw 0 1vw;
+  width: 30vw;
+  height: 30vh;
+  margin:  0 2vw;
 }
 
 .sp_difference_row{
