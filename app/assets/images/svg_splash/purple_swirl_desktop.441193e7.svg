@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="1086px" height="307px" viewBox="0 0 1086 307" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>4578A546-7199-4E00-BCE3-34493852EAD0@1.00x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 1086 0 1086 307 0 307"></polygon>
+    </defs>
+    <g id="Main-Screens" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-with-EC-Grid" transform="translate(-354.000000, -2064.000000)">
+            <g id="Purple-Swirl" transform="translate(354.000000, 2064.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M1086,307 L542.999711,307 L0,307 C0,307 120.856716,69.7013256 536.47598,133.08635 C952.094666,196.471952 1086,0 1086,0 L1086,196.861626 L1086,307 Z" id="Fill-1" fill="#AEAEFF" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
