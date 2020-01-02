@@ -25,7 +25,8 @@ class SplashPage extends React.Component{
             
           </div>
         </div>
-
+      
+        <div className="swirl-svg yellow-top"></div>
 
         <div className="sp_difference_row">
           <h1> What makes us different? </h1>
@@ -51,6 +52,9 @@ class SplashPage extends React.Component{
             </div>
 
           </div>
+        </div>
+          <div className="swirl-svg purple-bottom"></div>
+        <div className = "align-right">
         </div>
 
         <div className="sp_editors_choice_row">
