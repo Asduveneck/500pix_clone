@@ -11,6 +11,11 @@
     background-repeat: no-repeat;
   }
 
+  .swirl-svg {
+    height: 500px;
+    background-repeat: no-repeat;
+  }
+
   h2 {
     font-size: 18px;
   }
@@ -27,6 +32,11 @@
   } // All have a hover over effect. All but join become transparent
 }
 // Div row styling:
+
+.yellow-top {
+  background-image: image-url("svg_splash/yellow_wave");
+
+}
 
 .sp_discover_row{
   // background-color: #668aa6; // Need to touch up the picture
