@@ -14,7 +14,7 @@ class SplashPage extends React.Component{
     return(
       <div className="splash_page">
 
-        <div className="sp_discover_row">
+        <div className="sp_discover_row narrow">
           <div className="sp_dscvr_cnt">
             <div className ="sp_dscvr_l">
               <h1>Discover and share the world's finest photos</h1>
@@ -30,7 +30,7 @@ class SplashPage extends React.Component{
 
         <div className="sp_difference_row">
           <h1> What makes us different? </h1>
-          <div className="sp_d_3_cols">
+          <div className="sp_d_3_cols narrow">
 
             <div className="sp_d_col"> {/*Column 1*/}
               <div className="svg seedling"> </div>

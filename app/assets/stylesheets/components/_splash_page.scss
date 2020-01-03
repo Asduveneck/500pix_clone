@@ -1,5 +1,6 @@
 // Universal Splash Page Styling
 .splash_page{
+
   display: flex;
   flex-direction: column;
   color: #222222;
@@ -45,13 +46,17 @@
   } // All have a hover over effect. All but join become transparent
 }
 // Div row styling:
+.narrow {
+  padding: 0 2.5vw;
+}
 .sp_discover_row{
+  margin-top: 64px;
   // background-color: #668aa6; // Need to touch up the picture
   background-color: #f4e631;
   .sp_dscvr_cnt{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    // flex-direction: row;
+    // justify-content: space-between;
 
     div {
       margin: 10px;
@@ -60,11 +65,15 @@
 }
 .sp_dscvr_l {
   align-self: center;
-  margin: 0 2vw 0 0;
+  padding-right: 10vw;
+  width: 40vw;
   
   h1 {
     font-size: 48px;
     line-height: 52px;
+    font-weight: bold;
+    text-shadow: 1px 0 #888888;
+  letter-spacing:1px;
     margin: 0px 0px 16px 80px;
   }
   p {
@@ -83,7 +92,6 @@
   background-size: cover;
   width: 30vw;
   height: 30vh;
-  margin:  0 2vw;
 }
 
 .sp_difference_row{
