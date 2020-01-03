@@ -29,6 +29,9 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
     text-decoration: none;
     margin: 0px 16px;
   }
+  a:hover {
+    color: $blue;
+  }
 }
 // Right Side
 .nb_r {
@@ -54,5 +57,7 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   div {
     margin: 0px 16px;
   }
-
+  .navk:hover {
+    color: $blue;
+  }
 }
