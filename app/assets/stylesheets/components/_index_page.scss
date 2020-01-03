@@ -34,9 +34,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 60px;
+  // display: flex;
+  // flex-wrap: wrap;
 
 
   .indvPhoto {
+    // flex-grow: 1;
+    // margin: 2px;
     .i_p_gradient {
       display: none;
     }
