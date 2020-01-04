@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-
-const mSTP = ({ session, entities: { users } }) => ({
-
+import photoShow from './photo_show';
+const mSTP = (state) => ({
+  test: "placeholder"
 });
 
 //mapDispatchToProps
@@ -9,4 +9,4 @@ const mDTP = dispatch => ({
 
 });
 
-export default connect(mSTP, mDTP)(NavBar)
+export default connect(mSTP, mDTP)(photoShow)

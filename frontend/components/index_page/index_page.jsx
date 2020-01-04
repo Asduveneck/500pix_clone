@@ -56,7 +56,7 @@ class IndexPage extends React.Component {
         </div>
         <div className="index_page_page">
           {this.state.photos.map((photo, idx) => (
-            <Link to={`/photo/${idx}`}>
+            <Link to={{pathname: `/photo/${idx}`, state: {test: `test string ${idx}`}}} key={`link_photo_${idx}`}>
               <IndvPhoto
                 title={photo.title}
                 url={photo.fileUrl}
