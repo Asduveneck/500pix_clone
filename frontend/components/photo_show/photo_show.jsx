@@ -1,11 +1,11 @@
 import React from 'react';
 
-const photo_show = () => {
+const photoShow = () => {
   return (
-    <div>
+    <div className="indvPhotoShow">
       
     </div>
   );
 };
 
-export default photo_show;
+export default photoShow;

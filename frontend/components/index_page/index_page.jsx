@@ -1,6 +1,7 @@
 import React from 'react';
 import IndvPhoto from './index_indv_photo';
 import InfiniteScroll from '../infinitescroll';
+import { Link } from 'react-router-dom'; // Eventually make clicking on each photo a link or render a container...
 
 
 
@@ -55,11 +56,13 @@ class IndexPage extends React.Component {
         </div>
         <div className="index_page_page">
           {this.state.photos.map((photo, idx) => (
-            <IndvPhoto
-              title={photo.title}
-              url={photo.fileUrl}
-              key={`photo_${idx}`}
-            />
+            <Link to={`/photo/${idx}`}>
+              <IndvPhoto
+                title={photo.title}
+                url={photo.fileUrl}
+                key={`photo_${idx}`}
+              />
+            </Link>
           ))
           }
         </div>
