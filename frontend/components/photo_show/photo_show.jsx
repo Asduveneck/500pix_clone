@@ -23,7 +23,7 @@ class photoShow extends React.Component {
   render() {
     let photo = this.props.photo;
     if (!photo) return null;
-    
+    console.log(photo);
     let {title, description, views, rating, fileUrl} = photo;
 
     let photoStyle = {
@@ -38,7 +38,7 @@ class photoShow extends React.Component {
 
         <div className = "indvPhoto-Container" > 
           <div className="indvPhoto">
-            <img src={fileUrl} alt={title} width='100%' height='auto' minHeight='600px' />
+            <img src={fileUrl} alt={title} width='100%' height='auto' />
           </div>
         </div>
 
