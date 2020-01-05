@@ -24,7 +24,7 @@ const App = () => (
       <br />
     {/* Routes to use */}
       <ProtectedRoute exact path="/index" component={IndexPageContainer} />
-      <ProtectedRoute path="/photo/:id" component={PhotoShowContainer} />
+      <ProtectedRoute exact path="/photo/:photoId" component={PhotoShowContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
