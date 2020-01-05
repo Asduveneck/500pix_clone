@@ -35,6 +35,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
+    console.log("in Index Page component did mount"); // TODO: REMOVE THIS
     this.props.fetchPhotos()
       .then( () => this.setState({
         photos: this.props.photos
@@ -56,7 +57,7 @@ class IndexPage extends React.Component {
         </div>
         <div className="index_page_page">
           {this.state.photos.map((photo, idx) => (
-            <Link to={{pathname: `/photo/${idx}`, state: {test: `test string ${idx}`}}} key={`link_photo_${idx}`}>
+            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`}>
               <IndvPhoto
                 title={photo.title}
                 url={photo.fileUrl}
