@@ -24,7 +24,7 @@ class photoShow extends React.Component {
     let photo = this.props.photo;
     if (!photo) return null;
     console.log(photo);
-    let {title, description, views, rating, fileUrl} = photo;
+    let {title, description, views, rating, fileUrl, created_at, photographer} = photo;
 
     let photoStyle = {
       backgroundImage: `url(${fileUrl})`,
@@ -46,7 +46,7 @@ class photoShow extends React.Component {
           <div className = "iPS user-info">
             <div className="left">
               <h2>{title}</h2>
-              <span>by </span>
+              <span>by {photographer}</span>
                 {/* TODO: jBuilder to get username  */}
             </div>
             <div className="right">
