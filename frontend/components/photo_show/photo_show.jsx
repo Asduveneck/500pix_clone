@@ -46,17 +46,25 @@ class photoShow extends React.Component {
           <div className = "iPS user-info">
             <div className="left">
               <h2>{title}</h2>
-              <span>by {photographer}</span>
-                {/* TODO: jBuilder to get username  */}
+              <span>by {photographer} </span>
+                {/* TODO: LINK to photographer showPage  */}
             </div>
             <div className="right">
               {/* TODO: user pic goes here eventually */}
             </div>
-          <p>{description}</p>
           </div>
-          <div className = "iPS photo-stats"></div>
-            <h2>{rating}</h2>
-            <h2>{views}</h2>
+          <p>{description}</p>
+          <div className = "iPS photo-stats">
+          {/* swap top h2 for span */}
+            <div className="stat">
+              <span>Rating</span> 
+              <h2>{rating}</h2>
+            </div>
+            <div className="stat">
+              <span>Views</span>
+              <h2>{views}</h2>
+            </div>
+          </div>
         </div>
 
         <div className="ips stats-Pitch">

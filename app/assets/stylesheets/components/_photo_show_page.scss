@@ -1,6 +1,15 @@
 .indvPhotoShowPage {
   display: flex; // not needed?
   flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    text-shadow: 1px 0 #888888;
+    letter-spacing:1px;
+  }
+
 }
 .indvPhoto-Container {
   display: flex;
@@ -20,4 +29,28 @@
   margin: 24px 128px 0;
   background-color: red;
 
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 32px 0px;
+
+    .right {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      // background-color: magenta;
+    }
+  }
+
+}
+
+.photo-stats {
+  display: flex;
+  background-color: green;
+  // height: 300px;
+  .stat {
+    padding: 32px 32px 0 0;
+  }
 }
