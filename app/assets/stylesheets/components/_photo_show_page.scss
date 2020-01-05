@@ -10,6 +10,11 @@
     letter-spacing:1px;
   }
 
+  span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
 }
 .indvPhoto-Container {
   display: flex;
@@ -27,14 +32,19 @@
 
 .indvPhoto-details-container {
   margin: 24px 128px 0;
-  background-color: red;
+  // background-color: red;
 
+  .margb8 {
+    margin: 0 0 8px;
+  }
   .user-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 32px 0px;
-
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgb(215, 216, 219);
+  
     .right {
       width: 64px;
       height: 64px;
@@ -44,12 +54,19 @@
     }
   }
 
+  .temp1 {
+    text-decoration: none;
+  }
+  
+  .temp1:hover {
+    color: $blue;
+  }
+
 }
 
 .photo-stats {
   display: flex;
-  background-color: green;
-  // height: 300px;
+  // background-color: green;
   .stat {
     padding: 32px 32px 0 0;
   }

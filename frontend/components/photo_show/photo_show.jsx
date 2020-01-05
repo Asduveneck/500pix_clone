@@ -45,7 +45,7 @@ class photoShow extends React.Component {
         <div className = "indvPhoto-details-container">
           <div className = "iPS user-info">
             <div className="left">
-              <h2>{title}</h2>
+              <h2 className="iPS margb8">{title}</h2>
               <span>by {photographer} </span>
                 {/* TODO: LINK to photographer showPage  */}
             </div>
@@ -53,27 +53,30 @@ class photoShow extends React.Component {
               {/* TODO: user pic goes here eventually */}
             </div>
           </div>
+          {/* location creation info here */}
           <p>{description}</p>
           <div className = "iPS photo-stats">
           {/* swap top h2 for span */}
             <div className="stat">
-              <span>Rating</span> 
+              <span className="iPS margb8">Rating</span> 
               <h2>{rating}</h2>
             </div>
             <div className="stat">
-              <span>Views</span>
+              <span className="iPS margb8">Views</span>
               <h2>{views}</h2>
             </div>
-          </div>
+
+            <div className="ips stats-Pitch">
+              {/* Border around this while repeating graph svg */}
+            </div>
+            {/* Then make a bunch of spans for each metadata */}          
         </div>
+        {/* Category */}
+            
+        {/* Tags */}
 
-        <div className="ips stats-Pitch">
-          {/* Border around this while repeating graph svg */}
-        </div>
-        {/* Then make a bunch of spans for each metadata */}
-
-
-        <Link to='/index'>All</Link>
+        <Link to='/index' className="temp1">Home</Link>
+      </div>
 
       </div>
     )
