@@ -1,0 +1,23 @@
+.indvPhotoShowPage {
+  display: flex; // not needed?
+  flex-direction: column;
+}
+.indvPhoto-Container {
+  display: flex;
+
+  justify-content: center;
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  padding: 2.5% 0;
+
+  .indvPhoto {
+    width: 90vw;
+    // background-color: magenta;
+  }
+}
+
+.indvPhoto-details-container {
+  margin: 24px 128px 0;
+  background-color: red;
+
+}
