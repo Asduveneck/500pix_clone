@@ -17,26 +17,21 @@ class photoShow extends React.Component {
   }
 
   componentDidMount() {
-    console.log("in photo_show component did mount"); // TODO: REMOVE THIS
-    console.log(this.props);
     this.props.fetchPhoto(this.props.match.params.photoId) // see app.jsx
   }
 
   render() {
     let photo = this.props.photo;
     if (!photo) return null;
+    
     let {title, description, views, rating, fileUrl} = photo;
 
-    console.log("In render. photo:")
-    console.log(photo);
     let photoStyle = {
       backgroundImage: `url(${fileUrl})`,
       backgroundSize: 'cover',
       height: '50vh',
       width: '95vw'
     }
-    console.log("In render. photoStyle:");
-    console.log(photoStyle);
     return (
       <div className = "indvPhotoShowPage">
 
