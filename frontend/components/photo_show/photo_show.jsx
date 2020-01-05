@@ -29,27 +29,43 @@ class photoShow extends React.Component {
     let photoStyle = {
       backgroundImage: `url(${fileUrl})`,
       backgroundSize: 'cover',
+      minHeight: '600px',
       height: '50vh',
       width: '95vw'
     }
     return (
       <div className = "indvPhotoShowPage">
 
-        <div className = "indvPhoto-Container" style={photoStyle}> 
+        <div className = "indvPhoto-Container" > 
+          <div className="indvPhoto">
+            <img src={fileUrl} alt={title} width='100%' height='auto' minHeight='600px' />
+          </div>
         </div>
 
         <div className = "indvPhoto-details-container">
-          <div className = "iPS-top">
-            <h2>{title}</h2>
+          <div className = "iPS user-info">
+            <div className="left">
+              <h2>{title}</h2>
+              <span>by </span>
+                {/* TODO: jBuilder to get username  */}
+            </div>
+            <div className="right">
+              {/* TODO: user pic goes here eventually */}
+            </div>
+          <p>{description}</p>
+          </div>
+          <div className = "iPS photo-stats"></div>
             <h2>{rating}</h2>
             <h2>{views}</h2>
-          </div>
-          <div className = "iPS-bottom"></div>
-          <p>{description}</p>
         </div>
 
+        <div className="ips stats-Pitch">
+          {/* Border around this while repeating graph svg */}
+        </div>
+        {/* Then make a bunch of spans for each metadata */}
 
-        <Link to='/'>All</Link>
+
+        <Link to='/index'>All</Link>
 
       </div>
     )
