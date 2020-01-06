@@ -7,8 +7,20 @@ class userShow extends React.Component {
     super(props);
   }
 
-  render() {
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.userId) // see app.jsx
+  }
 
+  componentWillUnmount() {
+    console.log("clearing user now");
+    this.props.clearUser();
+  }
+
+
+  render() {
+    let user = this.props.user;
+    if (!user) return null;
+    console.log(user);
 
     return (
       <div className="userShowPage">
