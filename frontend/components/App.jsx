@@ -13,6 +13,7 @@ import SplashPageContainer from './splash_page/splash_page_container';
 import NavBarContainer from './nav_bars/nav_bar_container'; 
 import IndexPageContainer from './index_page/index_page_container';
 import PhotoShowContainer from './photo_show/photo_show_container';
+import UserShowContainer from './user_profile';
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
@@ -24,7 +25,8 @@ const App = () => (
       <br />
     {/* Routes to use */}
       <ProtectedRoute exact path="/index" component={IndexPageContainer} />
-      <ProtectedRoute exact path="/photo/:photoId" component={PhotoShowContainer} />
+      <ProtectedRoute exact path="/photo/:photoId" component={PhotoShowContainer} /> {/* Make it so that this is a normal route, but components within are protected */}
+      <ProtectedRoute exact path="/:username" component={UserShowContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
