@@ -31,3 +31,19 @@ export const clearUserErrors = () => ({
 });
 
 // ========================== Thunk Actions  ===================================
+
+export const fetchUser = userId => dispatch => (
+  APIUtil.fetchUser(userId)
+    .then(user => (dispatch(receiveUser(user))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+);
+
+export const updateUser = user => dispatch => (
+  APIUtil.updateUser(user)
+    .then(updatedUser => (dispatch(receiveUser(updatedUser))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+);
