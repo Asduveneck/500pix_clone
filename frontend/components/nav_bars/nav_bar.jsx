@@ -30,7 +30,7 @@ const NavBar = ({ currentUser, logout}) => {
       rsContents=[
         <div key="navk3" className="far fa-user-circle"></div>, // Will be a link placeholder
         <div key="navk4" className="fas fa-plus"></div>,
-        <button onClick={logout} key="navk5">Nav Log Out</button>
+        <button onClick={logout} key="navk5">Nav Log Out</button> // Placeholder. TODO: Will put into a click dropdown and move this there
       ]
     }
     return(
