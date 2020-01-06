@@ -13,7 +13,7 @@ import SplashPageContainer from './splash_page/splash_page_container';
 import NavBarContainer from './nav_bars/nav_bar_container'; 
 import IndexPageContainer from './index_page/index_page_container';
 import PhotoShowContainer from './photo_show/photo_show_container';
-import UserShowContainer from './user_profile';
+import UserShowContainer from './user_profile/user_show_container';
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
