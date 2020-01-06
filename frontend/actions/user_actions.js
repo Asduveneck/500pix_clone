@@ -40,7 +40,7 @@ export const clearUserErrors = () => ({
 
 // ========================== Thunk Actions  ===================================
 
-export const fetchUser = userId => dispatch => (
+export const fetchUser = userId => dispatch => ( // TODO: FINDME! replace with username
   APIUtil.fetchUser(userId)
     .then(user => (dispatch(receiveUser(user))
     ), err => (

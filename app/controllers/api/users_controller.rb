@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
+  def show # TODO: FINDME THIS IS WHERE WE SET THE ROUTE. Update this to find_by :user_name ? 
     @user = User.find(params[:id])
     render :show
   end

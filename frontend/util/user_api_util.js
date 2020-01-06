@@ -1,4 +1,4 @@
-export const fetchUser = (id) => (
+export const fetchUser = (id) => ( //TODO: FINDME replace id with username here?
   $.ajax({
     method: 'get',
     url: `/api/users/${id}`,
