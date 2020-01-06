@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import IndvPhoto from '../index_page/index_indv_photo'
 
 class userShow extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   componentDidMount() {
@@ -21,6 +23,9 @@ class userShow extends React.Component {
     if (!user) return null;
     console.log(user);
     let { user_name, first_name, last_name, location_city, location_country, about, photos } = user;
+
+    let userPhotos = [];
+    // loop over photoId and fetch each photo.
 
     return (
       <div className="userShowPage">
@@ -41,7 +46,7 @@ class userShow extends React.Component {
         {/* Placeholder class, for now will only have users uploaded photos. */}
         PHOTOS {photos.length}
         <div className="user_photos">
-          {/* Another image gallery */}
+          {/* Another image gallery. Iterate through photos */}
         </div>
       </div>
 
