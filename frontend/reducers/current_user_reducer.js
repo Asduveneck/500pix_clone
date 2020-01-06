@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_ac
 
 
 // Keeps track of users... 
-const usersReducer = (state = {}, action) => {
+const currentUserReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   
@@ -17,4 +17,4 @@ const usersReducer = (state = {}, action) => {
   }
 };
 
-export default usersReducer;
+export default currentUserReducer;
