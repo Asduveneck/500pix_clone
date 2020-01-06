@@ -4,7 +4,10 @@ import { combineReducers } from 'redux';
 
 import currentUser from './current_user_reducer'; //usersReducer imported as users for implicit kv in JS
 import photos from './photos_reducer';
+import users from './user_reducer';
+
 export default combineReducers({
   currentUser, // equivalent to currentUser: currentUser,
   photos,
+  users,
 });
