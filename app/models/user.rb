@@ -51,6 +51,20 @@ class User < ApplicationRecord
   
   # ---------------    Code     ------------------ 
 
+  # Association helper methods
+
+  # Returns attached files  
+    # TODO: remove this if not used for user gallery
+  def all_photo_urls
+    url_list = []
+    photos.each do |photo|
+      url_list << photo.file
+    end
+    url_list
+  end
+
+  # User Auth:
+
   after_initialize :ensure_session_token
   
   def self.find_by_credentials(username, password)
