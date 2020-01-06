@@ -2,6 +2,7 @@
 import * as APIUtil from '../util/user_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
+export const CLEAR_USER = "CLEAR_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 // export const DELETE_USER = "DELETE_USER"; // no deleting users yet
 
@@ -19,8 +20,8 @@ export const receiveUser = user => ({
 // Delete: no deleting users yet
 
 export const clearUser = () => ({
-  type: RECEIVE_USER,
-  user: {} // replace user object with empty pojo. For navigating away
+  type: CLEAR_USER,
+  // user: {} // For navigating away
 })
 
 
