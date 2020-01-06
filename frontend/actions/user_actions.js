@@ -18,6 +18,13 @@ export const receiveUser = user => ({
 // Update: in THUNK.
 // Delete: no deleting users yet
 
+export const clearUser = () => ({
+  type: RECEIVE_USER,
+  user: {} // replace user object with empty pojo. For navigating away
+})
+
+
+
 // --------- Errors --------
 
 export const receiveErrors = errors => ({
