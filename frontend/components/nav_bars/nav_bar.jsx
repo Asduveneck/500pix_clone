@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout}) => {
 
-  const leftSide = () => (
+  const leftSide = () => {
+    let logoLink = <Link to="/">1000px</Link>
+    if(currentUser) {
+      logoLink = <Link to="/index">1000px</Link>
+    }
+    return(
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
       <nav>
-        <Link to="/">1000 px</Link> {/* Works since in Routes we can switch or modulate what / hits...
-          BUT I need to change the action to be a refresh if we're logged in. So... I'll need something similar to lines 21.
-        */}
+        {logoLink}
         <a href="https://github.com/Asduveneck" target="_blank" className="fab fa-github"></a>
         <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="fab fa-linkedin-in"></a>
       </nav>
     </div>
-  )
+  )}
 
   const rightSide = () => {
     let rsContents = [];
@@ -27,7 +30,7 @@ const NavBar = ({ currentUser, logout}) => {
       rsContents=[
         <div key="navk3" className="far fa-user-circle"></div>, // Will be a link placeholder
         <div key="navk4" className="fas fa-plus"></div>,
-        <button onClick={logout} key="navk5">Log Out</button>
+        <button onClick={logout} key="navk5">Nav Log Out</button>
       ]
     }
     return(
