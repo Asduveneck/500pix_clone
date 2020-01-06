@@ -1,4 +1,4 @@
-import { RECEIVE_USER} from '../actions/user_actions';
+import { RECEIVE_USER, CLEAR_USER } from '../actions/user_actions';
 
 
 // Keeps track of users... 
@@ -10,6 +10,8 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_USER:
       nextState[action.user.id] = action.user;
       return nextState;
+    case CLEAR_USER:
+      return {} // empty object since we only view one user at a time
     default:
       return state;
   }
