@@ -74,7 +74,7 @@ class photoShow extends React.Component {
         {/* Category */}
             
         {/* Tags */}
-
+        {/* Temp placeholder link */}
         <Link to='/index' className="temp1">Home</Link>
       </div>
 
