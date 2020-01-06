@@ -10,7 +10,10 @@ class userShow extends React.Component {
   }
 
   componentDidMount() {
+    // console.log("Component did mount")
+    // console.log(this.props.match.params.user_name); // attempt to find by username
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
+
   }
 
   componentWillUnmount() {
@@ -19,6 +22,7 @@ class userShow extends React.Component {
 
 
   render() {
+    console.log("In render");
     let user = this.props.user;
     if (!user) return null;
     console.log(user);

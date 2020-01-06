@@ -26,7 +26,7 @@ const App = () => (
     {/* Routes to use */}
       <ProtectedRoute exact path="/index" component={IndexPageContainer} />
       <ProtectedRoute exact path="/photo/:photoId" component={PhotoShowContainer} /> {/* Make it so that this is a normal route, but components within are protected */}
-      {/* <ProtectedRoute exact path="/:username" component={UserShowContainer}/> */}  {/* Ideal */}
+      {/* <ProtectedRoute exact path="/users/:user_name" component={UserShowContainer}/>  Ideal */}
       <ProtectedRoute exact path="/users/:userId" component={UserShowContainer}/>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
