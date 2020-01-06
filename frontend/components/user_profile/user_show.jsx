@@ -42,13 +42,14 @@ class userShow extends React.Component {
       <p className="user_about">{about}</p>
       <div className="user_stats_location"> </div>
       <div className="user_ext_links"></div> 
-      <div className="user_TODO_links">
+      <div className="temp user_TODO_links">
         {/* Placeholder class, for now will only have users uploaded photos. */}
         PHOTOS {photos.length}
+      </div>
         <div className="user_photos">
           {/* Another image gallery. Iterate through photos */}
+          {/* May make this responsive to above link so we display different ones like tabs */}
         </div>
-      </div>
 
 
       </div>
