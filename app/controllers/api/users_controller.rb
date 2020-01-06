@@ -17,6 +17,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update 
+    # TODO: Make sure this only works on current_user
     @user = self.current_user # calls helper method from application controller.
     if @user.update_attributes(user_updatable_params)
       remder :show

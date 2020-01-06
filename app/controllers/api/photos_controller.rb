@@ -29,6 +29,7 @@ class Api::PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
+    # TODO: check if photo belongs to current user!
     if @photo.update_attributes(photo_params)
       render :show
     else
