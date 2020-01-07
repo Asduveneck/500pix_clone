@@ -1,6 +1,6 @@
 #nav_bar_outer {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 32px);
   padding: 16px 64px;
   background-color: $background_white;
   // background-color: lightcoral;
@@ -59,5 +59,24 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   }
   .navk:hover {
     color: $blue;
+  }
+  // .user_prof {
+  //   display: flex;
+  // }
+  .dropdown-btn {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .dropdown-content {
+    background-color: $background_white;
+    position: relative;
+    left: -32px;
+    min-width: 168px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.16), 0 0 4px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 8px 0;
+
   }
 }

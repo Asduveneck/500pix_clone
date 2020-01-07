@@ -28,11 +28,16 @@ const NavBar = ({ currentUser, logout}) => {
       ]
     } else {
       rsContents=[
-        <Link to={`/users/${currentUser.id}`}>
-        <div key="navk3" className="far fa-user-circle"></div>
-        </Link>,
-        <div key="navk4" className="fas fa-plus"></div>,
-        <button onClick={logout} key="navk5">Nav Log Out</button> // Placeholder. TODO: Will put into a click dropdown and move this there
+        <div key="navk3" className="far fa-user-circle user_prof">
+          <div className="dropdown-btn">
+          <div className="dropdown-content js-click">
+            <div><Link to={`/users/${currentUser.id}`}>Profile</Link></div>
+            <button onClick={logout} key="navk5">Log out</button>
+          </div>
+          </div>
+        </div>,
+        <div key="navk4" className="fas fa-plus"> Upload</div>
+
       ]
     }
     return(
