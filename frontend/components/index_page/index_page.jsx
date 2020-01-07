@@ -35,7 +35,6 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
-    console.log("in Index Page component did mount"); // TODO: REMOVE THIS
     this.props.fetchPhotos()
       .then( () => this.setState({
         photos: this.props.photos
