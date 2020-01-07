@@ -30,10 +30,10 @@ const NavBar = ({ currentUser, logout}) => {
       rsContents=[
         <div key="navk3" className="far fa-user-circle user_prof">
           <div className="dropdown-btn">
-          <div className="dropdown-content js-click">
-            <div><Link to={`/users/${currentUser.id}`}>Profile</Link></div>
-            <button onClick={logout} key="navk5">Log out</button>
-          </div>
+            <div className="dropdown-content js-click">
+                <Link to={`/users/${currentUser.id}`} className="dropdown-link">Profile</Link>
+                <button onClick={logout} className="dropdown-link">Log out</button>
+            </div>
           </div>
         </div>,
         <div key="navk4" className="fas fa-plus"> Upload</div>
