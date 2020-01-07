@@ -73,10 +73,12 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   //   // background-color: maroon;
   // }
 
-  .dropdown-btn {
+  .dropdown-container {
     position: absolute;
     z-index: 1;
+    display: none;
   }
+  .show{display: block}
 
   .dropdown-content {
     background-color: $background_white;

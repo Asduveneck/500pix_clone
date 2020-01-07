@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout}) => {
 
+  // Helper methods
+  const toggleShow = () => { // listener for opening and closing
+    document.getElementById("js-dropdown").classList.toggle("show")
+  }
+
+  window.onclick = function (event) {
+    if (!event.target.matches('.user_prof')) {
+      let dropdown = document.getElementsByClassName("dropdown-container");
+      for (let i = 0; i < dropdown.length; i++) {
+        let openDropdown = dropdown[i];
+        if (openDropdown.classList.contains('show')) { 
+          openDropdown.classList.remove('show');
+        }
+      }
+ 
+    }
+  }
+
+  // Left and Right sides of nav bar
   const leftSide = () => {
     let logoLink = <Link to="/">1000px</Link>
     if(currentUser) {
@@ -28,9 +47,9 @@ const NavBar = ({ currentUser, logout}) => {
       ]
     } else {
       rsContents=[
-        <div key="navk3" className="far fa-user-circle user_prof">
-          <div className="dropdown-btn">
-            <div className="dropdown-content js-click">
+        <div key="navk3" className="far fa-user-circle user_prof" onClick={toggleShow}>
+          <div className="dropdown-container" id="js-dropdown">
+            <div className="dropdown-content">
                 <Link to={`/users/${currentUser.id}`} className="dropdown-link">Profile</Link>
                 <button onClick={logout} className="dropdown-link">Log out</button>
             </div>
