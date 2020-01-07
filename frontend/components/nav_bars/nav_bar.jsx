@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout}) => {
 
-  const leftSide = () => (
+  const leftSide = () => {
+    let logoLink = <Link to="/">1000px</Link>
+    if(currentUser) {
+      logoLink = <Link to="/index">1000px</Link>
+    }
+    return(
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
       <nav>
-        <Link to="/">1000 px</Link> {/* Works since in Routes we can switch or modulate what / hits...
-          BUT I need to change the action to be a refresh if we're logged in. So... I'll need something similar to lines 21.
-        */}
+        {logoLink}
         <a href="https://github.com/Asduveneck" target="_blank" className="fab fa-github"></a>
         <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="fab fa-linkedin-in"></a>
       </nav>
     </div>
-  )
+  )}
 
   const rightSide = () => {
     let rsContents = [];
@@ -27,7 +30,7 @@ const NavBar = ({ currentUser, logout}) => {
       rsContents=[
         <div key="navk3" className="far fa-user-circle"></div>, // Will be a link placeholder
         <div key="navk4" className="fas fa-plus"></div>,
-        <button onClick={logout} key="navk5">Log Out</button>
+        <button onClick={logout} key="navk5">Nav Log Out</button> // Placeholder. TODO: Will put into a click dropdown and move this there
       ]
     }
     return(
@@ -45,70 +48,6 @@ const NavBar = ({ currentUser, logout}) => {
       {rightSide()}
     </div>
   )
-
-  $(window).scroll(function(){
-    let scroll = $(window).scrollTop();
-//     if(scroll>0) {
-//       console.log("We have hit this!")
-//       $("#nav_bar_outer").addClass("navScroll");
-//     } else if ($("#nav_bar_outer").bottom < $("#index_page_navbar")) {
-// $("#nav_bar_outer").removeClass("navScroll");
-//     }
-
-    if (scroll > 0) {
-      console.log(scroll);
-      $("#nav_bar_outer").addClass("navScroll");
-    } else {
-      $("#nav_bar_outer").removeClass("navScroll");
-      console.log("scrolling stopped")
-    }
-
-    // if ($("#nav_bar_outer").bottom < $("#index_page_navbar")) {
-    //   console.log("overlap has occurred")
-    // }
-
-  })
-
-  
-
-  // Works but a bit nasty and clunky:
-
-  // let scrollStop = (callback) => {
-  //   // Make sure a valid callback was provided
-  //   if (!callback || typeof callback !== 'function') return;
-  //   // Setup scrolling variable
-  //   let isScrolling;
-  //   // Listen for scroll events
-  //   window.addEventListener('scroll', function (event) {
-  //     // Clear our timeout throughout the scroll
-  //     window.clearTimeout(isScrolling);
-  //     // Set a timeout to run after scrolling ends
-  //     isScrolling = setTimeout(function () {
-  //       // Run the callback
-  //       callback();
-  //     }, 75);
-  //   }, false);
-  // };
-
-
-  // const navScrollAddShadow = () => {
-  //   // console.log("scrolling now");
-  //   $("#nav_bar_outer").addClass("navScroll");
-  //   $("#nav_bar_outer.navScroll").fadeIn();
-  // };
-  // const navScrollRemoveShadow = () => {
-  //   // console.log("scrolling stopped");
-  //   // $("#nav_bar_outer.navScroll").fadeOut()
-  //   $("#nav_bar_outer").removeClass("navScroll");
-  // };
-
-  // // $(window).scroll(function(){
-  // //   $("#nav_bar_outer").addClass("navScroll");
-  // // })
-
-  // $(window).on("scroll", navScrollAddShadow);
-  // // $(window).off("scroll",navScrollRemoveShadow); // only removes listener...
-  // scrollStop(navScrollRemoveShadow);
 
   return mainBar();
 }; 

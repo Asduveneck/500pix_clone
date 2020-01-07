@@ -4,7 +4,8 @@ import { combineReducers } from 'redux';
 /*
 We will import:
   1. entities_reducer, which imports:
-    users_reducer
+    current_user_reducer
+    users_reducer // to do
     photos_reducer 
 
   2. session_reducer, which does not import anything
@@ -37,7 +38,7 @@ export default rootReducer;
 Current state slice:
   {
     entities: {
-      users: {},
+      currentUser: {},
       photos: {},
     },
     session: {

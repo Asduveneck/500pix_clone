@@ -1,0 +1,48 @@
+.userShowPage {
+  display: flex;
+  flex-direction: column;
+  // align-content: center;
+  // justify-content: center;
+  background-color: $background_white;
+
+  .user_back_img {
+    background-color: lightblue;
+    min-height: 500px;
+    width: 100%;
+
+    border-bottom: 1px solid rgb(215, 216, 219);
+  }
+  .user_prof_img {
+    // display: none;
+    align-self: center;
+    height: 128px;
+    width: 128px;
+    margin: -64px 0 0;
+    border-radius: 50%;
+    background-color: $light_grey;
+    // Replace with background image temporarily
+  }
+  h2 {
+    text-align: center;
+    margin: 32px 0 0;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    letter-spacing:1px;
+  }
+
+  .user_TODO_links {
+    width: 100%;
+    align-self: center;
+    text-align: center; // TEMPORARY UNTIL WE GET MORE links
+    margin: 16px 0;
+    // background-color: mediumaquamarine;
+  }
+  .user_photos {
+    width: 100%;
+    min-height: 750px;
+    background-color: #F7F8FA;
+    
+  }
+
+}

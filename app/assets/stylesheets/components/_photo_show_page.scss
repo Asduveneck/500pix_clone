@@ -1,0 +1,76 @@
+.indvPhotoShowPage {
+  display: flex; // not needed?
+  flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: bold;
+    text-shadow: 1px 0 #888888;
+    letter-spacing:1px;
+  }
+
+  span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+}
+.indvPhoto-Container {
+  display: flex;
+
+  justify-content: center;
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  padding: 2.5% 0;
+
+  .indvPhoto {
+    width: 90vw;
+    // background-color: magenta;
+  }
+}
+
+.indvPhoto-details-container {
+  margin: 24px 128px 0;
+  // background-color: red;
+
+  .margb8 {
+    margin: 0 0 8px;
+  }
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 32px 0px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgb(215, 216, 219);
+  
+    .right {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      // background-color: magenta;
+    }
+  }
+
+  .temp1 {
+    text-decoration: none;
+    padding: 64px 0px;
+    // background-color: green;
+  }
+  
+  .temp1:hover {
+    color: $blue;
+  }
+
+}
+
+.photo-stats {
+  display: flex;
+  // background-color: green;
+  .stat {
+    padding: 32px 32px 0 0;
+  }
+  margin: 0 0 32px;
+}

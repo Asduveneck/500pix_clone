@@ -4,8 +4,8 @@ import { logout } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 // mapStateToProps 
-const mSTP = ({ session, entities: { users } }) => ({ 
-    currentUser: users[session.id]
+const mSTP = ({ session, entities: { currentUser } }) => ({ 
+    currentUser: currentUser[session.id]
   });
 
 //mapDispatchToProps
