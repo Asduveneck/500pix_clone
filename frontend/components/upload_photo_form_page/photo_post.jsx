@@ -11,7 +11,7 @@ class photoCreate extends React.Component {
 
     return(
       <div className="photoCreate_Page">
-
+        New photos here
       </div>
     )
   }
