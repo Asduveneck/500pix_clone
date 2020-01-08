@@ -55,7 +55,7 @@ const NavBar = ({ currentUser, logout}) => {
             </div>
           </div>
         </div>,
-        <div key="navk4" className="fas fa-plus"> Upload</div>
+        <div key="navk4" className="fas fa-plus"> &uarr; <div className="upload_arrow"></div>  Upload</div>
 
       ]
     }
