@@ -4,6 +4,7 @@ json.extract! photo, :id, :title, :description, :views, :rating, :created_at
 
 json.set! :photographer, photo.photographer
 json.set! :photo_usr_name, photo.user[:user_name]
+json.set! :photo_usr_id, photo.user[:id]
 
 if photo.file.attached?()
   json.fileUrl polymorphic_url(photo.file) # sets url for photo file to be the file URL.
