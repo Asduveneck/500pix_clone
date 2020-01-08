@@ -9,7 +9,9 @@ class userShow extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  componentDidMount() { 
+    // Change the URL, we update the user component, but we don't remount.
+    // upon update, do something. So I should be looking into update 
     console.log("Component did mount")
     // console.log(this.props.match.params.user_name);
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
@@ -31,15 +33,46 @@ class userShow extends React.Component {
 
       })
   }
+
+  // componentDidUpdate() { // triggers infinite loop
+  //   console.log("Component did update")
+  //   // console.log(this.props.match.params.user_name);
+  //   this.props.fetchUser(this.props.match.params.userId) // see app.jsx
+  //     .then(res => {
+  //       console.log("In component did update fetched User success callback")
+  //       let user = res.user;
+  //       let photoIds = user.photos;
+  //       let userPhotos = [];
+  //       photoIds.map(photoId => {
+  //         this.props.fetchPhoto(photoId).then((res) => {
+  //           userPhotos.push(res.photo)
+  //         })
+  //       }
+  //       )
+  //       console.log("Still in success cb. About to set state");
+  //       this.setState({ photos: userPhotos })
+  //       console.log("Still in success cb. State:");
+  //       console.log(this.state);
+
+  //     })
+  // }
   // Stops infinite loop:
   // shouldComponentUpdate(nextProps, nextState) { 
-  //   if (!this.props.user) return true; // rerender if there is no user
-  //   if (!this.state.photos) return true; 
-  //   // console.log(this.props.user.photos.length);
-  //   // console.log(nextState.photos.length);
-  //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
+    // console.log("in shouldComponentUpdate")
+    // console.log("this.props:")
+    // console.log(this.props)
+    // console.log("path:")
+    // // console.log(nextState)
+    // let currentPath = this.props.location.pathname
+    // let nextPath = nextProps.location.pathname
+    // console.log(currentPath)
+    // if (!this.props.user) return true; // rerender if there is no user
+  // //   if (!this.state.photos) return true; 
+  // //   // console.log(this.props.user.photos.length);
+  // //   // console.log(nextState.photos.length);
+  // //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
 
-  //   // Stop user component re-rendering with each new photo being fetched
+  // //   // Stop user component re-rendering with each new photo being fetched
   //   if (this.props.user.id === undefined) return true;
   //   if (this.props.user.id === nextProps.user.id) { // CAUSING PROBLEMS?
   //     return false
@@ -48,9 +81,9 @@ class userShow extends React.Component {
   //   }
   // }
 
-  componentWillUnmount() {
-    this.props.clearUser();
-  }
+  // componentWillUnmount() {
+  //   this.props.clearUser();
+  // }
 
   render() {
     console.log("In render");
