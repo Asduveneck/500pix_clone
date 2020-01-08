@@ -32,20 +32,21 @@ class userShow extends React.Component {
       })
   }
   // Stops infinite loop:
-  shouldComponentUpdate(nextProps, nextState) { 
-    if (!this.props.user) return true;
-    if (!this.state.photos) return true;
-    // console.log(this.props.user.photos.length);
-    // console.log(nextState.photos.length);
-    // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
+  // shouldComponentUpdate(nextProps, nextState) { 
+  //   if (!this.props.user) return true; // rerender if there is no user
+  //   if (!this.state.photos) return true; 
+  //   // console.log(this.props.user.photos.length);
+  //   // console.log(nextState.photos.length);
+  //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
 
-    // Stop user component re-rendering with each new photo being fetched
-    if (this.props.user.id === nextProps.user.id) {
-      return false
-    } else {
-      return true
-    }
-  }
+  //   // Stop user component re-rendering with each new photo being fetched
+  //   if (this.props.user.id === undefined) return true;
+  //   if (this.props.user.id === nextProps.user.id) { // CAUSING PROBLEMS?
+  //     return false
+  //   } else {
+  //     return true
+  //   }
+  // }
 
   componentWillUnmount() {
     this.props.clearUser();
