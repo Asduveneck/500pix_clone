@@ -25,7 +25,7 @@ const NavBar = ({ currentUser, logout}) => {
   const leftSide = () => {
     let logoLink = <Link to="/">1000px</Link>
     if(currentUser) {
-      logoLink = <Link to="/index" className="darker_font">1000px</Link>
+      logoLink = <Link to="/index" >1000px</Link>
     }
     return(
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
