@@ -13,6 +13,10 @@
       margin: 0px 16px;
     }
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  .darker_font {
+    color: #222222;
+  }
 }
 
 #nav_bar_outer.navScroll {
@@ -36,10 +40,16 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
 // Right Side
 .nb_r {
   margin-right: 64px;
+  nav {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
   a {
     color: #222222;
     text-decoration: none;
-    font-size: 18px
+    font-size: 18px;
+    align-self: center;
   }
   .navk {
     font-weight: bold;
@@ -47,10 +57,10 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   .navk.log{
     margin: 0px 24px;
   }
-  .navk.sign{
+  .sign{
     margin: 0px 16px;
     padding: 4px 16px;
-    border: 1.5px;
+    border: 2px;
     border-radius: 25px;
     border-style: solid;
   }
@@ -59,6 +69,25 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   }
   .navk:hover { // nav links in the bar
     color: $blue;
+  }
+  .upload {
+    display: flex;
+    flex-direction: row;
+    span:last-child {
+      align-self: center;
+      margin-top: 4px;
+    }
+    border-color: #222222;
+  }
+  .upload_arrow {
+    background-image: image-url("svg_misc/icon_upload");
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    margin-right: 8px;
+  }
+  .upload.sign:hover {
+    fill: magenta;
   }
 
   // dropdown stuff
@@ -72,7 +101,12 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   //   // margin-right: -32px;
   //   // background-color: maroon;
   // }
-
+  .user_prof {
+    font-size: 32px;
+  }
+  .user_prof:hover{
+    cursor: pointer;
+  }
   .dropdown-container {
     position: absolute;
     z-index: 1;
