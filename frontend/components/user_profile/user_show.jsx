@@ -88,7 +88,7 @@ class userShow extends React.Component {
           console.log("Looping through state photos"); //FINDME never called! TODO:
           console.log(photo);
           return (
-          <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`}>
+            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
             <IndvPhoto
               title={photo.title}
               url={photo.fileUrl}

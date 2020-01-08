@@ -56,7 +56,7 @@ class IndexPage extends React.Component {
         </div>
         <div className="index_page_page">
           {this.state.photos.map((photo, idx) => (
-            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`}>
+            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
               <IndvPhoto
                 title={photo.title}
                 url={photo.fileUrl}
