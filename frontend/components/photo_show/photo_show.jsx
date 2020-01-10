@@ -40,7 +40,7 @@ class photoShow extends React.Component {
             <div className="left">
               <h2 className="iPS margb8">{title}</h2>
               
-              <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink">{photographer}</Link></span>
+              <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink" key={`usr_${photo_usr_id}`}>{photographer}</Link></span>
                 {/* TODO: LINK to photographer showPage  */}
             </div>
             <div className="right">
