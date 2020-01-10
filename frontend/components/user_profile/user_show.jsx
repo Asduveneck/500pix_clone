@@ -19,19 +19,32 @@ class userShow extends React.Component {
         console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
-        let userPhotos = [];
-        photoIds.map(photoId => {
-          this.props.fetchPhoto(photoId).then((res) => {
-            userPhotos.push(res.photo)
-          })
-        }
-      )
-      console.log("Still in success cb. About to set state");
-      this.setState({photos: userPhotos})
-      console.log("Still in success cb. State:");
-      console.log(this.state);
+        // let userPhotos = [];
+      //   photoIds.map(photoId => {
+      //     this.props.fetchPhoto(photoId).then((res) => {
+      //       userPhotos.push(res.photo)
+      //     })
+      //   }
+      // )
+      // console.log("Still in success cb. About to set state");
+      // this.setState({photos: userPhotos})
+      // console.log("Still in success cb. State:");
+      // console.log(this.state);
 
-      })
+      Promise.all(photoIds.map(photoId => {
+        return this.props.fetchPhoto(photoId) // See if any of this is necessary because you set up props as you do this...
+      })).then(res => {
+        let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
+        for(let i = 0; i < res.length; i++) {
+          userPhotos.push(res[i].photo)
+        }
+        return userPhotos;
+      }).then(res => {
+        this.setState({ photos: res })
+        // console.log(res);
+      });
+
+      });
   }
 
   // componentDidUpdate() { // triggers infinite loop
@@ -87,6 +100,7 @@ class userShow extends React.Component {
 
   render() {
     console.log("In render");
+    console.log(this.props);
     let user = this.props.user;
     if (!user) return null;
     // if (!this.state.photos) return null; // BREAKS code
@@ -110,16 +124,15 @@ class userShow extends React.Component {
     // this.setState({photos: userPhotos}) // not allowed
     // console.log(this.state);
 
-    console.log("Render State:");
-    console.log(this.state);
+    // console.log("Render State:");
+    // console.log(this.state);
 
     const displayPhotos = () => {
       if (this.state.photos) {
-        console.log("Found some photos. this.state.photos:");
-        console.log(this.state.photos);
+        // console.log("Found some photos. this.state.photos:");
+        // console.log(this.state.photos);
         return this.state.photos.map((photo, idx) => {
-          // console.log("Looping through state photos"); //FINDME never called! TODO:
-          console.log(idx);
+          // console.log(idx); // already missing one! Don't know why but oh well
           // console.log(photo);
           return (
             <Link to={`/photo/${photo.id}`} key={`link_photo_${photo.id}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
@@ -133,8 +146,8 @@ class userShow extends React.Component {
 
         )
       } else {
-        console.log("No photos found")
-        return "TESTING"
+        // console.log("No photos found")
+        return "0 Photos were found"
       }
     }
     
