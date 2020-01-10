@@ -6,9 +6,10 @@ class photoCreate extends React.Component {
 
   constructor(props) { // only valid in react class... 
     super(props);
-    this.handleFiles = this.handleFiles.bind(this)
+    // this.handleFile = this.handleFile.bind(this)
     this.state = {
       title: "",
+      description: ""
     };
   }
 
@@ -18,8 +19,10 @@ class photoCreate extends React.Component {
   // Use principles from: https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
   // once you get a basic version going.
 
-  handleFiles() {
-    console.log("test")
+  handleFile() {
+    console.log("In handle Files. this:")
+    console.log(this);
+    debugger;
   };
 
   handleInput(e) {
@@ -42,7 +45,7 @@ class photoCreate extends React.Component {
             <span>Upload photos</span>
 
             <button>Select Photos </button>
-            <input type="file" id="fileElem" />
+            <input type="file" id="fileElem" onChange={this.handleFile.bind(this)} />
             {/* files supposed to go in handleFiles */}
           <span>Or drag and drop photos anywhere on this page</span>
         </form>
