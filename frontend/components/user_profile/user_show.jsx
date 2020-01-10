@@ -118,10 +118,11 @@ class userShow extends React.Component {
         console.log("Found some photos. this.state.photos:");
         console.log(this.state.photos);
         return this.state.photos.map((photo, idx) => {
-          console.log("Looping through state photos"); //FINDME never called! TODO:
-          console.log(photo);
+          // console.log("Looping through state photos"); //FINDME never called! TODO:
+          console.log(idx);
+          // console.log(photo);
           return (
-            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
+            <Link to={`/photo/${photo.id}`} key={`link_photo_${photo.id}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
             <IndvPhoto
               title={photo.title}
               url={photo.fileUrl}
@@ -139,7 +140,7 @@ class userShow extends React.Component {
     
 
     return (
-      <div className="userShowPage">
+      <div className="userShowPage" key={`user_${user_name}`}>
         <div className="temp user_back_img">
           {/* background image with thin 1px bottom border. Replace with img tag later */}
         </div>
@@ -160,11 +161,11 @@ class userShow extends React.Component {
         <div className="user_photos index_page_page">
           {/* Another image gallery. Reusing previous class for now */}
           {/* May make this responsive to above link so we display different ones like tabs */}
-          {console.log("IN DIV HERE. State")}
+          {/* {console.log("IN DIV HERE. State")} */}
           {/* {console.log(userPhotos)}
           {console.log(userPhotos.map)} */}
-          {console.log(this.state)}
-          {console.log(this.state.photos)}
+          {/* {console.log(this.state)} */}
+          {/* {console.log(this.state.photos)} */}
           {displayPhotos()}
         </div>
 
