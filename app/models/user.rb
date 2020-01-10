@@ -63,6 +63,10 @@ class User < ApplicationRecord
     url_list
   end
 
+  # def photos_all // there is a method to get the fileURL. photo_attached ? 
+
+  # end
+
   # User Auth:
 
   after_initialize :ensure_session_token

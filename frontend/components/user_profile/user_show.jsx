@@ -15,7 +15,7 @@ class userShow extends React.Component {
     console.log("Component did mount")
     // console.log(this.props.match.params.user_name);
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
-      .then(res => {
+      .then(res => { // missing one photo each time.
         console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
@@ -91,7 +91,7 @@ class userShow extends React.Component {
     if (!user) return null;
     // if (!this.state.photos) return null; // BREAKS code
     console.log(user);
-    let { user_name, first_name, last_name, location_city, location_country, about, photos } = user;
+    let { user_name, first_name, last_name, location_city, location_country, about, photos, photos_all } = user;
 
     // let userPhotos = [];
     // // loop over photoId and fetch each photo.
@@ -115,9 +115,11 @@ class userShow extends React.Component {
 
     const displayPhotos = () => {
       if (this.state.photos) {
+      // if (photos_all) { # no fileURL! FINDME TODO:
         console.log("Found some photos. this.state.photos:");
-        console.log(this.state.photos);
+        // console.log(this.state.photos);
         return this.state.photos.map((photo, idx) => {
+        // return photos_all.map((photo, idx) => {
           console.log("Looping through state photos"); //FINDME never called! TODO:
           console.log(photo);
           return (
