@@ -8,8 +8,10 @@ class photoCreate extends React.Component {
     super(props);
     // this.handleFile = this.handleFile.bind(this)
     this.state = {
-      title: "",
-      description: ""
+      // title: "",
+      // description: "",
+      // You update all this other information in a redirect.
+      photos: []
     };
   }
 
@@ -19,19 +21,16 @@ class photoCreate extends React.Component {
   // Use principles from: https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
   // once you get a basic version going.
 
-  handleFile() {
-    console.log("In handle Files. this:")
-    console.log(this);
-    debugger;
+  handleFile(e) {
+    this.setState({photos: e.currentTarget.files})
   };
 
-  handleInput(e) {
-    this.setState({title: e.currentTarget.value})
-
-  }
+  // handleInput(e) { // some other page will do the actual sending. We may have our handleSubmit be a way to thread in props!
+  //   this.setState({title: e.currentTarget.value})
+  // }
 
   handleSubmit(e) {
-    
+
   }
 
 
@@ -40,7 +39,7 @@ class photoCreate extends React.Component {
     <div className="photoCreate_Page">
       New photos here
       <div id="drop-area">
-        <form className="photo_form">
+        <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
 
             <span>Upload photos</span>
 
