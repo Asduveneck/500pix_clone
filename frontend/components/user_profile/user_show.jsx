@@ -19,19 +19,32 @@ class userShow extends React.Component {
         console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
-        let userPhotos = [];
-        photoIds.map(photoId => {
-          this.props.fetchPhoto(photoId).then((res) => {
-            userPhotos.push(res.photo)
-          })
-        }
-      )
-      console.log("Still in success cb. About to set state");
-      this.setState({photos: userPhotos})
-      console.log("Still in success cb. State:");
-      console.log(this.state);
+        // let userPhotos = [];
+      //   photoIds.map(photoId => {
+      //     this.props.fetchPhoto(photoId).then((res) => {
+      //       userPhotos.push(res.photo)
+      //     })
+      //   }
+      // )
+      // console.log("Still in success cb. About to set state");
+      // this.setState({photos: userPhotos})
+      // console.log("Still in success cb. State:");
+      // console.log(this.state);
 
-      })
+      Promise.all(photoIds.map(photoId => {
+        return this.props.fetchPhoto(photoId) // See if any of this is necessary because you set up props as you do this...
+      })).then(res => {
+        let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
+        for(let i = 0; i < res.length; i++) {
+          userPhotos.push(res[i].photo)
+        }
+        return userPhotos;
+      }).then(res => {
+        this.setState({ photos: res })
+        // console.log(res);
+      });
+
+      });
   }
 
   // componentDidUpdate() { // triggers infinite loop
@@ -87,6 +100,7 @@ class userShow extends React.Component {
 
   render() {
     console.log("In render");
+    console.log(this.props);
     let user = this.props.user;
     if (!user) return null;
     // if (!this.state.photos) return null; // BREAKS code
@@ -110,20 +124,18 @@ class userShow extends React.Component {
     // this.setState({photos: userPhotos}) // not allowed
     // console.log(this.state);
 
-    console.log("Render State:");
-    console.log(this.state);
+    // console.log("Render State:");
+    // console.log(this.state);
 
     const displayPhotos = () => {
       if (this.state.photos) {
-      // if (photos_all) { # no fileURL! FINDME TODO:
-        console.log("Found some photos. this.state.photos:");
+        // console.log("Found some photos. this.state.photos:");
         // console.log(this.state.photos);
         return this.state.photos.map((photo, idx) => {
-        // return photos_all.map((photo, idx) => {
-          console.log("Looping through state photos"); //FINDME never called! TODO:
-          console.log(photo);
+          // console.log(idx); // already missing one! Don't know why but oh well
+          // console.log(photo);
           return (
-            <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
+            <Link to={`/photo/${photo.id}`} key={`link_photo_${photo.id}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
             <IndvPhoto
               title={photo.title}
               url={photo.fileUrl}
@@ -134,14 +146,14 @@ class userShow extends React.Component {
 
         )
       } else {
-        console.log("No photos found")
-        return "TESTING"
+        // console.log("No photos found")
+        return "0 Photos were found"
       }
     }
     
 
     return (
-      <div className="userShowPage">
+      <div className="userShowPage" key={`user_${user_name}`}>
         <div className="temp user_back_img">
           {/* background image with thin 1px bottom border. Replace with img tag later */}
         </div>
@@ -150,7 +162,7 @@ class userShow extends React.Component {
           {/* profile image: round border, fixed size, negative margin of half */}
         </div>
 
-      <h2 className="user_fl_name">{first_name} {last_name}</h2>
+      <h2 className="user_fl_name" key={`user_id_${user.id}`}>{first_name} {last_name}</h2>
 
       <p className="user_about">{about}</p>
       <div className="user_stats_location"> </div>
@@ -162,11 +174,11 @@ class userShow extends React.Component {
         <div className="user_photos index_page_page">
           {/* Another image gallery. Reusing previous class for now */}
           {/* May make this responsive to above link so we display different ones like tabs */}
-          {console.log("IN DIV HERE. State")}
+          {/* {console.log("IN DIV HERE. State")} */}
           {/* {console.log(userPhotos)}
           {console.log(userPhotos.map)} */}
-          {console.log(this.state)}
-          {console.log(this.state.photos)}
+          {/* {console.log(this.state)} */}
+          {/* {console.log(this.state.photos)} */}
           {displayPhotos()}
         </div>
 
