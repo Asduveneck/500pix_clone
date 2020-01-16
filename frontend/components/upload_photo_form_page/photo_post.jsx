@@ -42,6 +42,8 @@ class photoCreate extends React.Component {
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
+
+    this.props.createPhoto(formData); // does the ajax call request
   }
 
 
@@ -56,7 +58,7 @@ class photoCreate extends React.Component {
 
             <span>Upload photos</span>
 
-            <button>Select Photos </button>
+            {/* <button>Select Photos </button> */}
             {/* <input type="text"/> Do this for title and description? */}
             <input type="text" value={this.state.title} onChange={this.update('title')} />
             <textarea name="description" value={this.state.description} onChange={this.update('description')} />
