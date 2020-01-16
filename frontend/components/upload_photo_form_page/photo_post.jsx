@@ -10,6 +10,7 @@ class photoCreate extends React.Component {
       description: "",
       // You update all this other information in a redirect.
       photoFile: null, // 
+      photoUrl: null,
       // photos: []
     };
   }
@@ -21,7 +22,15 @@ class photoCreate extends React.Component {
   // once you get a basic version going.
 
   handleFile(e) {
-    this.setState({photoFile: e.currentTarget.files[0]}) // Need to index into the array for the photo files...
+    const fileReader = new FileReader(); // file Reader for preview
+    const file = e.currentTarget.files[0] // Moved out of setState to later 
+
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   };
 
   // handleInput(e) { // some other page will do the actual sending. We may have our handleSubmit be a way to thread in props!
@@ -57,11 +66,13 @@ class photoCreate extends React.Component {
 
 
   render() {
-    // console.log(this.props);
-    console.log(this.state);
+    // Return a photo if present:
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "250px"}} /> : null;
+
   return(
     <div className="photoCreate_Page">
       New photos here
+      {preview}
       <div id="drop-area">
         <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
 

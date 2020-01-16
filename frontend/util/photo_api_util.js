@@ -9,6 +9,7 @@ export const createPhoto = (photo) => (
     method: 'post',
     url: `/api/photos/`,
     data: photo, // BUG: We had to remove the {} to get the form to work...
+    // TODO: Test if seeding still works. If not, then we need to restructure our AJAX call again with photo in {} for the seed...
     contentType: false,
     processData: false,
   })
