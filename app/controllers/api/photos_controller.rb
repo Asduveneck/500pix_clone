@@ -11,7 +11,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    debugger # turns out photo_params made it here...
+    # debugger # BUG: turns out photo_params is nil
     @photo = Photo.new(photo_params)
     debugger
     if @photo.save

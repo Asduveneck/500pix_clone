@@ -4,15 +4,24 @@
     - In our Active.Storage, we call the association `file`, so I will stick to that convention here
  */
 
-export const createPhoto = (photo) => (
+export const createPhoto = (photo) => {
+  debugger;
+    for (var pair of photo.entries()) {
+      console.log(pair[0] + ', ' + pair[1]);
+    }
+  debugger;
+  return(
   $.ajax({
     method: 'post',
     url: `/api/photos/`,
     data: {photo},
     contentType: false,
     processData: false,
-  })
-); 
+  }).then( // BUG: We are unsuccessful in this AJAX call. Why? ActionController rails server says param photo is missing.
+    (success) => console.log(success.message),
+    (fail) => {console.log("broke here"); console.log(fail.responseJSON)}
+  )
+)}; 
 
 export const fetchPhotos = () => (
   $.ajax({

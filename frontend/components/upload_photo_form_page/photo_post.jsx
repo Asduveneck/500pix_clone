@@ -39,15 +39,17 @@ class photoCreate extends React.Component {
     const formData = new FormData();
     // and we'll be allowing multiple photo uploads...
     // This should be properly nested...?
+    formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
+    // formData.append('photo[photo]', "testing");
+    // OKAY here:
+    // for (var pair of formData.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1]);
+    // }
 
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ', ' + pair[1]);
-    }
-
-    debugger; // Keys are properly nested. Fails in server end because it can't find photo...?
+    // debugger; // Keys are properly nested. Fails in server end because it can't find photo...?
 
     this.props.createPhoto(formData); // does the ajax call request
   }
