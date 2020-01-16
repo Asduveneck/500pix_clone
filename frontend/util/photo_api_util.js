@@ -9,6 +9,8 @@ export const createPhoto = (photo) => (
     method: 'post',
     url: `/api/photos/`,
     data: {photo},
+    contentType: false,
+    processData: false,
   })
 ); 
 
