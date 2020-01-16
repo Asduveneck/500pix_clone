@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = dispatch => ({
-  createPhoto: photo => dispatch(createPhoto(photo))
+  createPhoto: photo => dispatch(createPhoto(photo))  // We don't do this part just yet if we have a secondary form...
 });
 
 export default connect(mSTP, mDTP)(photoPost)
