@@ -11,7 +11,9 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
+    debugger # turns out photo_params made it here...
     @photo = Photo.new(photo_params)
+    debugger
     if @photo.save
       render :show   # Could also be the edit form right after too...
     else

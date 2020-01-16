@@ -37,11 +37,17 @@ class photoCreate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('photo[title]', this.state.title); // title will just be the filename minus extension until user manually updates
     // and we'll be allowing multiple photo uploads...
+    // This should be properly nested...?
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
+
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ', ' + pair[1]);
+    }
+
+    debugger; // Keys are properly nested. Fails in server end because it can't find photo...?
 
     this.props.createPhoto(formData); // does the ajax call request
   }
@@ -49,7 +55,8 @@ class photoCreate extends React.Component {
 
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
+    console.log(this.state);
   return(
     <div className="photoCreate_Page">
       New photos here
@@ -60,11 +67,15 @@ class photoCreate extends React.Component {
 
             {/* <button>Select Photos </button> */}
             {/* <input type="text"/> Do this for title and description? */}
+            <label htmlFor="">Title:
             <input type="text" value={this.state.title} onChange={this.update('title')} />
+            </label>
+            Description:
             <textarea name="description" value={this.state.description} onChange={this.update('description')} />
             <input type="file" id="fileElem" onChange={this.handleFile.bind(this)} />
             {/* files supposed to go in handleFiles */}
           <span>Or drag and drop photos anywhere on this page</span>
+            <button>Upload Photo</button>
         </form>
       </div>
     </div>
