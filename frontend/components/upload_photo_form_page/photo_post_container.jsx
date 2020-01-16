@@ -3,8 +3,8 @@ import photoPost from './photo_post';
 import { createPhoto } from '../../actions/photo_actions';
 
 
-const mSTP = (state, ownProps) => ({
-
+const mSTP = ({ session, entities: { currentUser } }) => ({
+  currentUserID: currentUser[session.id].id
 });
 
 const mDTP = dispatch => ({

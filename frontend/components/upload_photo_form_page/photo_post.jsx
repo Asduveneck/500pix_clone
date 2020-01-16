@@ -41,11 +41,13 @@ class photoCreate extends React.Component {
     // and we'll be allowing multiple photo uploads...
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
+    formData.append('photo[user_id]', this.props.currentUserID);
   }
 
 
 
   render() {
+    console.log(this.props);
   return(
     <div className="photoCreate_Page">
       New photos here
