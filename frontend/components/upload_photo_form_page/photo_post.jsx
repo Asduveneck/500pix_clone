@@ -37,9 +37,10 @@ class photoCreate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    // formData.append('post[title', this.state.title); // title will just be the filename minus extension until user manually updates
+    formData.append('photo[title]', this.state.title); // title will just be the filename minus extension until user manually updates
     // and we'll be allowing multiple photo uploads...
-    formData.append('post[photo]', this.state.photos); // QUESTION: will this be restricted by my routes / model?
+    formData.append('photo[description]', this.state.description);
+    formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
   }
 
 
