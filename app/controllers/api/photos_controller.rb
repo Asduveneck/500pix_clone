@@ -11,9 +11,8 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    # debugger # BUG: turns out photo_params is nil
+    # debugger # BUG: turns out photo_params is nil. Why...?
     @photo = Photo.new(photo_params)
-    debugger
     if @photo.save
       render :show   # Could also be the edit form right after too...
     else
