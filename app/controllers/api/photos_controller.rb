@@ -49,7 +49,8 @@ class Api::PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:title, :description, # user input
       :user_id, # from current user
-      :views, :rating # not user inputted
+      :views, :rating, # not user inputted
+      :file # from file upload...
     )
   end
 
