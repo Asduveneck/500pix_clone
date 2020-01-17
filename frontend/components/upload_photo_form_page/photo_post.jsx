@@ -46,8 +46,7 @@ class photoCreate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    // and we'll be allowing multiple photo uploads...
-    // This should be properly nested...?
+    // Following works with our AJAX call if we say `photo` instead of `{photo}`
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
