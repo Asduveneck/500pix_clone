@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F7F8FA;
+    background-color: $background_grey;
     height: 100vh; 
 }
 
@@ -63,7 +63,7 @@
       height: 5vh;
       font-size: 3vh;
       background-color: #34BF49;
-      color: #F7F8FA; 
+      color: $background_grey; 
     }
   }
 

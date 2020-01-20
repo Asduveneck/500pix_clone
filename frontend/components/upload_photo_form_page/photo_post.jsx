@@ -70,8 +70,10 @@ class photoCreate extends React.Component {
 
   return(
     <div className="photoCreate_Page">
-      New photos here
+      Upload photo
+      
       {preview}
+      
       <div id="drop-area">
         <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
 
