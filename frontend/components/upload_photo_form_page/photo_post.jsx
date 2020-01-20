@@ -87,16 +87,18 @@ class photoCreate extends React.Component {
             <input type="file" id="file-input" className="fileInput" 
               name = "file" onChange={this.handleFile.bind(this)} />
               <br/>
-            <label htmlFor="photo title">Title:</label>
-              <input type="text" name="photo title" value={this.state.title} 
-                onChange={this.update('title')} />
-            <br/>
-            <label htmlFor="photo description">Description:</label>
-              <textarea name="description" name="photo description" 
-                value={this.state.description} 
-                onChange={this.update('description')} />
-            {/* <span>Or drag and drop photos anywhere on this page</span> */}
-            <button>Upload Photo</button>
+            <div className="form_inputs">
+              <label htmlFor="photo title">Title:</label>
+                <textarea name="photo title" value={this.state.title} 
+                  onChange={this.update('title')} />
+              <br/>
+              <label htmlFor="photo description">Description:</label>
+                <textarea name="description" name="photo description" 
+                  value={this.state.description} 
+                  onChange={this.update('description')} />
+              {/* <span>Or drag and drop photos anywhere on this page</span> */}
+              <button>Upload Photo</button>
+            </div>
           </form>
         </div>
       </div>

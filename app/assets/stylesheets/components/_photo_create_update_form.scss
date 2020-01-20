@@ -13,21 +13,20 @@
     margin: 24px 0;
   }
 
-  .pcc_Rt {
-    margin: 24px 0;
+  .pcc_Rt, .photo_form, .form_inputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+  }
+
+  .pcc_Rt {
+    margin: 24px 0;
     background-color: $background_white;
 
     width: 400px;
     // background-color: maroon;
   }
   .photo_form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
   // styles label to look like a button
     .file-input-button {
