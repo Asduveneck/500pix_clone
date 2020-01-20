@@ -7,26 +7,44 @@
   display: flex;
   background-color: $background_grey;
   justify-content: space-between;
+  padding: 0 64px;
 
   .pcc_Lt {
-
+    margin: 24px 0;
   }
 
   .pcc_Rt {
+    margin: 24px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    background-color: $background_white;
 
     width: 400px;
     // background-color: maroon;
+  }
+  .photo_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    * { // all children
-      width: 100%;
-      margin: 5px; 
-      // background-color: lightcoral;
+  // styles label to look like a button
+    .file-input-button {
+      align-self: center;
+      width: 100px;
+      text-align: center;
+      font-size: 16px;
+      background-color: $blue;
+      color: $background_white;
+      border-radius: 12.5px;
+      border-style: none;
+      margin: 16px 0px;
+      padding: 8px 32px;
+      cursor: pointer;
     }
 
+    // hides standard file upload button
     .fileInput {
       width: 0.01px;
       height: 0.01px;
@@ -36,5 +54,4 @@
       z-index: -1;
     }
   }
-
 }
