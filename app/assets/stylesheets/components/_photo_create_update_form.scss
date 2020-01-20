@@ -1,4 +1,25 @@
 .photoCreate_Page {
   margin-top: 128px; // temporary
+  // background-color: $background_grey;
+}
+
+.photoCreate_content {
+  display: flex;
   background-color: $background_grey;
+  justify-content: space-between;
+
+  .pcc_Lt {
+
+  }
+
+  .pcc_Rt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+    width: 400px;
+    // background-color: maroon;
+
+  }
 }

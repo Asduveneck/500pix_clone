@@ -70,28 +70,33 @@ class photoCreate extends React.Component {
 
   return(
     <div className="photoCreate_Page">
-      Upload photo
-      
-      {preview}
-      
-      <div id="drop-area">
-        <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
-
-            <span>Upload photos</span>
-
-            {/* <button>Select Photos </button> */}
-            {/* <input type="text"/> Do this for title and description? */}
-            <label htmlFor="">Title:
-            <input type="text" value={this.state.title} onChange={this.update('title')} />
-            </label>
-            Description:
-            <textarea name="description" value={this.state.description} onChange={this.update('description')} />
-            <input type="file" id="fileElem" onChange={this.handleFile.bind(this)} />
-            {/* files supposed to go in handleFiles */}
-          <span>Or drag and drop photos anywhere on this page</span>
-            <button>Upload Photo</button>
-        </form>
+      <div className="photoCreate_Nav">
+        Upload photo
       </div>
+
+      <div className="photoCreate_content">
+        <div className="pcc_Lt">
+          {preview}
+        </div>
+        <div className="pcc_Rt">
+          <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
+            <label htmlFor="photo-title">Title:</label>
+              <input type="text" id="photo-title" value={this.state.title} 
+                onChange={this.update('title')} />
+            <br/>
+            <label htmlFor="photo-description">Description:</label>
+              <textarea name="description" id="photo-description" 
+                value={this.state.description} 
+                onChange={this.update('description')} />
+            <input type="file" id="fileElem" onChange={this.handleFile.bind(this)} />
+            {/* <span>Or drag and drop photos anywhere on this page</span> */}
+            <button>Upload Photo</button>
+          </form>
+        </div>
+      </div>
+      
+   
+      
     </div>
   )
   }
