@@ -81,21 +81,24 @@ class photoCreate extends React.Component {
         <div className="pcc_Lt">
           {preview}
         </div>
-        <div className="pcc_Rt">
-          <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
+        <div className="pcc_Rt fColCen">
+          <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
             <label htmlFor="file-input" className="pcc_message file-input-button">Select Photo</label>
             <input type="file" id="file-input" className="fileInput" 
               name = "file" onChange={this.handleFile.bind(this)} />
-              <br/>
-            <div className="form_inputs">
-              <label htmlFor="photo title">Title:</label>
-                <textarea name="photo title" value={this.state.title} 
-                  onChange={this.update('title')} />
-              <br/>
-              <label htmlFor="photo description">Description:</label>
-                <textarea name="description" name="photo description" 
-                  value={this.state.description} 
-                  onChange={this.update('description')} />
+
+            <div className="form_inputs fColCen">
+              <div className="input fColCen">
+                <label htmlFor="photo title">Title:</label>
+                  <textarea name="photo title" value={this.state.title} 
+                    onChange={this.update('title')} />
+              </div>
+              <div className="input fColCen">
+                <label htmlFor="photo description">Description:</label>
+                  <textarea name="description" name="photo description" 
+                    value={this.state.description} 
+                    onChange={this.update('description')} />
+              </div>
               {/* <span>Or drag and drop photos anywhere on this page</span> */}
               <button>Upload Photo</button>
             </div>

@@ -13,7 +13,7 @@
     margin: 24px 0;
   }
 
-  .pcc_Rt, .photo_form, .form_inputs {
+  .fColCen { // flex column center
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,6 +51,22 @@
       overflow: hidden;
       position: absolute;
       z-index: -1;
+    }
+
+    // styling the bottom part of other inputs
+    .form_inputs {
+      width: 375px;
+      margin: 0 auto;
+      .input {
+
+        label {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        textarea {
+          resize: vertical;
+        }
+      }
     }
   }
 }
