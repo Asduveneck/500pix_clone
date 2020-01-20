@@ -21,5 +21,24 @@
     width: 400px;
     // background-color: maroon;
 
+    * { // all children
+      width: 100%;
+      margin: 5px; 
+      // background-color: lightcoral;
+    }
+
   }
+    .fileInput {
+
+    background-color: lightcoral;
+    color: magenta;
+  }
+    #file-input {
+      width: 0.01px;
+      height: 0.01px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
 }
