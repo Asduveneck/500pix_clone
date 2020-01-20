@@ -83,7 +83,7 @@ class photoCreate extends React.Component {
         </div>
         <div className="pcc_Rt">
           <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
-            <label htmlFor="file-input">Select Photo</label>
+            <label htmlFor="file-input" className="pcc_message file-input-button">Select Photo</label>
             <input type="file" id="file-input" className="fileInput" 
               name = "file" onChange={this.handleFile.bind(this)} />
               <br/>
