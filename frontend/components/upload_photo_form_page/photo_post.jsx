@@ -24,7 +24,10 @@ class photoCreate extends React.Component {
   handleFile(e) {
     const fileReader = new FileReader(); // file Reader for preview
     const file = e.currentTarget.files[0] // Moved out of setState to later 
-
+    // check file extension and size here next
+      // console.log(file.type);
+      // console.log(file.size);
+    this.setState({title: file.name})
     fileReader.onloadend = () => {
       this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
@@ -66,7 +69,7 @@ class photoCreate extends React.Component {
 
   render() {
     // Return a photo if present:
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "250px"}} /> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "400px"}} /> : null;
 
   return(
     <div className="photoCreate_Page">
@@ -80,8 +83,8 @@ class photoCreate extends React.Component {
         </div>
         <div className="pcc_Rt">
           <form className="photo_form" onSubmit={this.handleSubmit.bind(this)}>
-            <label htmlFor="file-input">Upload Photo</label>
-            <input type="file" id="file-input" classname="fileInput" 
+            <label htmlFor="file-input">Select Photo</label>
+            <input type="file" id="file-input" className="fileInput" 
               name = "file" onChange={this.handleFile.bind(this)} />
               <br/>
             <label htmlFor="photo title">Title:</label>

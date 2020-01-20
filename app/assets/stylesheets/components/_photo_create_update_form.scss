@@ -27,13 +27,7 @@
       // background-color: lightcoral;
     }
 
-  }
     .fileInput {
-
-    background-color: lightcoral;
-    color: magenta;
-  }
-    #file-input {
       width: 0.01px;
       height: 0.01px;
       opacity: 0;
@@ -41,4 +35,6 @@
       position: absolute;
       z-index: -1;
     }
+  }
+
 }
