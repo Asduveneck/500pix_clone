@@ -12,6 +12,7 @@ class photoCreate extends React.Component {
       photoFile: null, // 
       photoUrl: null,
       // photos: []
+      photoErrors: [],
     };
   }
 
@@ -24,15 +25,34 @@ class photoCreate extends React.Component {
   handleFile(e) {
     const fileReader = new FileReader(); // file Reader for preview
     const file = e.currentTarget.files[0] // Moved out of setState to later 
-    // check file extension and size here next
-      // console.log(file.type);
-      // console.log(file.size);
-    this.setState({title: file.name})
-    fileReader.onloadend = () => {
-      this.setState({ photoFile: file, photoUrl: fileReader.result });
-    };
-    if (file) {
-      fileReader.readAsDataURL(file);
+    // TODO: check file extension and size here next
+
+    const photoErrors = [];
+    let bugFree = true;
+
+    // Error handling
+    if (!file.type.includes("image/jpeg")) { // if there is a file of the right format
+      photoErrors.push("Error: Images must be in JPEG format")
+      bugFree = false;
+    }
+    if (file.size > 25 * Math.pow(10, 6) ) { // 25 MP constraint.
+      photoErrors.push("Error: Images cannot exceed 25 Mb")
+      bugFree = false;
+    }
+
+    this.setState({photoErrors}); 
+
+    // If no bugs
+    if (bugFree) {
+      // default title will be the file name
+      this.setState({ title: file.name.split('.').slice(0, -1).join('.')})
+      fileReader.onloadend = () => {
+        this.setState({ photoFile: file, photoUrl: fileReader.result });
+      };
+  
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
   };
 
@@ -69,7 +89,19 @@ class photoCreate extends React.Component {
 
   render() {
     // Return a photo if present:
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : null;
+
+    const imageReq =  <div className="imageReq">
+      <h3>Image Requirements</h3>
+      <h5>JPEG only</h5>
+      <h5>Max. photo size is 25 Mb</h5>
+      <ul className="fnt_err">
+        {this.state.photoErrors.map( (fErr, idx) => (
+          <li key={`fnt_err ${idx}`}>{fErr}</li>
+        ))}
+      </ul>
+    </div>
+
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : imageReq;
 
   return(
     <div className="photoCreate_Page">
