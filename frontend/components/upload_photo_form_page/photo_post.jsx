@@ -73,9 +73,9 @@ class photoCreate extends React.Component {
 
   return(
     <div className="photoCreate_Page">
-      <div className="photoCreate_Nav">
+      <h2>
         Upload photo
-      </div>
+      </h2>
 
       <div className="photoCreate_content">
         <div className="pcc_Lt">

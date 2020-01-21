@@ -1,6 +1,13 @@
 .photoCreate_Page {
-  margin-top: 128px; // temporary
+  margin-top: 64px; // temporary
   // background-color: $background_grey;
+
+  h2 {
+    margin-left: 64px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 700;
+  }
 }
 
 .photoCreate_content {
