@@ -92,8 +92,8 @@ class photoCreate extends React.Component {
 
     const imageReq =  <div className="imageReq">
       <h3>Image Requirements</h3>
-      <h5>JPEG only</h5>
-      <h5>Max. photo size is 25 Mb</h5>
+      <li className="im_ind_req">JPEG only</li>
+      <li className="im_ind_req">Max. photo size is 25 Mb</li>
       <ul className="fnt_err">
         {this.state.photoErrors.map( (fErr, idx) => (
           <li key={`fnt_err ${idx}`}>{fErr}</li>

@@ -22,19 +22,42 @@
 
     .imageReq {
       background-color: $background_white;
+      width: 400px;
+      height: 250px;
     }
-    h3 {
-
-    }
-
-    h5, ul { margin: 8px 0}
 
     li {
       list-style: none;
-      margin: 5px 0;
-      color: red;
-      margin-left: 8px;
+      font-size: 12px;
+      margin: 4px 0;
     }
+
+    h3 {
+      padding: 16px 0;
+      margin-left: 16px;
+      // text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 1px 0 black;
+      letter-spacing:1.5px;
+    }
+
+    .im_ind_req {
+      margin-left: 24px;
+    }
+    ul { margin: 8px 0}
+
+    .fnt_err {
+      color: red;
+      margin-left: 48px;
+      margin-top: 16px;
+      li {
+        margin: 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+
   }
 
   .fColCen { // flex column center
