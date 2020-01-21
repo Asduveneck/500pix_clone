@@ -24,20 +24,27 @@ class IndexIndvPhoto extends React.Component{
     }
 
 // onClick={() => openModal('login')}>Login</button> // cannot be passed through yet...
-    return (
-      <div className="indvPhoto" style={nonHover}>
-        <div className="i_p_gradient">
-          <div className="top">
-            {/* <h1>Placeholder Top</h1> */}
+    if (this.props.editMode) {
+      return(
+      <div className="indvPhoto" style={nonHover} >
+
+      </div>)
+    } else {
+      return (
+        <div className="indvPhoto" style={nonHover}>
+          <div className="i_p_gradient">
+            <div className="top">
+              {/* <h1>Placeholder Top</h1> */}
+            </div>
+            <div className="bottom">
+              <h4>{title}</h4>
+            </div>
           </div>
-          <div className="bottom">
-            <h4>{title}</h4> 
-          </div>
+          {/* <img src={url} alt={title}/> */}
         </div>
-        {/* <img src={url} alt={title}/> */}
-      </div>
-    )
-  }
+      )
+    }
+    }
 };
 
 export default IndexIndvPhoto

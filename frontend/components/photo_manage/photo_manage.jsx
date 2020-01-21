@@ -6,7 +6,13 @@ class photoManage extends React.Component {
     super(props);
     // this.handleFile = this.handleFile.bind(this)
     this.state = { // we have our photos list here!
+      photos: [],
+      chosenPhoto: {},
+      chosenPhotoIdx: "",
+      title: "",
+      description: "",
     };
+    this.displayPhotos = this.displayPhotos.bind(this);
   }
 
   componentDidMount() {
@@ -36,11 +42,6 @@ class photoManage extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     // Following works with our AJAX call if we say `photo` instead of `{photo}`
-    if (this.state.title !== "") {
-      formData.append('photo[title]', this.state.title);
-    } else {
-      formData.append('photo[title]', this.state.backupTitle);
-    }
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
@@ -53,27 +54,32 @@ class photoManage extends React.Component {
     // add an image redirect here
   }
 
-
+  displayPhotos() {
+    if (this.state.photos) {
+      return this.state.photos.map((photo, idx) => {
+        return (
+          <div key={`photo_${idx}`} onClick={() => this.setState({
+            chosenPhoto: photo, chosenPhotoIdx: idx, title: photo.title,
+            description: photo.description})}
+            >
+            <IndvPhoto
+              editMode={true}
+              photo={photo}
+              url={photo.fileUrl}
+              idx={idx}
+              height="125px"
+            />
+          </div>
+        )
+      }
+      )
+    } else {
+      return [];  // return an empty array...
+    }
+  }
 
   render() {
     if (!this.state.photos) return null;
-    const displayPhotos = () => {
-      if (this.state.photos) {
-        return this.state.photos.map((photo, idx) => {
-          return (
-              <IndvPhoto
-                title={photo.title}
-                url={photo.fileUrl}
-                key={`photo_${idx}`}
-                height="125px"
-              />
-          )
-        }
-        )
-      } else {
-        return [];  // return an empty array...
-      }
-    }
 
     return (
       <div className="photoCreate_Page">
@@ -84,7 +90,7 @@ class photoManage extends React.Component {
         <div className="photoCreate_content">
           <div className="photo_manage_gallery">
             <div className="user_photos index_page_page">
-              {displayPhotos()}
+              {this.displayPhotos()}
             </div>
 
           </div>
