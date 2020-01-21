@@ -130,7 +130,8 @@ class photoCreate extends React.Component {
                 <label htmlFor="photo title">Title:</label>
                   <textarea name="photo title" value={this.state.title} 
                     onChange={this.update('title')} 
-                    placeholder="e.g. Sunset in Blue"  
+                    placeholder="e.g. Sunset in Blue"
+                    className="title"
                   />
               </div>
               <div className="input fColCen">
