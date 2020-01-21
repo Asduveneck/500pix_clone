@@ -13,9 +13,16 @@ class IndexIndvPhoto extends React.Component{
     let nonHover = {
       backgroundImage: `url(${url})`,
       backgroundSize: 'cover',
-      height: '250px',
+      // height: '250px',
       width: 'auto',
     }
+
+    if (this.props.height) { // if we pass in a height prop
+      nonHover.height = this.props.height;
+    } else {
+      nonHover.height= "250px";
+    }
+
 // onClick={() => openModal('login')}>Login</button> // cannot be passed through yet...
     return (
       <div className="indvPhoto" style={nonHover}>

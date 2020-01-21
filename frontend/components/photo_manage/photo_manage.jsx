@@ -65,6 +65,7 @@ class photoManage extends React.Component {
                 title={photo.title}
                 url={photo.fileUrl}
                 key={`photo_${idx}`}
+                height="125px"
               />
           )
         }
