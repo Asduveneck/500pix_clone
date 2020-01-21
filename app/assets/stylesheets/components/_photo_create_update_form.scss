@@ -124,3 +124,18 @@
     }
   }
 }
+// update form part
+.photo_manage_gallery {
+  width: calc(100vw - 528px - 12px;);
+  min-width: 250px;
+  .index_page_page {
+    width: 100%;
+      border: 1px;
+      margin: 12px;
+  
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+  }
+
+} 

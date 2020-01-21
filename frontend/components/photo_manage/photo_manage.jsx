@@ -81,7 +81,7 @@ class photoManage extends React.Component {
       </h2>
 
         <div className="photoCreate_content">
-          <div className="pcc_Lt">
+          <div className="photo_manage_gallery">
             <div className="user_photos index_page_page">
               {displayPhotos()}
             </div>
