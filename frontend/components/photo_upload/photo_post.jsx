@@ -63,7 +63,7 @@ class photoCreate extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     // Following works with our AJAX call if we say `photo` instead of `{photo}`
-    if (title !== "") {
+    if (this.state.title !== "" ) {
       formData.append('photo[title]', this.state.title);
     } else {
       formData.append('photo[title]', this.state.backupTitle);
@@ -77,6 +77,7 @@ class photoCreate extends React.Component {
     // }
 
     this.props.createPhoto(formData); // does the ajax call request
+    // add an image redirect here
   }
 
 
