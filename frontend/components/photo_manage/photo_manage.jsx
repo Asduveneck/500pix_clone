@@ -5,53 +5,29 @@ class photoManage extends React.Component {
   constructor(props) { // only valid in react class... 
     super(props);
     // this.handleFile = this.handleFile.bind(this)
-    this.state = {
-      title: "",
-      description: "",
-      photoFile: null, // 
-      photoUrl: null,
-      // photos: []
-      photoErrors: [],
-      backupTitle: "",
+    this.state = { // we have our photos list here!
     };
   }
 
-  // Use principles from: https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
-  // once you get a basic version going.
+  componentDidMount() {
+    this.props.fetchUser(this.props.match.params.userId) // Fetches all user photos
+      .then(res => {
+        let user = res.user;
+        let photoIds = user.photos;
 
-  handleFile(e) {
-    const fileReader = new FileReader(); // file Reader for preview
-    const file = e.currentTarget.files[0] // Moved out of setState to later 
-
-    const photoErrors = [];
-    let bugFree = true;
-
-    // Error handling
-    if (!file.type.includes("image/jpeg")) { // if there is a file of the right format
-      photoErrors.push("Error: Images must be in JPEG format")
-      bugFree = false;
-    }
-    if (file.size > 25 * Math.pow(10, 6)) { // 25 MP constraint.
-      photoErrors.push("Error: Images cannot exceed 25 Mb")
-      bugFree = false;
-    }
-
-    this.setState({ photoErrors });
-
-    // If no bugs
-    if (bugFree) {
-      // default title will be the file name
-      let fileName = file.name.split('.').slice(0, -1).join('.')
-      this.setState({ title: fileName, backupTitle: fileName })
-      fileReader.onloadend = () => {
-        this.setState({ photoFile: file, photoUrl: fileReader.result });
-      };
-
-      if (file) {
-        fileReader.readAsDataURL(file);
-      }
-    }
-  };
+        Promise.all(photoIds.map(photoId => {
+          return this.props.fetchPhoto(photoId)
+        })).then(res => {
+          let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
+          for (let i = 0; i < res.length; i++) {
+            userPhotos.push(res[i].photo)
+          }
+          return userPhotos;
+        }).then(res => {
+          this.setState({ photos: res })
+        });
+      });
+  }
 
   update(field) {
     return e => this.setState({
@@ -59,7 +35,7 @@ class photoManage extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e) { // need to modify for updatePhoto
     e.preventDefault();
     const formData = new FormData();
     // Following works with our AJAX call if we say `photo` instead of `{photo}`
@@ -105,7 +81,7 @@ class photoManage extends React.Component {
 
         <div className="photoCreate_content">
           <div className="pcc_Lt">
-            {preview}
+          // TODO: Here is where we will import all our photos
           </div>
           <div className="pcc_Rt fColCen">
             <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
