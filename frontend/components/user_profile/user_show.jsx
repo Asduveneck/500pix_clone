@@ -12,11 +12,11 @@ class userShow extends React.Component {
   componentDidMount() { 
     // Change the URL, we update the user component, but we don't remount.
     // upon update, do something. So I should be looking into update 
-    console.log("Component did mount")
+    // console.log("Component did mount")
     // console.log(this.props.match.params.user_name);
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
       .then(res => { // missing one photo each time.
-        console.log("In component did mount fetched User success callback")
+        // console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
         // let userPhotos = [];
