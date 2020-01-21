@@ -1,6 +1,5 @@
 .photoCreate_Page {
-  margin-top: 32px; // temporary
-  // background-color: $background_grey;
+  margin-top: 32px;
 
   h2 {
     margin-left: 64px;
@@ -9,7 +8,6 @@
     font-weight: 700;
   }
 }
-
 .photoCreate_content {
   display: flex;
   background-color: $background_grey;
@@ -25,13 +23,11 @@
       width: 400px;
       height: 250px;
     }
-
     li {
       list-style: none;
       font-size: 12px;
       margin: 4px 0;
     }
-
     h3 {
       padding: 16px 0;
       margin-left: 16px;
@@ -41,12 +37,8 @@
       text-shadow: 1px 0 black;
       letter-spacing:1.5px;
     }
-
-    .im_ind_req {
-      margin-left: 24px;
-    }
+    .im_ind_req { margin-left: 24px}
     ul { margin: 8px 0}
-
     .fnt_err {
       color: red;
       margin-left: 24px;
@@ -57,30 +49,24 @@
         font-weight: bold;
       }
     }
-
   }
 
   .fColCen { // flex column center
     display: flex;
     flex-direction: column;
-    // justify-content: center;
   }
 
   .pcc_Rt {
     margin: 24px 0;
     margin-left: 16px;
     background-color: $background_white;
-
     width: 400px;
-    // background-color: maroon;
   }
   .photo_form {
-
   // styles label to look like a button
     .file-input.blueButton {
       width: 100px;
     }
-    
     .blueButton{
       align-self: center;
       text-align: center;
@@ -94,9 +80,7 @@
       padding: 8px 32px;
       cursor: pointer;
     }
-
-    // hides standard file upload button
-    .fileInput {
+    .fileInput { // hides standard file upload button
       width: 0.01px;
       height: 0.01px;
       opacity: 0;
@@ -104,7 +88,6 @@
       position: absolute;
       z-index: -1;
     }
-
     // styling the bottom part of other inputs
     .form_inputs {
       width: 375px;
@@ -113,7 +96,6 @@
       .input, button {
         margin: 16px 0;
       }
-
       .input {
         label {
           font-size: 16px;
@@ -132,7 +114,6 @@
           padding: 16px;
           overflow-wrap: break-word;
         }
-
         textarea:focus{
           border-color: $blue;
         }

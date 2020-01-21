@@ -8,7 +8,6 @@ class photoCreate extends React.Component {
     this.state = {
       title: "",
       description: "",
-      // You update all this other information in a redirect.
       photoFile: null, // 
       photoUrl: null,
       // photos: []
@@ -17,16 +16,12 @@ class photoCreate extends React.Component {
     };
   }
 
-
-
-
   // Use principles from: https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
   // once you get a basic version going.
 
   handleFile(e) {
     const fileReader = new FileReader(); // file Reader for preview
     const file = e.currentTarget.files[0] // Moved out of setState to later 
-    // TODO: check file extension and size here next
 
     const photoErrors = [];
     let bugFree = true;
@@ -58,10 +53,6 @@ class photoCreate extends React.Component {
     }
   };
 
-  // handleInput(e) { // some other page will do the actual sending. We may have our handleSubmit be a way to thread in props!
-  //   this.setState({title: e.currentTarget.value})
-  // } // bbeing done as update as in our session_form.jsx 
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -80,13 +71,10 @@ class photoCreate extends React.Component {
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
-    // formData.append('photo[photo]', "testing");
-    // OKAY here:
+
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
-
-    // debugger; // Keys are properly nested. Fails in server end because it can't find photo...?
 
     this.props.createPhoto(formData); // does the ajax call request
   }
@@ -94,7 +82,6 @@ class photoCreate extends React.Component {
 
 
   render() {
-    // Return a photo if present:
 
     const imageReq =  <div className="imageReq">
       <h3>Image Requirements</h3>
