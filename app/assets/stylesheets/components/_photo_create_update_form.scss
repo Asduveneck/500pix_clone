@@ -1,5 +1,5 @@
 .photoCreate_Page {
-  margin-top: 64px; // temporary
+  margin-top: 32px; // temporary
   // background-color: $background_grey;
 
   h2 {
@@ -15,6 +15,7 @@
   background-color: $background_grey;
   justify-content: space-between;
   padding: 0 64px;
+  height: calc(100vh - 132px);
 
   .pcc_Lt {
     margin: 24px 0;
@@ -23,11 +24,12 @@
   .fColCen { // flex column center
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
   }
 
   .pcc_Rt {
     margin: 24px 0;
+    margin-left: 16px;
     background-color: $background_white;
 
     width: 400px;

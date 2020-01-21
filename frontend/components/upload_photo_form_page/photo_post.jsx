@@ -69,7 +69,7 @@ class photoCreate extends React.Component {
 
   render() {
     // Return a photo if present:
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "400px"}} /> : null;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : null;
 
   return(
     <div className="photoCreate_Page">
