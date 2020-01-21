@@ -137,5 +137,17 @@
       grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
       gap: 15px;
   }
+  .edtPhoto {
+    cursor: pointer;
+  }
+
+  .chPhoto {
+    cursor: auto;
+    border: solid $background_white 1.5px;
+    padding: 0px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px $blue;
+  }
+
 
 } 
