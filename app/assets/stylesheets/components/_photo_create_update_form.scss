@@ -57,13 +57,18 @@
     .form_inputs {
       width: 375px;
       margin: 0 auto;
-      .input {
 
+      .input, button {
+        margin: 16px 0;
+      }
+
+      .input {
         label {
           font-size: 14px;
           line-height: 1.5;
         }
         textarea {
+          height: 56px;
           resize: vertical;
         }
       }
