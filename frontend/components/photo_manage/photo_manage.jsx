@@ -1,5 +1,5 @@
 import React from 'react';
-
+import IndvPhoto from '../index_page/index_indv_photo';
 class photoManage extends React.Component {
 
   constructor(props) { // only valid in react class... 
@@ -10,8 +10,6 @@ class photoManage extends React.Component {
   }
 
   componentDidMount() {
-    // console.log(this.props);
-    // debugger;
     let photoIds = this.props.currentUser.photos;
 
     Promise.all(photoIds.map(photoId => {
@@ -25,7 +23,6 @@ class photoManage extends React.Component {
     }).then(res => {
       this.setState({ photos: res })
     });
-
   }
 
   update(field) {
@@ -33,6 +30,7 @@ class photoManage extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+
 
   handleSubmit(e) { // need to modify for updatePhoto
     e.preventDefault();
@@ -58,16 +56,36 @@ class photoManage extends React.Component {
 
 
   render() {
+    if (!this.state.photos) return null;
+    const displayPhotos = () => {
+      if (this.state.photos) {
+        return this.state.photos.map((photo, idx) => {
+          return (
+              <IndvPhoto
+                title={photo.title}
+                url={photo.fileUrl}
+                key={`photo_${idx}`}
+              />
+          )
+        }
+        )
+      } else {
+        return [];  // return an empty array...
+      }
+    }
 
     return (
       <div className="photoCreate_Page">
         <h2>
-          Upload photo
+          Manage {this.state.photos.length} Photos
       </h2>
 
         <div className="photoCreate_content">
           <div className="pcc_Lt">
-          // TODO: Here is where we will import all our photos
+            <div className="user_photos index_page_page">
+              {displayPhotos()}
+            </div>
+
           </div>
           <div className="pcc_Rt fColCen">
             <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
