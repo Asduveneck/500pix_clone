@@ -13,6 +13,7 @@ class photoCreate extends React.Component {
       photoUrl: null,
       // photos: []
       photoErrors: [],
+      backupTitle: "",
     };
   }
 
@@ -27,7 +28,7 @@ class photoCreate extends React.Component {
     const file = e.currentTarget.files[0] // Moved out of setState to later 
     // TODO: check file extension and size here next
 
-    const photoErrors = [];
+    const photoErrors = ["placeholder error 1"];
     let bugFree = true;
 
     // Error handling
@@ -45,7 +46,8 @@ class photoCreate extends React.Component {
     // If no bugs
     if (bugFree) {
       // default title will be the file name
-      this.setState({ title: file.name.split('.').slice(0, -1).join('.')})
+      let fileName = file.name.split('.').slice(0, -1).join('.')
+      this.setState({ title: fileName, backupTitle: fileName })
       fileReader.onloadend = () => {
         this.setState({ photoFile: file, photoUrl: fileReader.result });
       };
@@ -70,7 +72,11 @@ class photoCreate extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     // Following works with our AJAX call if we say `photo` instead of `{photo}`
-    formData.append('photo[title]', this.state.title);
+    if (title !== "") {
+      formData.append('photo[title]', this.state.title);
+    } else {
+      formData.append('photo[title]', this.state.backupTitle);
+    }
     formData.append('photo[description]', this.state.description);
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
