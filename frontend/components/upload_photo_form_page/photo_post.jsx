@@ -28,7 +28,7 @@ class photoCreate extends React.Component {
     const file = e.currentTarget.files[0] // Moved out of setState to later 
     // TODO: check file extension and size here next
 
-    const photoErrors = ["placeholder error 1"];
+    const photoErrors = [];
     let bugFree = true;
 
     // Error handling
