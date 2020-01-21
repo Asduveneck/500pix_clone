@@ -83,7 +83,7 @@ class photoCreate extends React.Component {
         </div>
         <div className="pcc_Rt fColCen">
           <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
-            <label htmlFor="file-input" className="pcc_message file-input-button">Select Photo</label>
+            <label htmlFor="file-input" className="pcc_message file-input blueButton">Select Photo</label>
             <input type="file" id="file-input" className="fileInput" 
               name = "file" onChange={this.handleFile.bind(this)} />
 
@@ -100,7 +100,7 @@ class photoCreate extends React.Component {
                     onChange={this.update('description')} />
               </div>
               {/* <span>Or drag and drop photos anywhere on this page</span> */}
-              <button>Upload Photo</button>
+              <button className="blueButton">Upload Photo</button>
             </div>
           </form>
         </div>
