@@ -68,6 +68,7 @@ class photoManage extends React.Component {
               url={photo.fileUrl}
               idx={idx}
               height="125px"
+              chosen={this.state.chosenPhotoIdx===idx}
             />
           </div>
         )

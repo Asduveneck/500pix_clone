@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom'; // Eventually make clicking on each pho
 class IndexIndvPhoto extends React.Component{
 
   render() {
-    let title = this.props.title;
-    let url = this.props.url;
+    let {title, url, height, editMode, chosen} = this.props;
+    // let title = this.props.title;
+    // let url = this.props.url;
 
     let nonHover = {
       backgroundImage: `url(${url})`,
@@ -17,19 +18,23 @@ class IndexIndvPhoto extends React.Component{
       width: 'auto',
     }
 
-    if (this.props.height) { // if we pass in a height prop
-      nonHover.height = this.props.height;
+    if (height) { // if we pass in a height prop
+      nonHover.height = height;
     } else {
       nonHover.height= "250px";
     }
 
 // onClick={() => openModal('login')}>Login</button> // cannot be passed through yet...
-    if (this.props.editMode) {
-      return(
-      <div className="indvPhoto" style={nonHover} >
+    if (editMode) { // manage photo page
+      // check if idx here is same as chosenPhoto...
+      if (chosen) {
+        return <div className="indvPhoto edtPhoto chPhoto" style={nonHover} > </div>
+      } else {
+        return <div className="indvPhoto edtPhoto" style={nonHover} > </div>
+      }
 
-      </div>)
-    } else {
+
+    } else { // index or user page
       return (
         <div className="indvPhoto" style={nonHover}>
           <div className="i_p_gradient">
