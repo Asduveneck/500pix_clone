@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import photoMange from './photo_manage';
+import photoManage from './photo_manage';
 import { fetchPhoto, updatePhoto, deletePhoto } from '../../actions/photo_actions';
 
 
