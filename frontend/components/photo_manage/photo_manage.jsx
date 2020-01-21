@@ -10,23 +10,22 @@ class photoManage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId) // Fetches all user photos
-      .then(res => {
-        let user = res.user;
-        let photoIds = user.photos;
+    // console.log(this.props);
+    // debugger;
+    let photoIds = this.props.currentUser.photos;
 
-        Promise.all(photoIds.map(photoId => {
-          return this.props.fetchPhoto(photoId)
-        })).then(res => {
-          let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
-          for (let i = 0; i < res.length; i++) {
-            userPhotos.push(res[i].photo)
-          }
-          return userPhotos;
-        }).then(res => {
-          this.setState({ photos: res })
-        });
-      });
+    Promise.all(photoIds.map(photoId => {
+      return this.props.fetchPhoto(photoId)
+    })).then(res => {
+      let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
+      for (let i = 0; i < res.length; i++) {
+        userPhotos.push(res[i].photo)
+      }
+      return userPhotos;
+    }).then(res => {
+      this.setState({ photos: res })
+    });
+
   }
 
   update(field) {
@@ -60,19 +59,6 @@ class photoManage extends React.Component {
 
   render() {
 
-    const imageReq = <div className="imageReq">
-      <h3>Image Requirements</h3>
-      <li className="im_ind_req">JPEG only</li>
-      <li className="im_ind_req">Max. photo size is 25 Mb</li>
-      <ul className="fnt_err">
-        {this.state.photoErrors.map((fErr, idx) => (
-          <li key={`fnt_err ${idx}`}>{fErr}</li>
-        ))}
-      </ul>
-    </div>
-
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{ height: "300px" }} /> : imageReq;
-
     return (
       <div className="photoCreate_Page">
         <h2>
@@ -85,9 +71,9 @@ class photoManage extends React.Component {
           </div>
           <div className="pcc_Rt fColCen">
             <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
-              <label htmlFor="file-input" className="pcc_message file-input blueButton">Select Photo</label>
-              <input type="file" id="file-input" className="fileInput"
-                name="file" onChange={this.handleFile.bind(this)} />
+              {/* <label htmlFor="file-input" className="pcc_message file-input blueButton">Select Photo</label> */}
+              {/* <input type="file" id="file-input" className="fileInput"
+                name="file" onChange={this.handleFile.bind(this)} /> */}
 
               <div className="form_inputs fColCen">
                 <div className="input fColCen">
@@ -106,7 +92,9 @@ class photoManage extends React.Component {
                     placeholder="e.g. A sunset taken at a port in Kaosiung, Taiwan."
                   />
                 </div>
+
                 {/* <span>Or drag and drop photos anywhere on this page</span> */}
+
                 <button className="blueButton">Upload Photo</button>
               </div>
             </form>

@@ -2,9 +2,8 @@ import { connect } from 'react-redux';
 import photoManage from './photo_manage';
 import { fetchPhoto, updatePhoto, deletePhoto } from '../../actions/photo_actions';
 
-
 const mSTP = ({ session, entities: { currentUser } }) => ({
-  currentUserID: currentUser[session.id].id
+  currentUser: currentUser[session.id]
 });
 
 const mDTP = dispatch => ({
