@@ -91,13 +91,17 @@ class photoCreate extends React.Component {
               <div className="input fColCen">
                 <label htmlFor="photo title">Title:</label>
                   <textarea name="photo title" value={this.state.title} 
-                    onChange={this.update('title')} />
+                    onChange={this.update('title')} 
+                    placeholder="e.g. Sunset in Blue"  
+                  />
               </div>
               <div className="input fColCen">
                 <label htmlFor="photo description">Description:</label>
                   <textarea name="description" name="photo description" 
                     value={this.state.description} 
-                    onChange={this.update('description')} />
+                    onChange={this.update('description')} 
+                    placeholder="e.g. A sunset taken at a port in Kaosiung, Taiwan."
+                    />
               </div>
               {/* <span>Or drag and drop photos anywhere on this page</span> */}
               <button className="blueButton">Upload Photo</button>
