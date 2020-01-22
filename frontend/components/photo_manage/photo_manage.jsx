@@ -21,6 +21,7 @@ class photoManage extends React.Component {
 
   componentDidMount() {
     let photoIds = this.props.currentUser.photos; // BUG: doesn't refresh in time from photo Upload
+    // console.log(photoIds) // BUG: errors out if I include this line. Error in reducer?!?
     // NOTE: look into  getDerivedStateFromProps and componentDidUpdate
     Promise.all(photoIds.map(photoId => {
       return this.props.fetchPhoto(photoId)
@@ -35,12 +36,7 @@ class photoManage extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevProps, prevState) { // TODO: potential fix
-  //   if (prevState.photos !== this.state.photos) {
-  //     // console.log("DO SOMETHING")
-  //     // this.forceUpdate(); // brute force
-
-  //   }
+  // componentDidUpdate(prevProps, prevState) { // TODO: potential fix // does not detect incoming photo..,
   // }
 
   update(field) {
@@ -108,14 +104,13 @@ class photoManage extends React.Component {
 
   deletePhotoPOJO() {
     let deletedPhoto = this.state.chosenPhoto;
-    if (deletedPhoto.id !== undefined) { // If there is no debugger
-      let deletedPhotoId = deletedPhoto.id;
-      this.props.deletePhoto(deletedPhotoId) // do something about chosen photo next
-        .then(() => {
-          this.setState({chosenPhoto: {}, chosenPhotoIdx: ""})
-        }
-        )
-        this.setState({photos: this.state.photos}) // set state to photo to rerender it?
+    if (deletedPhoto.id !== undefined) { // If there is a photo ID
+      this.props.deletePhoto(deletedPhoto.id);
+      // Removing deleted photo from state
+      const delPIdx = this.state.photos.indexOf(deletedPhoto); // NOTE: This lookup can be tremendously slow, but is probably faster than reloading all images upon updating the fetched user...
+      let newPhotos = this.state.photos;
+      newPhotos.splice(delPIdx, 1);
+      this.setState({photos: newPhotos})
     }
   }
 
