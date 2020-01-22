@@ -16,7 +16,7 @@ class photoManage extends React.Component {
     this.showOnUpdate = this.showOnUpdate.bind(this);
     this.updatePhotoPOJO = this.updatePhotoPOJO.bind(this);
     this.cancelPhotoUpdate = this.cancelPhotoUpdate.bind(this);
-
+    this.deletePhotoPOJO = this.deletePhotoPOJO.bind(this);
   }
 
   componentDidMount() {
@@ -98,6 +98,18 @@ class photoManage extends React.Component {
     })
   }
 
+  deletePhotoPOJO() {
+    let deletedPhoto = this.state.chosenPhoto;
+    let deletedPhotoId = deletedPhoto.id;
+
+    this.props.deletePhoto(deletedPhotoId) // do something about chosen photo next
+      .then(() => {
+        
+        this.setState({chosenPhoto: {}, chosenPhotoIdx: ""}) // and something else
+      }
+      )
+  }
+
   showOnUpdate() {
     if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
       let {chosenPhoto, title, description} = this.state;
@@ -159,7 +171,7 @@ class photoManage extends React.Component {
 
                 {/* <button className="blueButton" type="button" onClick={() => console.log("do nothing")}>Upload Photo</button> */}
                 
-                <button type="button" onClick={() => console.log("delete photo")} className="delete">Delete photo</button>
+                <button type="button" onClick={() => this.deletePhotoPOJO() } className="delete">Delete photo</button>
                 {this.showOnUpdate()}
               </div>
             </form>
