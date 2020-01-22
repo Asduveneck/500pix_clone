@@ -21,7 +21,7 @@ class photoManage extends React.Component {
 
   componentDidMount() {
     let photoIds = this.props.currentUser.photos; // BUG: doesn't refresh in time from photo Upload
-
+    // NOTE: look into  getDerivedStateFromProps and componentDidUpdate
     Promise.all(photoIds.map(photoId => {
       return this.props.fetchPhoto(photoId)
     })).then(res => {
@@ -34,6 +34,14 @@ class photoManage extends React.Component {
       this.setState({ photos: res })
     });
   }
+
+  // componentDidUpdate(prevProps, prevState) { // TODO: potential fix
+  //   if (prevState.photos !== this.state.photos) {
+  //     // console.log("DO SOMETHING")
+  //     // this.forceUpdate(); // brute force
+
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -100,14 +108,15 @@ class photoManage extends React.Component {
 
   deletePhotoPOJO() {
     let deletedPhoto = this.state.chosenPhoto;
-    let deletedPhotoId = deletedPhoto.id;
-
-    this.props.deletePhoto(deletedPhotoId) // do something about chosen photo next
-      .then(() => {
-        
-        this.setState({chosenPhoto: {}, chosenPhotoIdx: ""}) // and something else
-      }
-      )
+    if (deletedPhoto.id !== undefined) { // If there is no debugger
+      let deletedPhotoId = deletedPhoto.id;
+      this.props.deletePhoto(deletedPhotoId) // do something about chosen photo next
+        .then(() => {
+          this.setState({chosenPhoto: {}, chosenPhotoIdx: ""})
+        }
+        )
+        this.setState({photos: this.state.photos}) // set state to photo to rerender it?
+    }
   }
 
   showOnUpdate() {

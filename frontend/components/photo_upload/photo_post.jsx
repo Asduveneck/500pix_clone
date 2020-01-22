@@ -75,9 +75,12 @@ class photoCreate extends React.Component {
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
-
-    this.props.createPhoto(formData) // does the ajax call request
-      .then( () => this.props.history.push("/manage_photos") );
+    if (this.state.photoFile) {
+      this.props.createPhoto(formData) // does the ajax call request
+        .then( () => this.props.history.push("/manage_photos") );
+    } else {
+      this.setState({photoErrors: ["Please attach a valid image"]});
+    }
   }
 
 
