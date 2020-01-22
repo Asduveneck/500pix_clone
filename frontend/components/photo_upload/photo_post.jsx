@@ -127,7 +127,7 @@ class photoCreate extends React.Component {
                   <textarea name="description" name="photo description" 
                     value={this.state.description} 
                     onChange={this.update('description')} 
-                    placeholder="e.g. A sunset taken at a port in Kaosiung, Taiwan."
+                    placeholder="e.g. A sunset taken at a port in Kaohsiung, Taiwan."
                     />
               </div>
               {/* <span>Or drag and drop photos anywhere on this page</span> */}
