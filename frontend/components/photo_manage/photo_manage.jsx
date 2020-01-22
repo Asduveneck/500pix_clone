@@ -84,7 +84,11 @@ class photoManage extends React.Component {
     let updatedPhoto = this.state.chosenPhoto;
     updatedPhoto.title = this.state.title;
     updatedPhoto.description = this.state.description;
-    this.props.updatePhoto(updatedPhoto);  // NOTE: we should do something after this like a redirect or a popup in this case
+    this.props.updatePhoto(updatedPhoto)
+      .then(() => this.setState({
+        chosenPhoto: {},
+        chosenPhotoIdx: ""
+      }))
   }
 
   cancelPhotoUpdate() {
