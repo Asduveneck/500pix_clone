@@ -76,8 +76,8 @@ class photoCreate extends React.Component {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
 
-    this.props.createPhoto(formData); // does the ajax call request
-    // add an image redirect here
+    this.props.createPhoto(formData) // does the ajax call request
+      .then( () => this.props.history.push("/manage_photos") );
   }
 
 
