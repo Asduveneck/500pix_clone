@@ -21,11 +21,21 @@ const NavBar = ({ currentUser, logout}) => {
     }
   }
 
+  $(window).scroll(function () { // shadow effect on scroll
+    let scroll = $(window).scrollTop();
+    if (scroll > 0) {
+      $("#nav_bar_outer").addClass("navScroll");
+    } else {
+      $("#nav_bar_outer").removeClass("navScroll");
+    }
+  })	
+
+
   // Left and Right sides of nav bar
   const leftSide = () => {
     let logoLink = <Link to="/">1000px</Link>
     if(currentUser) {
-      logoLink = <Link to="/index" >1000px</Link>
+      logoLink = <Link to="/index" className="logged_in_logo">1000px</Link>
     }
     return(
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}

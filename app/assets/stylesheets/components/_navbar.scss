@@ -3,6 +3,7 @@
   width: calc(100% - 32px);
   padding: 16px 64px;
   background-color: $background_white;
+  z-index: 1;
   // background-color: lightcoral;
   display: flex;
   flex-direction: row;
@@ -35,6 +36,9 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   }
   a:hover {
     color: $blue;
+  }
+  .logged_in_logo { // to match upload form spacing.
+    margin-left: -16px;
   }
 }
 // Right Side
@@ -165,7 +169,5 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
     color: white;
     cursor: pointer;
   }
-
-
 
 }
