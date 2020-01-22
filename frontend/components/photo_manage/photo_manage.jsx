@@ -17,6 +17,7 @@ class photoManage extends React.Component {
     this.updatePhotoPOJO = this.updatePhotoPOJO.bind(this);
     this.cancelPhotoUpdate = this.cancelPhotoUpdate.bind(this);
     this.deletePhotoPOJO = this.deletePhotoPOJO.bind(this);
+    this.clearChosenPhoto = this.clearChosenPhoto.bind(this); 
   }
 
   componentDidMount() {
@@ -89,10 +90,11 @@ class photoManage extends React.Component {
     updatedPhoto.title = this.state.title;
     updatedPhoto.description = this.state.description;
     this.props.updatePhoto(updatedPhoto)
-      .then(() => this.setState({
-        chosenPhoto: {},
-        chosenPhotoIdx: ""
-      }))
+      .then(() => this.clearChosenPhoto())
+  }
+
+  clearChosenPhoto() { // TODO: future: add this to surrounding the photos and make it work onClick.
+    this.setState({chosenPhoto: {}, chosenPhotoIdx: ""})
   }
 
   cancelPhotoUpdate() {
@@ -140,7 +142,7 @@ class photoManage extends React.Component {
       </h2>
 
         <div className="photoCreate_content">
-          <div className="pcc_Lt photo_manage_gallery">
+          <div className="pcc_Lt photo_manage_gallery" >
             <h3>{this.state.photos.length} photos</h3>
             <div className="user_photos index_page_page">
               {this.displayPhotos()}
