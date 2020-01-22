@@ -15,6 +15,7 @@ class photoManage extends React.Component {
     this.displayPhotos = this.displayPhotos.bind(this);
     this.showOnUpdate = this.showOnUpdate.bind(this);
     this.updatePhotoPOJO = this.updatePhotoPOJO.bind(this);
+    this.cancelPhotoUpdate = this.cancelPhotoUpdate.bind(this);
 
   }
 
@@ -41,7 +42,7 @@ class photoManage extends React.Component {
   }
 
 
-  handleSubmit(e) { // need to modify for updatePhoto
+  handleSubmit(e) { // NOT USED
     e.preventDefault();
     const formData = new FormData();
     // Following works with our AJAX call if we say `photo` instead of `{photo}`
@@ -52,9 +53,6 @@ class photoManage extends React.Component {
     // for (var pair of formData.entries()) {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
-
-    // this.props.createPhoto(formData); // does the ajax call request
-    // add an image redirect here
   }
 
   displayPhotos() {
@@ -89,6 +87,13 @@ class photoManage extends React.Component {
     this.props.updatePhoto(updatedPhoto);  // NOTE: we should do something after this like a redirect or a popup in this case
   }
 
+  cancelPhotoUpdate() {
+    this.setState({
+      title: this.state.chosenPhoto.title,
+      description: this.state.chosenPhoto.description
+    })
+  }
+
   showOnUpdate() {
     if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
       let {chosenPhoto, title, description} = this.state;
@@ -96,7 +101,7 @@ class photoManage extends React.Component {
       if (chosenPhoto.title !== title || chosenPhoto.description !== description) {
         return(
           <div className="update_buttons">
-            <span className="update cancel" type="button" onClick={() => console.log("cancel function")}>Cancel</span>
+            <span className="update cancel" type="button" onClick={() => this.cancelPhotoUpdate()}>Cancel</span>
             <button className="update save" type="button" onClick={() => this.updatePhotoPOJO()}>Save Changes</button>
           </div>
         )
