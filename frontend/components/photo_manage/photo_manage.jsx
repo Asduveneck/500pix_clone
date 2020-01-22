@@ -14,6 +14,8 @@ class photoManage extends React.Component {
     };
     this.displayPhotos = this.displayPhotos.bind(this);
     this.showOnUpdate = this.showOnUpdate.bind(this);
+    this.updatePhotoPOJO = this.updatePhotoPOJO.bind(this);
+
   }
 
   componentDidMount() {
@@ -79,16 +81,23 @@ class photoManage extends React.Component {
     }
   }
 
+  updatePhotoPOJO() { // done to distinguish between actual POJO
+    // updating the photo
+    let updatedPhoto = this.state.chosenPhoto;
+    updatedPhoto.title = this.state.title;
+    updatedPhoto.description = this.state.description;
+    this.props.updatePhoto(updatedPhoto);  // NOTE: we should do something after this like a redirect or a popup in this case
+  }
+
   showOnUpdate() {
     if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
       let {chosenPhoto, title, description} = this.state;
       // if there is a change
       if (chosenPhoto.title !== title || chosenPhoto.description !== description) {
-        // debugger;
         return(
           <div className="update_buttons">
-            <span className="update cancel" type="button" onClick={() => console.log("reset state")}>Cancel</span>
-            <button className="update save" type="button" onClick={() => console.log("update function")}>Save Changes</button>
+            <span className="update cancel" type="button" onClick={() => console.log("cancel function")}>Cancel</span>
+            <button className="update save" type="button" onClick={() => this.updatePhotoPOJO()}>Save Changes</button>
           </div>
         )
       }
