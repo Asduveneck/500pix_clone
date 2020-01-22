@@ -131,8 +131,8 @@ class photoCreate extends React.Component {
                     />
               </div>
               {/* <span>Or drag and drop photos anywhere on this page</span> */}
-              <button className="blueButton">Upload Photo</button>
             </div>
+              <button className="blueButton">Upload Photo</button>
           </form>
         </div>
       </div>
