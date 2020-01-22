@@ -131,7 +131,7 @@ class photoManage extends React.Component {
             </div>
 
           </div>
-          <div className="pcc_Rt fColCen">
+          <div className="pcc_Rt fColCen updateContainer">
             <form className="photo_form fColCen" onSubmit={this.handleSubmit.bind(this)}>
               {/* <label htmlFor="file-input" className="pcc_message file-input blueButton">Select Photo</label> */}
               {/* <input type="file" id="file-input" className="fileInput"
@@ -151,7 +151,7 @@ class photoManage extends React.Component {
                   <textarea name="description" name="photo description"
                     value={this.state.description}
                     onChange={this.update('description')}
-                    placeholder="e.g. A sunset taken at a port in Kaosiung, Taiwan."
+                    placeholder="e.g. A sunset taken at a port in Kaohsiung, Taiwan."
                   />
                 </div>
 
