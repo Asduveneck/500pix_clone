@@ -20,7 +20,7 @@ class photoManage extends React.Component {
   }
 
   componentDidMount() {
-    let photoIds = this.props.currentUser.photos;
+    let photoIds = this.props.currentUser.photos; // BUG: doesn't refresh in time from photo Upload
 
     Promise.all(photoIds.map(photoId => {
       return this.props.fetchPhoto(photoId)
