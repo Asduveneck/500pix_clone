@@ -51,6 +51,7 @@ const NavBar = ({ currentUser, logout}) => {
           <div className="dropdown-container" id="js-dropdown">
             <div className="dropdown-content">
                 <Link to={`/users/${currentUser.id}`} className="dropdown-link">Profile</Link>
+                <Link to="/manage_photos" className="dropdown-link">Manage Photos</Link>
                 <button onClick={logout} className="dropdown-link">Log out</button>
             </div>
           </div>
