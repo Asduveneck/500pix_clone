@@ -13,6 +13,7 @@ class photoManage extends React.Component {
       description: "",
     };
     this.displayPhotos = this.displayPhotos.bind(this);
+    this.showOnUpdate = this.showOnUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -50,7 +51,7 @@ class photoManage extends React.Component {
     //   console.log(pair[0] + ', ' + pair[1]);
     // }
 
-    this.props.createPhoto(formData); // does the ajax call request
+    // this.props.createPhoto(formData); // does the ajax call request
     // add an image redirect here
   }
 
@@ -64,7 +65,6 @@ class photoManage extends React.Component {
             >
             <IndvPhoto
               editMode={true}
-              photo={photo}
               url={photo.fileUrl}
               idx={idx}
               height="125px"
@@ -79,17 +79,35 @@ class photoManage extends React.Component {
     }
   }
 
+  showOnUpdate() {
+    if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
+      let {chosenPhoto, title, description} = this.state;
+      // if there is a change
+      if (chosenPhoto.title !== title || chosenPhoto.description !== description) {
+        // debugger;
+        return(
+          <div className="update_buttons">
+            <span className="update cancel" type="button" onClick={() => console.log("reset state")}>Cancel</span>
+            <button className="update save" type="button" onClick={() => console.log("update function")}>Save Changes</button>
+          </div>
+        )
+      }
+    }
+  }
+
+
   render() {
     if (!this.state.photos) return null;
-
+    // {this.showOnUpdate()}
     return (
       <div className="photoCreate_Page">
         <h2>
-          Manage {this.state.photos.length} Photos
+          Photo Manager
       </h2>
 
         <div className="photoCreate_content">
-          <div className="photo_manage_gallery">
+          <div className="pcc_Lt photo_manage_gallery">
+            <h3>{this.state.photos.length} photos</h3>
             <div className="user_photos index_page_page">
               {this.displayPhotos()}
             </div>
@@ -121,7 +139,10 @@ class photoManage extends React.Component {
 
                 {/* <span>Or drag and drop photos anywhere on this page</span> */}
 
-                <button className="blueButton">Upload Photo</button>
+                {/* <button className="blueButton" type="button" onClick={() => console.log("do nothing")}>Upload Photo</button> */}
+                
+                <button type="button" onClick={() => console.log("delete photo")} className="delete">Delete photo</button>
+                {this.showOnUpdate()}
               </div>
             </form>
           </div>

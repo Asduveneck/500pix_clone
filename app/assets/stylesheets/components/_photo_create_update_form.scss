@@ -61,6 +61,7 @@
     margin-left: 16px;
     background-color: $background_white;
     width: 400px;
+
   }
   .photo_form {
   // styles label to look like a button
@@ -144,10 +145,58 @@
   .chPhoto {
     cursor: auto;
     border: solid $background_white 1.5px;
+    // background-color: $background_white;
+    // border: 2px solid #0870d1;
     padding: 0px;
     box-sizing: border-box;
     box-shadow: 0 0 5px $blue;
   }
 
-
 } 
+
+.delete {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 48px;
+  color: red;
+  background: $background_white;
+  border: 1px solid #d7d8db;
+  box-sizing: border-box;
+  border-radius: 28px;
+  cursor: pointer;
+}
+
+.update_buttons {
+  box-shadow: 0 0 2px rgba(0,0,0,.02), 0 -2px 6px rgba(0,0,0,.08);
+  // justify-self: baseline;
+  // align-self: flex-end;
+  position: absolute;
+  bottom: 24px;
+  width: 400px;
+  margin-left: -12.5px;
+  display: flex;
+  justify-content: space-around;
+  .update {
+    align-self: center;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: none;
+    margin: 16px 0px;
+    cursor: pointer;
+  }
+  .save {
+    width: 150px;
+    background-color: $blue;
+    color: $background_white;
+    padding: 8px 16px;
+  }
+  .cancel {
+    width: 100px;
+    color: $blue;
+  }
+}
