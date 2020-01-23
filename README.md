@@ -58,10 +58,6 @@
 
   In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title or description, or delete the photograph.
 
-### Features
-
-Currently, there is a secure frontend to backend user authentication via BCrypt. Photos can be viewed on a home feed. Hovering over a photo adds a shadow for emphasis and reveals the photos title.
-
 ### Screen Shots
 
 #### Home Page 
