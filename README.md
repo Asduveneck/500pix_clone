@@ -1,9 +1,18 @@
 # [1000px](https://asd-1000pix.herokuapp.com/)
 
+[Live Link](https://asd-1000pix.herokuapp.com/)
 
-1000px is a photography website to showcase your photography. It utilizes a Rails/PostgreSQL backend with React.js and Redux on the frontend. Images are hosted on AWS S3.
+1000px is a pixel-perfect tribute to the photography site, [500px](https://web.500px.com/). Users can post and share images, as well as look at the profiles of other users as well.
 
-The project was designed and implemented within 10 days, and there are many features planned but not yet executed. 
+## Table of Contents
+
+  * Technology Stack
+  * How to Use
+  * Features
+    * Viewing All Photos
+    * Create, Update, Delete Photos
+    * Viewing a user's profile page
+  * Future Features
 
 ### Features
 
