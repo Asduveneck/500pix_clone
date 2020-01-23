@@ -56,7 +56,7 @@
 
 ### Update or Delete photos
 
-
+  In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title or description, or delete the photograph.
 
 ### Features
 
