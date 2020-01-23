@@ -11,7 +11,8 @@
   - [Features](#Features)
     * [Viewing All Photos](#Viewing-All-Photos)
     * [Photo Show Page](#Photo-Show-Page)
-    * [Create, Update, Delete Photos](#Create,-Update,-Delete-Photos)
+    * [Create Photos](#Create-Photos)
+    * [Update or Delete Photos](#Update-or-Delete-Photos)
     * [User Profile Page](#User-Profile-Page)
   - [Future Features](#Future-Features)
 
@@ -33,6 +34,8 @@
 
   Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
 
+  To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
+
 ### Photo Show Page
 
   The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
@@ -41,9 +44,19 @@
 
 ### User Profile Page
 
-  
+  On the user profile page, the user can view all of their photos they've posted. Eventually, the user profile page will let a user have their own profile picture and 'cover' photo.
 
-### Create, Update, Delete Photos
+### Create photos
+
+  Users can create new photos via the `upload button` in the top of the nav bar. 
+
+  I constrain the accepted file format on the frontend before it reaches the server, and render the errors dynamically.
+
+  Upon successfully attaching an image, the user is redirected to the Photo Manager where the user can update or delete photographs.
+
+### Update or Delete photos
+
+
 
 ### Features
 
