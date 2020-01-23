@@ -27,12 +27,23 @@
 
 ## Features
 
-### Frontend to Bakend User Authentication
 ### Viewing All Photos
+
+  Upon successful login, the user is redirected to the index page where every image is rendered.
+
+  Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
+
 ### Photo Show Page
-### Create, Update, Delete Photos
+
+  The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
+
+  Clicking on the photographer's name will redirect you to that photographer's profile page.
+
 ### User Profile Page
 
+  
+
+### Create, Update, Delete Photos
 
 ### Features
 
