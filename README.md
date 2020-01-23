@@ -1,18 +1,35 @@
 # [1000px](https://asd-1000pix.herokuapp.com/)
 
-[Live Link](https://asd-1000pix.herokuapp.com/)
+###[Live Link](https://asd-1000pix.herokuapp.com/)
 
 1000px is a pixel-perfect tribute to the photography site, [500px](https://web.500px.com/). Users can post and share images, as well as look at the profiles of other users as well.
 
 ## Table of Contents
 
-  * Technology Stack
-  * How to Use
-  * Features
-    * Viewing All Photos
-    * Create, Update, Delete Photos
-    * Viewing a user's profile page
-  * Future Features
+  - [Technology Stack](#Technology-Stack)
+  - [How to Use](#How-to-Use)
+  - [Features](#Features)
+    * [Viewing All Photos](#Viewing-All-Photos)
+    * [Photo Show Page](#Photo-Show-Page)
+    * [Create, Update, Delete Photos](#Create,-Update,-Delete-Photos)
+    * [User Profile Page](#User-Profile-Page)
+  - [Future Features](#Future-Features)
+
+## Technology Stack
+
+  1000px is a full-stack single-page app created with a Ruby on Rails backend with a PostgreSQL database. The single-page app dynamically renders content via React.js with Redux. Additionally, JBuilder was used to create API responses to help maintain a flat state, and AWS S3 cloud storage was used to store images remotely.
+
+## How to Use
+
+
+## Features
+
+### Frontend to Bakend User Authentication
+### Viewing All Photos
+### Photo Show Page
+### Create, Update, Delete Photos
+### User Profile Page
+
 
 ### Features
 
@@ -28,14 +45,10 @@ Currently, there is a secure frontend to backend user authentication via BCrypt.
 
 ![Index Page](readme_assets/index.png)
 
-### Difficulties 
-
-  There were absurd bugs that occurred during development. For example, the testing environment got leaked into the production environment, which caused Heroku to break.
-
-  Currently, images hosted on AWS are displaying locally but not on Heroku.
 
 
-#### Features to be developed
+
+## Future Features
 
   * Users can create, read, update, and delete photos
   * Each image can be viewed in a larger frame
