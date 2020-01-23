@@ -21,6 +21,9 @@
 
 ## How to Use
 
+  To use 1000px, you can interact with the [live site](https://asd-1000pix.herokuapp.com/) hosted on Heroku. 
+  
+  You can also download this repository and set up and run the dependencies via `npm init && npm install && npm start`. You will need to connect AWS S3 to work with ActiveRecord.
 
 ## Features
 
