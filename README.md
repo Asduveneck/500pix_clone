@@ -60,19 +60,6 @@
 
   In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title or description, or delete the photograph.
 
-### Screen Shots
-
-#### Home Page 
-
-![Home Page](readme_assets/home.jpg)
-
-#### Index Page
-
-![Index Page](readme_assets/index.png)
-
-
-
-
 ## Future Features
 
   * Users can create, read, update, and delete photos
