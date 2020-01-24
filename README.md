@@ -1,6 +1,8 @@
 # [1000px](https://asd-1000pix.herokuapp.com/)
 
-###[Live Link](https://asd-1000pix.herokuapp.com/)
+### [Live Link](https://asd-1000pix.herokuapp.com/)
+
+![Splash Page](readme_assets/splash.gif)
 
 1000px is a pixel-perfect tribute to the photography site, [500px](https://web.500px.com/). Users can post and share images, as well as look at the profiles of other users as well.
 
