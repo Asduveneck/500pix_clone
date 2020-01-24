@@ -34,6 +34,8 @@
 
   Upon successful login, the user is redirected to the index page where every image is rendered.
 
+  ![Index Page](readme_assets/index.gif)
+
   Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
 
   To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
@@ -42,7 +44,10 @@
 
   The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
 
+
   Clicking on the photographer's name will redirect you to that photographer's profile page.
+
+  ![User Profile and Photo Show](readme_assets/user_prof.gif)
 
 ### User Profile Page
 
@@ -51,6 +56,8 @@
 ### Create photos
 
   Users can create new photos via the `upload button` in the top of the nav bar. 
+
+  ![Photo Create](readme_assets/photo_create.gif)
 
   I constrain the accepted file format on the frontend before it reaches the server, and render the errors dynamically.
 
