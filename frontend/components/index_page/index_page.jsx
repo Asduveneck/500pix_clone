@@ -44,7 +44,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    console.log("render()");
+    // console.log("render()");
     if(!this.state.photos) return null; //
     return(
       <div className="index_page_all">
