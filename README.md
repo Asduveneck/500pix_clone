@@ -43,7 +43,7 @@
 <details>
   <summary>Overall Index Page</summary>
 
-  The index page renders every image. As soon as the component mounts, we send a request to the database to fetch each photo, and update our state to contain the photos.
+  The index page renders every image. As soon as the component mounts, we dispatch a request to fetch each photo, and update our state to contain the photos.
 
 ```js
   componentDidMount(){
@@ -55,7 +55,37 @@
   }
 ```
 
-  
+<details>
+  <summary>
+    How `fetchPhotos()` works:
+  </summary>
+
+  To encapsulate the code, the `fetchPhotos` used here is defined within [photo_actions.js](). 
+
+```js
+export const fetchPhotos = () => dispatch => ( 
+  APIUtil.fetchPhotos()
+    .then(photos => (dispatch(receivePhotos(photos))
+      ), err => (
+        dispatch(receiveErrors(err.responseJSON))
+    ))
+);
+```   
+
+  Within our photo actions, we use `thunk middleware` to intercept our AJAX call (encapsulated as `APIUtil.fetchPhotos()`), and send the results of our query to the `photos reducer`, which helps maintain our slice of state.
+
+Our `APIUtil.fetchPhotos` is a simple `GET` request:
+
+```js
+export const fetchPhotos = () => (
+  $.ajax({
+    method: 'get',
+    url: `/api/photos`,
+  })
+); 
+```
+
+</details>
 
 
 </details>
