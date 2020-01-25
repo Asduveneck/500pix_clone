@@ -38,6 +38,12 @@
 
   Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
 
+  The index page is comprised of two main components; the index page itself, and each individual photograph is it's own component.
+
+<details>
+  <summary>Overall Index Page</summary>
+</details>
+
   To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
   
   
