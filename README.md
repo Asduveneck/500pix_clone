@@ -88,6 +88,24 @@ export const fetchPhotos = () => (
 
 </details>
 
+  Once we have our photos, we map through the array of photos, and thread the photo URL and title as props to each component, `IndvPhoto` (Individual Photo).
+
+```js
+<div className="index_page_page">
+  {this.state.photos.map((photo, idx) => (
+    <Link to={`/photo/${photo.id}`} key={`link_photo_${idx}`} style={{ height: "fit-content" }} >
+      <IndvPhoto
+        title={photo.title}
+        url={photo.fileUrl}
+        key={`photo_${idx}`}
+      />
+    </Link>
+  ))
+  }
+</div>
+```
+
+  By wrapping each photo within a `Link` tag, clicking on each image will redirect a user to that photo's show page.
 
 </details>
 
