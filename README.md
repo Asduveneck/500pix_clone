@@ -86,7 +86,17 @@
 
 ### Update or Delete photos
 
-  In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title or description, or delete the photograph.
+  In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title, descriptionm or even undo their changes. 
+
+
+  ![Update Photo Title](readme_assets/update_title.gif)
+  ![Update Photo Description](readme_assets/update_description.gif)
+  ![Undo Photo Update](readme_assets/update_undo.gif)
+
+  Users can also delete their photographs as well.
+
+  ![Delete Photo](readme_assets/delete_photo.gif)
+
 
 ## Future Features
 
