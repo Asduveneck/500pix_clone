@@ -141,7 +141,23 @@ if (height) { // if we pass in a height prop
 
   I use inline styling to immediately define the size of each image and prevent content on the page from reshuffling as images load.
 
-  W
+  Each photo is a `div` with the class name `indvPhoto`.
+
+```js
+<div className="indvPhoto" style={nonHover}>
+  <div className="i_p_gradient">
+    <div className="top">
+      {/* <h1>Placeholder Top</h1> */}
+    </div>
+    <div className="bottom">
+      <h4>{title}</h4>
+    </div>
+  </div>
+  {/* <img src={url} alt={title}/> */}
+</div>
+```
+
+  By having the image be a div, we can nest in additional `divs`. In this case, there is a container for information to display on hover; if a mouse hovers over the nested gradient, the shadows along with the photo's title will appear.
 
 </details>
 
