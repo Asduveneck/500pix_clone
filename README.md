@@ -110,6 +110,27 @@ export const fetchPhotos = () => (
 
 <details>
   <summary>Individual Photos</summary>
+
+  Because we thread in the url from the index page, we do not need to fetch the photo from the database again. We deconstruct our props object as follows:
+
+```js
+  let {title, url, height, editMode, chosen} = this.props;
+```
+
+  The `height` prop was not threaded when we were on the main index page, but is used when we are on the 'Photo Manager' page where we update our picture.
+
+  We then define the object nonHover to encapsulate our inline styling for each individual photograph
+
+```js
+let nonHover = {
+  backgroundImage: `url(${url})`,
+  backgroundSize: 'cover',
+  // height: '250px',
+  width: 'auto',
+}
+```
+  I used to define a fixed height per image, but as I reuse this 
+
 </details>
 
   To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
