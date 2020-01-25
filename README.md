@@ -42,6 +42,22 @@
 
 <details>
   <summary>Overall Index Page</summary>
+
+  The index page renders every image. As soon as the component mounts, we send a request to the database to fetch each photo, and update our state to contain the photos.
+
+```js
+  componentDidMount(){
+    this.props.fetchPhotos()
+      .then( () => this.setState({
+        photos: this.props.photos
+      })
+      )
+  }
+```
+
+  
+
+
 </details>
 
   To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
