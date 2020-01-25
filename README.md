@@ -129,7 +129,15 @@ let nonHover = {
   width: 'auto',
 }
 ```
-  I used to define a fixed height per image, but as I reuse this 
+  I used to define a fixed height per image, but I realized I would need a different default height, I wrote the following conditional to assign the height if it is provided as a prop:
+
+```js
+if (height) { // if we pass in a height prop
+  nonHover.height = height;
+} else {
+  nonHover.height= "250px";
+}
+```
 
 </details>
 
