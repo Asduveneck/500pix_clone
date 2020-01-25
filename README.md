@@ -117,7 +117,7 @@ export const fetchPhotos = () => (
   let {title, url, height, editMode, chosen} = this.props;
 ```
 
-  The `height` prop was not threaded when we were on the main index page, but is used when we are on the 'Photo Manager' page where we update our picture.
+  The `height` and `chosen` props were not threaded when we were on the main index page, but they are used when we are on the 'Photo Manager' page where we can choose a picture to update.
 
   We then define the object nonHover to encapsulate our inline styling for each individual photograph
 
@@ -138,6 +138,10 @@ if (height) { // if we pass in a height prop
   nonHover.height= "250px";
 }
 ```
+
+  I use inline styling to immediately define the size of each image and prevent content on the page from reshuffling as images load.
+
+  W
 
 </details>
 
