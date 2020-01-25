@@ -38,7 +38,7 @@
 
   Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
 
-  The index page is comprised of two main components; the index page itself, and each individual photograph is it's own component.
+  The index page is comprised of two main components; the index page itself, and each individual photograph is it's own component. The individual photo component is reused throughout other pages, such as the user profile page and the photo manager page.
 
 <details>
   <summary>Overall Index Page</summary>
