@@ -52,6 +52,15 @@
   
 </details>
 
+<details>
+  <summary>jBuilder Photo Partial</summary>
+
+```rb
+  json.set! :photographer, photo.photographer
+```
+
+</details>
+
 ### Photo Show Page
 
   The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
