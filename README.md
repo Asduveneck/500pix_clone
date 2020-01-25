@@ -57,7 +57,8 @@
 
 <details>
   <summary>
-    How `fetchPhotos()` works:
+    
+  How `fetchPhotos()` works:
   </summary>
 
   To encapsulate the code, the `fetchPhotos` used here is defined within [photo_actions.js](). 
