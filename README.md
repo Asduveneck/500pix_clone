@@ -108,6 +108,10 @@ export const fetchPhotos = () => (
 
 </details>
 
+<details>
+  <summary>Individual Photos</summary>
+</details>
+
   To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
   
   
