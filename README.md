@@ -88,10 +88,13 @@
 
   In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title, descriptionm or even undo their changes. 
 
+  | Update Title | Update Description | Undo Update |
+|--------------|--------------------|-------------|
+| ![Update Photo Title](readme_assets/update_title.gif) | ![Update Photo Description](readme_assets/update_description.gif) | ![Undo Photo Update](readme_assets/update_undo.gif) |
 
-  ![Update Photo Title](readme_assets/update_title.gif)
-  ![Update Photo Description](readme_assets/update_description.gif)
-  ![Undo Photo Update](readme_assets/update_undo.gif)
+
+  
+  
 
   Users can also delete their photographs as well.
 
