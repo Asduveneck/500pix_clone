@@ -225,7 +225,66 @@ jBuilder Photo Partial:
 
   ![Photo Create](readme_assets/photo_create.gif)
 
-  I constrain the accepted file format on the frontend before it reaches the server, and render the errors dynamically.
+  I constrain the accepted file format on the frontend before it reaches the server and begin checking for errors on the file immediately. If there are no errors, a preview of the image is rendered.
+
+  <details>
+    <summary>Checking for Errors on the file</summary>
+
+    I have two main constraints for the attached file: images have to be in JPEG format, and they cannot exceed 25 Mb in size.
+
+```js
+handleFile(e) {
+  const fileReader = new FileReader(); // file Reader for preview
+  const file = e.currentTarget.files[0] // The first file in our file input.
+
+  const photoErrors = [];
+  let bugFree = true;
+
+  // Error handling
+  if (!file.type.includes("image/jpeg")) { // if there is a file of the right format
+    photoErrors.push("Error: Images must be in JPEG format")
+    bugFree = false;
+  }
+  if (file.size > 25 * Math.pow(10, 6) ) { // 25 MP constraint.
+    photoErrors.push("Error: Images cannot exceed 25 Mb")
+    bugFree = false;
+  }
+
+  this.setState({photoErrors}); 
+  // continued below...
+```
+  `photoErrors` are initialized as an empty array each time a file is attached; this naturally clears pre-existing errors. 
+
+  I define a boolean, `bugFree` to indicate whether the image is valid or not. By default, it is true, but the moment we encounter an error, it is set to false. 
+
+  That way, after setting state, we can proceed with rendering a preview of the user's attached photo.
+
+```js
+  // continuation from above
+  if (bugFree) {
+    // default title will be the file name
+    let fileName = file.name.split('.').slice(0, -1).join('.')
+    this.setState({ title: fileName, backupTitle: fileName })
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+};
+```
+
+  </details>
+
+
+
+  <details>
+    <summary> </summary>
+  </details>
+
+
 
   Upon successfully attaching an image, the user is redirected to the Photo Manager where the user can update or delete photographs.
 
