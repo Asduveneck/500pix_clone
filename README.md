@@ -165,10 +165,32 @@ if (height) { // if we pass in a height prop
 
   The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
 
+  ![User Profile and Photo Show](readme_assets/user_prof.gif)
 
   Clicking on the photographer's name will redirect you to that photographer's profile page.
 
-  ![User Profile and Photo Show](readme_assets/user_prof.gif)
+  <details>
+    <summary>Click here for technical details</summary>
+
+  We reach each photo-show page by assinging the URL in each `<Link>` to be the photo's ID. Therefore, to fetch the corresponding photo, we just need to extract the id from the URL parameters:
+
+```js
+  this.props.fetchPhoto(this.props.match.params.photoId) // see app.jsx
+```
+
+  Additionally, I link each photo to the user show page via:
+
+```js
+  <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink" key={`usr_${photo_usr_id}`}>{photographer}</Link></span>
+```
+
+  What's interesting is that the `photographer` key was defined via `jBuilder` and a model-level method to minimize sending data across the server.
+
+
+  </details>
+  <details>
+    <summary> </summary>
+  </details>
 
 ### User Profile Page
 
