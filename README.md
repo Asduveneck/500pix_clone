@@ -257,7 +257,7 @@ handleFile(e) {
 
   I define a boolean, `bugFree` to indicate whether the image is valid or not. By default, it is true, but the moment we encounter an error, it is set to false. 
 
-  That way, after setting state, we can proceed with rendering a preview of the user's attached photo.
+  Thus, we only proceed with rendering a preview of the user's attached photo if the image is valid.
 
 ```js
   // continuation from above
