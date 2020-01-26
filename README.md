@@ -56,8 +56,10 @@
 ```
 
 <details>
-<summary>  
-  Click here to see additional details on how `fetchPhotos()` works:
+<summary>
+
+Click here to see additional details on how `fetchPhotos()` works:
+
 </summary>
 
   To encapsulate the code, the `fetchPhotos` used here is defined within [photo_actions.js](). 
@@ -211,11 +213,7 @@ jBuilder Photo Partial:
 
 </details>
 
-
-  </details>
-  <details>
-    <summary> </summary>
-  </details>
+</details>
 
 ### User Profile Page
 
