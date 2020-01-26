@@ -23,7 +23,7 @@ class photoShow extends React.Component {
   render() {
     let photo = this.props.photo;
     if (!photo) return null;
-    console.log(photo);
+    // console.log(photo);
     let { title, description, views, rating, fileUrl, created_at, photographer, photo_usr_id} = photo;
 
     return (
