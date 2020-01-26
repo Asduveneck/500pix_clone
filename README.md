@@ -161,29 +161,6 @@ if (height) { // if we pass in a height prop
 
 </details>
 
-  To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
-  
-  
-<details>
-  <summary style="color: blue" >Model Method</summary>
-    
-  ```rb
-    def photographer
-      "#{user.first_name} #{user.last_name}"
-    end
-  ```
-  
-</details>
-
-<details>
-  <summary>jBuilder Photo Partial</summary>
-
-```rb
-  json.set! :photographer, photo.photographer
-```
-
-</details>
-
 ### Photo Show Page
 
   The Photo Show Page includes a larger images accompanied by a description if the photographer wrote one.
@@ -232,4 +209,34 @@ if (height) { // if we pass in a height prop
   * Each photo updates the number of views it has.
   * Hovering over a photo reveals more information about it
   * Tracking data with each photo and displaying summary statistics
+
+## Additional Details
+
+<details>
+  <summary>Photo Backend Details</summary>
+
+    To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
+
+<details>
+  <summary style="color: blue" >Model Method</summary>
+
+  ```rb
+    def photographer
+      "#{user.first_name} #{user.last_name}"
+    end
+  ```
+
+</details>
+
+<details>
+  <summary>jBuilder Photo Partial</summary>
+
+```rb
+  json.set! :photographer, photo.photographer
+```
+</details>
+
+  This way, in the front end, I don't need to send an additional query to fetch the photographer's name on the photo show page.
+
+</details>
 
