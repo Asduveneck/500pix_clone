@@ -227,10 +227,10 @@ jBuilder Photo Partial:
 
   I constrain the accepted file format on the frontend before it reaches the server and begin checking for errors on the file immediately. If there are no errors, a preview of the image is rendered.
 
-  <details>
-    <summary>Checking for Errors on the file</summary>
+<details>
+  <summary>Checking for Errors on the file</summary>
 
-    I have two main constraints for the attached file: images have to be in JPEG format, and they cannot exceed 25 Mb in size.
+  I have two main constraints for the attached file: images have to be in JPEG format, and they cannot exceed 25 Mb in size.
 
 ```js
 handleFile(e) {
@@ -276,13 +276,21 @@ handleFile(e) {
 };
 ```
 
-  </details>
+</details>
+
+<details>
+  <summary>Toggling between Image Requirements and the Preview</summary>
 
 
+</details>
 
-  <details>
-    <summary> </summary>
-  </details>
+<details>
+  <summary>Multi-class and Hiding the default `input:file` message</summary>
+</details>
+
+<details>
+  <summary> </summary>
+</details>
 
 
 
