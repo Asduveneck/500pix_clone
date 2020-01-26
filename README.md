@@ -184,7 +184,32 @@ if (height) { // if we pass in a height prop
   <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink" key={`usr_${photo_usr_id}`}>{photographer}</Link></span>
 ```
 
-  What's interesting is that the `photographer` key was defined via `jBuilder` and a model-level method to minimize sending data across the server.
+  What's interesting is that the `photographer` key was defined via `jBuilder` and a model-level method.  To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
+
+<details>
+  <summary style="color: blue" >Model Methods</summary>
+
+```rb
+# Association to User:
+belongs_to :user,
+  foreign_key: :user_id,
+  class_name: :User 
+# Method to use above association to return a name
+def photographer
+  "#{user.first_name} #{user.last_name}"
+end
+```
+
+</details>
+
+jBuilder Photo Partial:
+```rb
+  json.set! :photographer, photo.photographer
+```
+
+  The jBuilder association minimizes sending information to the frontend because I no longer need to fetch the user with each photo. I did not store the photographer's with each photograph to minimize duplicating names within the database.
+
+</details>
 
 
   </details>
@@ -215,9 +240,6 @@ if (height) { // if we pass in a height prop
 | ![Update Photo Title](readme_assets/update_title.gif) | ![Update Photo Description](readme_assets/update_description.gif) | ![Undo Photo Update](readme_assets/update_undo.gif) |
 
 
-  
-  
-
   Users can also delete their photographs as well.
 
   ![Delete Photo](readme_assets/delete_photo.gif)
@@ -234,31 +256,4 @@ if (height) { // if we pass in a height prop
 
 ## Additional Details
 
-<details>
-  <summary>Photo Backend Details</summary>
-
-    To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
-
-<details>
-  <summary style="color: blue" >Model Method</summary>
-
-  ```rb
-    def photographer
-      "#{user.first_name} #{user.last_name}"
-    end
-  ```
-
-</details>
-
-<details>
-  <summary>jBuilder Photo Partial</summary>
-
-```rb
-  json.set! :photographer, photo.photographer
-```
-</details>
-
-  This way, in the front end, I don't need to send an additional query to fetch the photographer's name on the photo show page.
-
-</details>
 
