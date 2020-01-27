@@ -391,12 +391,6 @@ I then style the label to look like a button.
 
 </details>
 
-<details>
-  <summary> </summary>
-</details>
-
-
-
   Upon successfully attaching an image, the user is redirected to the Photo Manager where the user can update or delete photographs.
 
 ### Update or Delete photos
@@ -411,6 +405,12 @@ I then style the label to look like a button.
   Users can also delete their photographs as well.
 
   ![Delete Photo](readme_assets/delete_photo.gif)
+
+
+<details>
+  <summary> </summary>
+</details>
+
 
 
 ## Future Features
