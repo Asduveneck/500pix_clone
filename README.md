@@ -383,6 +383,8 @@ I then style the label to look like a button.
 }
 ```
 
+  ![upload button](readme_assets/photo_create_button)
+
   I used two classes for the label here because I reuse the `blueButton` class to style other buttons, such as the submit button:
 
 ```html
