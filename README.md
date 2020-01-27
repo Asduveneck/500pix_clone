@@ -281,6 +281,8 @@ handleFile(e) {
 <details>
   <summary>Toggling between Image Requirements and the Preview</summary>
 
+  On the photo post page, once a file has been attached, it no longer makes sense to render image requirements. Thus, I replace the image requirement section with a preview of the image.
+
 
 </details>
 
