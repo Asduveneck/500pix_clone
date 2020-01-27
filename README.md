@@ -287,7 +287,7 @@ handleFile(e) {
 
   I first create a preview of the image by using `FileReader.readAsDataURL()` in the `handleFile()` function.
 <details>
-  <summary>Click to see relevant code:</summary>
+  <summary>Click to see relevant code from handleFile:</summary>
 
 ```js
 const fileReader = new FileReader(); // file Reader for preview
@@ -322,10 +322,20 @@ And now, I use a ternary operator to assign a constant `preview` to a preview of
   const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : imageReq;
 ```
 
+  Thus, within the final output for this file, I display the image or the requirements in the left side of the photoCreate page via:
+
+```js
+  <div className="photoCreate_content">
+    <div className="pcc_Lt"> {/* Lt: left */}
+      {preview}
+    </div>
+    <div className="pcc_Rt fColCen">  {/* Rt: right */}
+```
+
 </details>
 
 <details>
-  <summary>Multi-class and Hiding the default `input:file` message</summary>
+  <summary>Hiding the default `input:file` message</summary>
 </details>
 
 <details>
