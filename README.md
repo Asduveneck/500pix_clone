@@ -285,13 +285,9 @@ handleFile(e) {
 
   On the photo post page, once a file has been attached, it no longer makes sense to render image requirements or any errors associated with the file. Thus, I replace the image requirement section with a preview of the image. 
 
-  
+  I first create a preview of the image by using `FileReader.readAsDataURL()` in the `handleFile()` function.
 <details>
-  <summary>
-
-  I create a preview of the image by using `FileReader.readAsDataURL()` in the `handleFile()` function (included above).
-  
-  </summary>
+  <summary>Click to see relevant code:</summary>
 
 ```js
 const fileReader = new FileReader(); // file Reader for preview
@@ -326,8 +322,6 @@ And now, I use a ternary operator to assign a constant `preview` to a preview of
   const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : imageReq;
 ```
 
-
-### end of section
 </details>
 
 <details>
