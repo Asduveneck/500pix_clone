@@ -408,9 +408,18 @@ I then style the label to look like a button.
 
   ![Delete Photo](readme_assets/delete_photo.gif)
 
+  The form and overall layout here is similar to the page used to post photos, and eventually the page to post photos will be consolidated here as well. However, there are a few functional differences within this form.
 
 <details>
-  <summary> </summary>
+  <summary>Displaying Photos </summary>
+</details>
+
+<details>
+  <summary>Selecting a Photo</summary>
+</details>
+
+<details>
+  <summary>Underlying functionality</summary>
 </details>
 
 
