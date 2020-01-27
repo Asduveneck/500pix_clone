@@ -283,9 +283,51 @@ handleFile(e) {
 <details>
   <summary>Toggling between Image Requirements and the Preview</summary>
 
-  On the photo post page, once a file has been attached, it no longer makes sense to render image requirements. Thus, I replace the image requirement section with a preview of the image.
+  On the photo post page, once a file has been attached, it no longer makes sense to render image requirements or any errors associated with the file. Thus, I replace the image requirement section with a preview of the image. 
+
+  
+<details>
+  <summary>
+
+  I create a preview of the image by using `FileReader.readAsDataURL()` in the `handleFile()` function (included above).
+  
+  </summary>
+
+```js
+const fileReader = new FileReader(); // file Reader for preview
+fileReader.onloadend = () => {
+  this.setState({ photoFile: file, photoUrl: fileReader.result });
+};
+
+if (file) { // sanity check: only proceed if file is present
+  fileReader.readAsDataURL(file);
+}
+```
+</details>
+
+I then assign a constant to show image requirements and any errors associated with the file.
+```js
+  const imageReq =  <div className="imageReq">
+  <h3>Image Requirements</h3>
+  <li className="im_ind_req">JPEG only</li>
+  <li className="im_ind_req">Max. photo size is 25 Mb</li>
+  {/* Mapping over any errors and assigning them each to a new <li> */}
+  <ul className="fnt_err"> 
+    {this.state.photoErrors.map( (fErr, idx) => (
+      <li key={`fnt_err ${idx}`}>{fErr}</li>
+    ))}
+  </ul>
+  </div>
+```
+
+And now, I use a ternary operator to assign a constant `preview` to a preview of the image only if it is present in State; otherwise, the preview constant contains the image requirements with any file errors.
+
+```js
+  const preview = this.state.photoUrl ? <img src={this.state.photoUrl} style={{height: "300px"}} /> : imageReq;
+```
 
 
+### end of section
 </details>
 
 <details>
