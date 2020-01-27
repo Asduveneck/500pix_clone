@@ -41,7 +41,7 @@
   The index page is comprised of two main components; the index page itself, and each individual photograph is it's own component. The individual photo component is reused throughout other pages, such as the user profile page and the photo manager page.
 
 <details>
-  <summary>Overall Index Page</summary>
+  <summary>Click here to learn about the Index Page component</summary>
 
   The index page renders every image. As soon as the component mounts, we dispatch a request to fetch each photo, and update our state to contain the photos.
 
@@ -54,6 +54,8 @@
       )
   }
 ```
+
+  This component serves to hold individual photo components.
 
 <details>
 <summary>
@@ -111,7 +113,7 @@ export const fetchPhotos = () => (
 </details>
 
 <details>
-  <summary>Individual Photos</summary>
+  <summary>Click here to learn about the Individual Photos component</summary>
 
   Because we thread in the url from the index page, we do not need to fetch the photo from the database again. We deconstruct our props object as follows:
 
@@ -131,7 +133,7 @@ let nonHover = {
   width: 'auto',
 }
 ```
-  I used to define a fixed height per image, but I realized I would need a different default height, I wrote the following conditional to assign the height if it is provided as a prop:
+  I used to define a fixed height per image, but I realized I would need a different default height in the photo manager. I wrote the following conditional to assign the height if it is provided as a prop:
 
 ```js
 if (height) { // if we pass in a height prop
