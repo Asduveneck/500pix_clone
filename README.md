@@ -335,7 +335,14 @@ And now, I use a ternary operator to assign a constant `preview` to a preview of
 </details>
 
 <details>
-  <summary>Hiding the default `input:file` message</summary>
+  <summary>Hiding the default HTML file input</summary>
+
+  The default input for choosing a file does not suit the rest of the form container:
+
+  <img />
+
+  Thus, I reduce the size of the default file input to be 1px (and not 0px for cross-browser support), and then I style the label to look like a button.
+
 </details>
 
 <details>
