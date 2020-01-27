@@ -383,7 +383,7 @@ I then style the label to look like a button.
 }
 ```
 
-  ![upload button](readme_assets/photo_create_button)
+  ![upload button](readme_assets/photo_create_button.gif)
 
   I used two classes for the label here because I reuse the `blueButton` class to style other buttons, such as the submit button:
 
@@ -408,10 +408,41 @@ I then style the label to look like a button.
 
   ![Delete Photo](readme_assets/delete_photo.gif)
 
-  The form and overall layout here is similar to the page used to post photos, and eventually the page to post photos will be consolidated here as well. However, there are a few functional differences within this form.
+  The form and overall layout here is similar to the page used to post photos, and eventually the page to post photos will be consolidated here as well. However, there are a few significant differences within this form.
 
 <details>
   <summary>Displaying Photos </summary>
+
+    We display a smaller version of each image the user has uploaded. The method to fetch each photo is the same, but the way we display them is different in two ways (compared to the previous ways). 
+
+```js
+displayPhotos() {
+  if (this.state.photos) {
+    return this.state.photos.map((photo, idx) => {
+      return (
+        <div key={`photo_${idx}`} onClick={() => this.setState({ // CHANGE 1!
+          chosenPhoto: photo, chosenPhotoIdx: idx, title: photo.title,
+          description: photo.description})}
+          >
+          <IndvPhoto
+            editMode={true} // CHANGE 2!
+            url={photo.fileUrl}
+            idx={idx}
+            height="125px"
+            chosen={this.state.chosenPhotoIdx===idx}
+          />
+        </div>
+      )
+    }
+    )
+  } else {
+    return [];  // return an empty array...
+  }
+}
+```
+  1.  We `setState` when clicking an image. We assign `chosenPhoto` to be the clicked photo, and we link that photo's title and description to the `title` and `description` in state. We no longer have a `LINK` to redirect the user to that photo's show page upon updating the image.
+  2. We thread in three new props: `editMode`, `height`, and `chosen`. We will be using `editMode` and `chosen` to identify which photo the user has chosen.
+
 </details>
 
 <details>
