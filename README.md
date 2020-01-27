@@ -339,9 +339,49 @@ And now, I use a ternary operator to assign a constant `preview` to a preview of
 
   The default input for choosing a file does not suit the rest of the form container:
 
-  <img />
+  ![default file input](readme_assets/other_images/file_input.png)
 
-  Thus, I reduce the size of the default file input to be 1px (and not 0px for cross-browser support), and then I style the label to look like a button.
+  Thus, I first linked the label for the input.
+
+```js
+  <label htmlFor="file-input" className="pcc_message file-input blueButton">Select Photo</label>
+  <input type="file" id="file-input" className="fileInput" 
+    name = "file" onChange={this.handleFile.bind(this)} />
+```
+
+  I then reduce the size of the default file input to be 1px (and not 0px for cross-browser support) and make it transparent.
+
+```scss
+.fileInput { // hides standard file upload button
+  width: 0.01px;
+  height: 0.01px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+```
+
+I then style the label to look like a button.
+
+```scss
+.file-input.blueButton {
+  width: 100px;
+}
+.blueButton{
+  align-self: center;
+  text-align: center;
+  font-size: 16px;
+  width: 200px;
+  background-color: $blue;
+  color: $background_white;
+  border-radius: 12.5px;
+  border-style: none;
+  margin: 16px 0px;
+  padding: 8px 32px;
+  cursor: pointer;
+}
+```
 
 </details>
 
