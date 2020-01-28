@@ -28,7 +28,7 @@
   
   You can also download this repository and set up and run the dependencies via `npm init && npm install && npm start`. You will need to connect AWS S3 to work with ActiveRecord.
 
-## Features
+## Main Features
 
 ### Viewing All Photos
 
@@ -522,13 +522,91 @@ if (editMode) { // manage photo page
 
   We can then style the chosen photo differently by its class, `chPhoto`.
 
-#### Passing the chosen photo into state
+```scss
+.edtPhoto {
+  cursor: pointer;
+}
 
+.chPhoto {
+  cursor: auto;
+  border: solid $background_white 1.5px;
+  // background-color: $background_white;
+  // border: 2px solid #0870d1;
+  padding: 0px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px $blue;
+}
+```
 
 </details>
 
 <details>
   <summary>Underlying functionality</summary>
+
+  There are a few helper functions beyond displaying photos that we bind to state.
+
+  | Name | Purpose |
+|--------------------------|----------------------------------------------------------------------|
+| `this.displayPhotos` | Displays all photos |
+| `this.showOnUpdate` | Display button to cancel or update only when there is a valid update |
+| `this.updatePhotoPOJO` | Updates the chosen photo |
+| `this.cancelPhotoUpdate` | Reverts the title and description to before the update was submitted |
+| `this.deletePhotoPOJO` | Deletes the chosen photo |
+| `this.clearChosenPhoto` | Removes the selected photo |
+
+<details>
+  <summary>Click here for details about showOnUpdate</summary>
+
+  The showOnUpdate returns buttons that trigger `cancelPhotoUpdate()` or `updatePhotoPOJO` only when we first have a chosen photo AND that the title or description has been changed.
+
+```js
+showOnUpdate() {
+  if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
+    let {chosenPhoto, title, description} = this.state;
+    // if there is a change
+    if (chosenPhoto.title !== title || chosenPhoto.description !== description) {
+      return(
+        <div className="update_buttons">
+          <span className="update cancel" type="button" onClick={() => this.cancelPhotoUpdate()}>Cancel</span>
+          <button className="update save" type="button" onClick={() => this.updatePhotoPOJO()}>Save Changes</button>
+        </div>
+      )
+    }
+  }
+}
+```
+</details>
+
+<details>
+  <summary>Click here for details about deletePhotoPOJO</summary>
+
+  The `deletePhotoPOJO` is similar to our `fetchPhoto` (in terms of dispatching a thunk action leading to our AJAX call), but this time we delete the photo instead of returning it.
+
+```js
+  deletePhotoPOJO() {
+    let deletedPhoto = this.state.chosenPhoto;
+    if (deletedPhoto.id !== undefined) { // If there is a photo ID
+      this.props.deletePhoto(deletedPhoto.id); // Does the actual deleting.
+      // continued below
+```
+  At this point, we have deleted the photo. However, within our State, we still have our deleted photo being displayed. Thus, we need to update our state to remove that photo. To quickly find that photo in our array of `photos` (in `state`), we use the `chosenPhotoIdx` (set when we first clicked on that image) to remove that photo.
+
+```js
+      // continued above
+      let newPhotos = this.state.photos; 
+      newPhotos.splice(this.state.chosenPhotoIdx, 1); // removes the photo from the array
+
+      this.setState({photos: newPhotos})  // sets state
+        .then(() => this.clearChosenPhoto() )
+    }
+  }
+```
+
+  And upon succesfully updating the state of photos, we clear our chosen photo.
+
+</details>
+
+
 </details>
 
 ## Future Features
