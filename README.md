@@ -38,7 +38,12 @@
 
   Hovering over a photograph reveals information about the photographer and image, and clicking on an image takes you to that photo's show page.
 
-  The index page is comprised of two main components; the index page itself, and each individual photograph is it's own component. The individual photo component is reused throughout other pages, such as the user profile page and the photo manager page.
+  The index page is comprised of two components; 
+  
+  1. The index page itself
+  2. The individual photo components; each individual photograph is it's own component. 
+  
+  The individual photo component is reused throughout other pages, such as the user profile page and the photo manager page.
 
 <details>
   <summary>Click here to learn about the Index Page component</summary>
@@ -123,7 +128,7 @@ export const fetchPhotos = () => (
 
   The `height` and `chosen` props were not threaded when we were on the main index page, but they are used when we are on the 'Photo Manager' page where we can choose a picture to update.
 
-  We then define the object nonHover to encapsulate our inline styling for each individual photograph
+  We then define the object `nonHover` to encapsulate our inline styling for each individual photograph
 
 ```js
 let nonHover = {
@@ -383,7 +388,7 @@ I then style the label to look like a button.
 }
 ```
 
-  ![upload button](readme_assets/photo_create_button.gif)
+  <!-- ![upload button](readme_assets/photo_create_button.gif) BUG: Fix and reupload gif -->
 
   I used two classes for the label here because I reuse the `blueButton` class to style other buttons, such as the submit button:
 
@@ -397,7 +402,7 @@ I then style the label to look like a button.
 
 ### Update or Delete photos
 
-  In the Photo Manager, users can only access their own individual photos. They select a photograph by clicking on it, where they can then update the title, descriptionm or even undo their changes. 
+  In the Photo Manager, users can only access their own photos. They select a photograph by clicking on it, where they can then update the title, descriptionm or even undo their changes. 
 
   | Update Title | Update Description | Undo Update |
 |--------------|--------------------|-------------|
