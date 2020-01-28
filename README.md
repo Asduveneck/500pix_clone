@@ -484,7 +484,29 @@ The title and description in state is linked to the value in the form's `textare
 
 #### Styling the chosen photo differently:
 
-  To make it visually clear which image the user has selected, I decide to make the chosen image look different.
+To make it visually clear which image the user has selected, I decide to make the chosen image look different. Thus, I would need to let the individual photo container know that:
+
+1. The photo is being displayed on the Photo Manager page
+2. The photo was clicked on.
+
+To let the container know we are coming from the photo manager page, I thread in the prop, `editMode` and assign that to `true`. That way, instead of returning the standard image that shows information on hover, I can return earlier via:
+
+```js
+if (editMode) {
+  return // return the photo without the hover gradients...
+}
+```
+
+To indicate which photo was clicked on, I track the index of each photo we display, and I then assign `chosenPhotoIdx` to be that photo's index when a user clicks on the photo.
+
+To thread that information to the individual photo container, all I need to do is:
+
+```js
+<IndvPhoto
+  // other props...
+  chosen={this.state.chosenPhotoIdx===idx}
+/>
+```
 
 Within the individual photo container, we return the image and give it an additional class `chPhoto` if the photo is chosen.
 
@@ -497,6 +519,8 @@ if (editMode) { // manage photo page
     return <div className="indvPhoto edtPhoto" style={nonHover} > </div>
   }
 ```
+
+  We can then style the chosen photo differently by its class, `chPhoto`.
 
 #### Passing the chosen photo into state
 
