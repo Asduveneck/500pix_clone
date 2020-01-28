@@ -413,7 +413,7 @@ I then style the label to look like a button.
 <details>
   <summary>Displaying Photos </summary>
 
-  We display a smaller version of each image the user has uploaded. The method to fetch each photo is the same, but the way we display them is different in two ways (compared to the previous ways). 
+  We display a smaller version of each image the user has uploaded. The method to fetch each photo is the same, but the way we display them is different in two ways (compared to the previous ways).
 
 ```js
 displayPhotos() {
@@ -440,7 +440,7 @@ displayPhotos() {
   }
 }
 ```
-  1.  We `setState` when clicking an image. We assign `chosenPhoto` to be the clicked photo, and we link that photo's title and description to the `title` and `description` in state. We no longer have a `LINK` to redirect the user to that photo's show page upon updating the image.
+  1.  We `setState` when clicking an image. We no longer have a `LINK` to redirect the user to that photo's show page upon updating the image.
   2. We thread in three new props: `editMode`, `height`, and `chosen`. We will be using `editMode` and `chosen` to identify which photo the user has chosen.
 
 </details>
@@ -448,11 +448,43 @@ displayPhotos() {
 <details>
   <summary>Selecting a Photo</summary>
 
-Users can select a photo by clicking on it, and change their selection by clicking on another one.
+Users can select a photo by clicking on it, and change their selection by clicking on another one. We handle the click listener and pass the selected photo to state all within `displayPhotos()`.
 
-Thus, we need to pass to the individual photo container whether that photo was clicked on, and that the photo is being shown on the Photo Manager page.
+Our default state is initially empty:
+
+```js
+  this.state = {
+    photos: [], // fetched photos
+    chosenPhoto: {},
+    chosenPhotoIdx: "",
+    title: "",
+    description: "",
+  };
+```
+
+And to each image, we define `onClick` callback to be:
+
+```js
+this.setState({chosenPhoto: photo, chosenPhotoIdx: idx, 
+  title: photo.title, description: photo.description})
+```
+
+When a user clicks on a photo, that photo becomes the chosen photo, and the title and description fields are set to that clicked photo's title/description.
+
+The title and description in state is linked to the value in the form's `textarea` inputs the same way we did so for the photo upload form.
+
+
+```js
+<textarea name="photo title" value={this.state.title}
+  onChange={this.update('title')}
+  placeholder="e.g. Sunset in Blue"
+  className="title"
+/>
+```
 
 #### Styling the chosen photo differently:
+
+  To make it visually clear which image the user has selected, I decide to make the chosen image look different.
 
 Within the individual photo container, we return the image and give it an additional class `chPhoto` if the photo is chosen.
 
@@ -475,15 +507,10 @@ if (editMode) { // manage photo page
   <summary>Underlying functionality</summary>
 </details>
 
-
-
 ## Future Features
 
-  * Users can create, read, update, and delete photos
-  * Each image can be viewed in a larger frame
   * Infinite scroll for the home feed 
   * Each photo updates the number of views it has.
-  * Hovering over a photo reveals more information about it
   * Tracking data with each photo and displaying summary statistics
 
 ## Additional Details
