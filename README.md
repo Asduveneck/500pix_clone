@@ -606,8 +606,13 @@ showOnUpdate() {
 
 </details>
 
-
 </details>
+
+## Misc Features
+
+### Modular Navigation Bar
+
+### Modular Session Form
 
 ## Future Features
 
