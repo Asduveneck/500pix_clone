@@ -193,7 +193,7 @@ if (height) { // if we pass in a height prop
   <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink" key={`usr_${photo_usr_id}`}>{photographer}</Link></span>
 ```
 
-  What's interesting is that the `photographer` key was defined via `jBuilder` and a model-level method.  To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the value in jBuilder.
+  What's interesting is that the `photographer` key was defined via `jBuilder` and a model-level method.  To maintain a simpler slice of state and minimize information I fetch with each photograph, I wrote a model method to return the photographer's name as a single string, and assign the result to the key `photographer` via jBuilder.
 
 <details>
   <summary style="color: blue" >Model Methods</summary>
@@ -616,6 +616,8 @@ showOnUpdate() {
 ## Misc Features
 
 ### Modular Navigation Bar
+
+
 
 ### Modular Session Form
 
