@@ -413,7 +413,7 @@ I then style the label to look like a button.
 <details>
   <summary>Displaying Photos </summary>
 
-    We display a smaller version of each image the user has uploaded. The method to fetch each photo is the same, but the way we display them is different in two ways (compared to the previous ways). 
+  We display a smaller version of each image the user has uploaded. The method to fetch each photo is the same, but the way we display them is different in two ways (compared to the previous ways). 
 
 ```js
 displayPhotos() {
@@ -447,6 +447,28 @@ displayPhotos() {
 
 <details>
   <summary>Selecting a Photo</summary>
+
+Users can select a photo by clicking on it, and change their selection by clicking on another one.
+
+Thus, we need to pass to the individual photo container whether that photo was clicked on, and that the photo is being shown on the Photo Manager page.
+
+#### Styling the chosen photo differently:
+
+Within the individual photo container, we return the image and give it an additional class `chPhoto` if the photo is chosen.
+
+```js
+if (editMode) { // manage photo page
+  // check if idx here is same as chosenPhoto...
+  if (chosen) {
+    return <div className="indvPhoto edtPhoto chPhoto" style={nonHover} > </div>
+  } else {
+    return <div className="indvPhoto edtPhoto" style={nonHover} > </div>
+  }
+```
+
+#### Passing the chosen photo into state
+
+
 </details>
 
 <details>
