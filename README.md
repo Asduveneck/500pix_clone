@@ -613,7 +613,7 @@ showOnUpdate() {
 
 </details>
 
-## Misc Features
+<!-- ## Misc Features -->
 
 <!-- ### Modular Navigation Bar -->
 
@@ -627,6 +627,6 @@ showOnUpdate() {
   * Each photo updates the number of views it has.
   * Tracking data with each photo and displaying summary statistics
 
-<!-- ## Additional Details Probably not -->
+<!-- ## Additional Details Probably -->
 
 
