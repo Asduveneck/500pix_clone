@@ -615,11 +615,11 @@ showOnUpdate() {
 
 ## Misc Features
 
-### Modular Navigation Bar
+<!-- ### Modular Navigation Bar -->
 
 
 
-### Modular Session Form
+<!-- ### Modular Session Form -->
 
 ## Future Features
 
@@ -627,6 +627,6 @@ showOnUpdate() {
   * Each photo updates the number of views it has.
   * Tracking data with each photo and displaying summary statistics
 
-## Additional Details
+<!-- ## Additional Details Probably not -->
 
 
