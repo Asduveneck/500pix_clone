@@ -1,8 +1,9 @@
 #nav_bar_outer {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 32px);
   padding: 16px 64px;
   background-color: $background_white;
+  z-index: 1;
   // background-color: lightcoral;
   display: flex;
   flex-direction: row;
@@ -13,6 +14,10 @@
       margin: 0px 16px;
     }
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+  .darker_font {
+    color: #222222;
+  }
 }
 
 #nav_bar_outer.navScroll {
@@ -32,14 +37,23 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   a:hover {
     color: $blue;
   }
+  .logged_in_logo { // to match upload form spacing.
+    margin-left: -16px;
+  }
 }
 // Right Side
 .nb_r {
   margin-right: 64px;
+  nav {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
   a {
     color: #222222;
     text-decoration: none;
-    font-size: 18px
+    font-size: 18px;
+    align-self: center;
   }
   .navk {
     font-weight: bold;
@@ -47,17 +61,113 @@ box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 6px 0px, rgba(0, 0, 0, 0.02) 0px 0px 2px
   .navk.log{
     margin: 0px 24px;
   }
-  .navk.sign{
+  .sign{
     margin: 0px 16px;
     padding: 4px 16px;
-    border: 1.5px;
+    border: 2px;
     border-radius: 25px;
     border-style: solid;
   }
   div {
     margin: 0px 16px;
   }
-  .navk:hover {
+  .navk:hover { // nav links in the bar
     color: $blue;
   }
+  .upload {
+    display: flex;
+    flex-direction: row;
+    span:last-child {
+      align-self: center;
+      margin-top: 4px;
+    }
+    border-color: #222222;
+  }
+  .upload_arrow {
+    background-image: image-url("svg_misc/icon_upload");
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    margin-right: 8px;
+  }
+  .upload.sign:hover {
+    fill: magenta;
+  }
+
+  // dropdown stuff
+  // .user_prof {
+  //   font-size: 32px;
+  //   border: none;
+  //   border-radius: 50%;
+  //   width: 32px;
+  //   height: 32px;
+  //   background-color: mediumpurple;
+  //   // margin-right: -32px;
+  //   // background-color: maroon;
+  // }
+  .user_prof {
+    font-size: 32px;
+  }
+  .user_prof:hover{
+    cursor: pointer;
+  }
+  .dropdown-container {
+    position: absolute;
+    z-index: 1;
+    display: none;
+  }
+  .show{display: block}
+
+  .dropdown-content {
+    background-color: $background_white;
+    position: relative;
+    left: -47px;
+    min-width: 168px;
+    min-height: 100px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.16), 0 0 4px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  // Makes a triangle positioned relative to the dropdown
+  .dropdown-content:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 82.5%; // Good luck maintaining
+    left: 25%;
+    box-sizing: border-box;
+    border: 10px solid black;
+    border-color: transparent transparent $background_white $background_white;
+    transform-origin: 0 0;
+    transform: rotate(135deg);
+    box-shadow: -3px 3px 3px 0 rgba(0, 0, 0, 0.08);
+  }
+  .dropdown-link:first-child {
+    margin-top: 8px;
+    padding: 8px 0;
+  }
+  .dropdown-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    // color: $light_grey;
+    text-align: center;
+    border: none;
+    width: 100%;
+    margin: 0;
+    padding: 6px 0px;
+    // height: 32px;
+  }
+
+  .dropdown-link:hover, dropdown-link:focus {
+    background-color: $blue;
+    color: white;
+    cursor: pointer;
+  }
+
 }

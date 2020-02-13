@@ -11,6 +11,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
+    # debugger # BUG: turns out photo_params is nil. Why...?
     @photo = Photo.new(photo_params)
     if @photo.save
       render :show   # Could also be the edit form right after too...
@@ -49,7 +50,8 @@ class Api::PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:title, :description, # user input
       :user_id, # from current user
-      :views, :rating # not user inputted
+      :views, :rating, # not user inputted
+      :file # from file upload...
     )
   end
 

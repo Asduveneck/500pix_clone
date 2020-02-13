@@ -23,16 +23,9 @@ class photoShow extends React.Component {
   render() {
     let photo = this.props.photo;
     if (!photo) return null;
-    console.log(photo);
-    let {title, description, views, rating, fileUrl, created_at, photographer} = photo;
+    // console.log(photo);
+    let { title, description, views, rating, fileUrl, created_at, photographer, photo_usr_id} = photo;
 
-    let photoStyle = {
-      backgroundImage: `url(${fileUrl})`,
-      backgroundSize: 'cover',
-      minHeight: '600px',
-      height: '50vh',
-      width: '95vw'
-    }
     return (
       <div className = "indvPhotoShowPage">
 
@@ -46,7 +39,8 @@ class photoShow extends React.Component {
           <div className = "iPS user-info">
             <div className="left">
               <h2 className="iPS margb8">{title}</h2>
-              <span>by {photographer} </span>
+              
+              <span>by <Link to={`/users/${photo_usr_id}`} className="photoLink" key={`usr_${photo_usr_id}`}>{photographer}</Link></span>
                 {/* TODO: LINK to photographer showPage  */}
             </div>
             <div className="right">
@@ -75,7 +69,7 @@ class photoShow extends React.Component {
             
         {/* Tags */}
         {/* Temp placeholder link */}
-        <Link to='/index' className="temp1">Home</Link>
+          <Link to='/index' className="temp1 photoLink">Home</Link>
       </div>
 
       </div>

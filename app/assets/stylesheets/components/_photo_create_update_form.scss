@@ -1,0 +1,206 @@
+.photoCreate_Page {
+  margin-top: 32px;
+
+  h2 {
+    margin-left: 64px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+.photoCreate_content {
+  display: flex;
+  background-color: $background_grey;
+  justify-content: space-between;
+  padding: 0 64px;
+  height: calc(100vh - 132px);
+
+  .pcc_Lt {
+    margin: 24px 0;
+
+    .imageReq {
+      background-color: $background_white;
+      width: 400px;
+      height: 250px;
+    }
+    li {
+      list-style: none;
+      font-size: 12px;
+      margin: 4px 0;
+    }
+    h3 {
+      padding: 16px 0;
+      margin-left: 16px;
+      // text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 1px 0 black;
+      letter-spacing:1.5px;
+    }
+    .im_ind_req { margin-left: 24px}
+    ul { margin: 8px 0}
+    .fnt_err {
+      color: red;
+      margin-left: 24px;
+      margin-top: 16px;
+      li {
+        margin: 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .fColCen { // flex column center
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pcc_Rt {
+    margin: 24px 0;
+    margin-left: 16px;
+    background-color: $background_white;
+    width: 400px;
+
+  }
+  .photo_form {
+  // styles label to look like a button
+    .file-input.blueButton {
+      width: 100px;
+    }
+    .blueButton{
+      align-self: center;
+      text-align: center;
+      font-size: 16px;
+      width: 200px;
+      background-color: $blue;
+      color: $background_white;
+      border-radius: 12.5px;
+      border-style: none;
+      margin: 16px 0px;
+      padding: 8px 32px;
+      cursor: pointer;
+    }
+    .fileInput { // hides standard file upload button
+      width: 0.01px;
+      height: 0.01px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+    // styling the bottom part of other inputs
+    .form_inputs {
+      width: 375px;
+      margin: 0 auto;
+
+      .input, button {
+        margin: 16px 0;
+      }
+      .input {
+        label {
+          font-size: 16px;
+          line-height: 1.5;
+          margin-bottom: 8px;
+        }
+        textarea {
+          height: 56px;
+          resize: vertical;
+          border: 1px solid black;
+          border-radius: 4px;
+          outline: none;
+          touch-action: manipulation;
+          overflow: hidden;
+          font-size: 16px;
+          padding: 16px;
+          overflow-wrap: break-word;
+        }
+        textarea:focus{
+          border-color: $blue;
+        }
+        .title {
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+// update form part
+.photo_manage_gallery {
+  width: calc(100vw - 528px - 12px);
+  min-width: 250px;
+  .index_page_page {
+    width: 100%;
+      border: 1px;
+      margin: 12px;
+  
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 15px;
+  }
+  .edtPhoto {
+    cursor: pointer;
+  }
+
+  .chPhoto {
+    cursor: auto;
+    border: solid $background_white 1.5px;
+    // background-color: $background_white;
+    // border: 2px solid #0870d1;
+    padding: 0px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px $blue;
+  }
+
+} 
+
+.delete {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 48px;
+  color: red;
+  background: $background_white;
+  border: 1px solid #d7d8db;
+  box-sizing: border-box;
+  border-radius: 28px;
+  cursor: pointer;
+}
+
+.update_buttons {
+  box-shadow: 0 0 2px rgba(0,0,0,.02), 0 -2px 6px rgba(0,0,0,.08);
+  // justify-self: baseline;
+  // align-self: flex-end;
+  position: absolute;
+  bottom: 24px;
+  width: 400px;
+  margin-left: -12.5px;
+  display: flex;
+  justify-content: space-around;
+  .update {
+    align-self: center;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12.5px;
+    border-style: none;
+    margin: 16px 0px;
+    cursor: pointer;
+  }
+  .save {
+    width: 150px;
+    background-color: $blue;
+    color: $background_white;
+    padding: 8px 16px;
+  }
+  .cancel {
+    width: 100px;
+    color: $blue;
+  }
+}
+
+.pcc_Rt.updateContainer {
+  margin-left: 30px;
+}

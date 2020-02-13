@@ -3,10 +3,39 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, logout}) => {
 
+  // Helper methods
+  const toggleShow = () => { // listener for opening and closing
+    document.getElementById("js-dropdown").classList.toggle("show")
+  }
+
+  window.onclick = function (event) {
+    if (!event.target.matches('.user_prof')) {
+      let dropdown = document.getElementsByClassName("dropdown-container");
+      for (let i = 0; i < dropdown.length; i++) {
+        let openDropdown = dropdown[i];
+        if (openDropdown.classList.contains('show')) { 
+          openDropdown.classList.remove('show');
+        }
+      }
+ 
+    }
+  }
+
+  $(window).scroll(function () { // shadow effect on scroll
+    let scroll = $(window).scrollTop();
+    if (scroll > 0) {
+      $("#nav_bar_outer").addClass("navScroll");
+    } else {
+      $("#nav_bar_outer").removeClass("navScroll");
+    }
+  })	
+
+
+  // Left and Right sides of nav bar
   const leftSide = () => {
     let logoLink = <Link to="/">1000px</Link>
     if(currentUser) {
-      logoLink = <Link to="/index">1000px</Link>
+      logoLink = <Link to="/index" className="logged_in_logo">1000px</Link>
     }
     return(
     <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
@@ -28,9 +57,17 @@ const NavBar = ({ currentUser, logout}) => {
       ]
     } else {
       rsContents=[
-        <div key="navk3" className="far fa-user-circle"></div>, // Will be a link placeholder
-        <div key="navk4" className="fas fa-plus"></div>,
-        <button onClick={logout} key="navk5">Nav Log Out</button> // Placeholder. TODO: Will put into a click dropdown and move this there
+        <div key="navk3" className="far fa-user-circle user_prof" onClick={toggleShow}>
+          <div className="dropdown-container" id="js-dropdown">
+            <div className="dropdown-content">
+                <Link to={`/users/${currentUser.id}`} className="dropdown-link">Profile</Link>
+                <Link to="/manage_photos" className="dropdown-link">Manage Photos</Link>
+                <button onClick={logout} className="dropdown-link">Log out</button>
+            </div>
+          </div>
+        </div>,
+        <Link key="navk4" className="upload sign darker_font" to="/new/photo"><span className="upload_arrow"></span><span>Upload</span></Link>
+
       ]
     }
     return(
