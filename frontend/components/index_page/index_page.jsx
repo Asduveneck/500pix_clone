@@ -22,7 +22,9 @@ class IndexPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      page: 3, // trigger our offset parameter?
+    };
   // }
   // constructor(props) {
   //   super(props);
@@ -35,7 +37,7 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchPhotos()
+    this.props.fetchPhotos(this.state.page)
       .then( () => this.setState({
         photos: this.props.photos
       }
@@ -70,7 +72,7 @@ class IndexPage extends React.Component {
       </div>
     );
   }
-
+ //history.push?
 }
 
 export default IndexPage;

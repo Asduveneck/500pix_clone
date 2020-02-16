@@ -3,7 +3,7 @@ class Api::PhotosController < ApplicationController
   def index
     @limit = 8
     offset = params[:offset].to_i * @limit ||= 0 # offset for pagination
-    @photos = Photo.all.offset(0).limit(@limit)
+    @photos = Photo.all.offset(offset).limit(@limit)
     render :index # we want infinite scroll so probably not yet...
   end
     

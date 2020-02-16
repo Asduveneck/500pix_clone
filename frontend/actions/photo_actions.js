@@ -60,8 +60,8 @@ export const createPhoto = formPhoto => dispatch => (
     ))
 );
 
-export const fetchPhotos = () => dispatch => ( 
-  APIUtil.fetchPhotos()
+export const fetchPhotos = (page) => dispatch => (
+  APIUtil.fetchPhotos(page)
     .then(photos => (dispatch(receivePhotos(photos))
       ), err => (
         dispatch(receiveErrors(err.responseJSON))

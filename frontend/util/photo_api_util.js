@@ -15,10 +15,10 @@ export const createPhoto = (photo) => (
   })
 ); 
 
-export const fetchPhotos = () => (
+export const fetchPhotos = (page) => (
   $.ajax({
     method: 'get',
-    url: `/api/photos`,
+    url: `/api/photos?offset=${page}`,
   })
 ); 
 
