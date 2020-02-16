@@ -94,7 +94,8 @@ class photoManage extends React.Component {
   }
 
   clearChosenPhoto() { // TODO: future: add this to surrounding the photos and make it work onClick.
-    this.setState({chosenPhoto: {}, chosenPhotoIdx: ""})
+    this.setState({
+      chosenPhoto: {}, chosenPhotoIdx: "", title: "", description: ""})
   }
 
   cancelPhotoUpdate() {
@@ -117,7 +118,7 @@ class photoManage extends React.Component {
       newPhotos.splice(this.state.chosenPhotoIdx, 1);
 
       this.setState({photos: newPhotos})
-        .then(() => this.clearChosenPhoto() )
+      this.clearChosenPhoto()
     }
   }
 
