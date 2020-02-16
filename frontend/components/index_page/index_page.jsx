@@ -24,6 +24,7 @@ class IndexPage extends React.Component {
     super(props);
     this.state = {
       page: 0, // trigger our offset parameter?
+      photos: [],
     };
   // }
   // constructor(props) {
@@ -38,12 +39,15 @@ class IndexPage extends React.Component {
 
   loadMore() {
     this.setState({page: this.state.page+1})
+    let prevPhotos = this.state.photos;
     this.props.fetchPhotos(this.state.page)
-      .then( () => this.setState({ photos: this.props.photos }))
+      .then( () => this.setState({ 
+        photos: [...prevPhotos, ...this.props.photos] 
+      })) // combine the photos
+      console.log(this.state);
   };
 
   componentDidMount(){
-    console.log(this.state.page)
     this.props.fetchPhotos(this.state.page)
       .then( () => this.setState({ photos: this.props.photos}))
     // in container mSTP.
