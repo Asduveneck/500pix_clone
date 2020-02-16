@@ -77,7 +77,10 @@ class photoCreate extends React.Component {
     // }
     if (this.state.photoFile) {
       this.props.createPhoto(formData) // does the ajax call request
-        .then( () => this.props.history.push("/manage_photos") );
+        .then( () => {
+          this.props.history.push("/manage_photos")} )
+        .then( () => console.log(this.props.currentUser) ); // BUG: not setting state again?
+        // /Undefined currentUser? In entities, we have our currentUser which has an array of photos that is MISSING our last set of photos...
     } else {
       this.setState({photoErrors: ["Please attach a valid image"]});
     }
