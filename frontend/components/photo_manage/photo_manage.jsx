@@ -21,6 +21,7 @@ class photoManage extends React.Component {
   }
 
   componentDidMount() {
+    // if (!this.props.currentUser.photos) return null; // Handle case where no photo // errors out here too?!?
     let photoIds = this.props.currentUser.photos; // BUG: doesn't refresh in time from photo Upload
     // console.log(photoIds) // BUG: errors out if I include this line. Error in reducer?!?
     // NOTE: look into  getDerivedStateFromProps and componentDidUpdate
@@ -139,7 +140,7 @@ class photoManage extends React.Component {
 
 
   render() {
-    if (!this.state.photos) return null;
+    if (!this.state.photos) return;
     // {this.showOnUpdate()}
     return (
       <div className="photoCreate_Page">
