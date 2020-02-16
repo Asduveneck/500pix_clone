@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 3, // trigger our offset parameter?
+      page: 0, // trigger our offset parameter?
     };
   // }
   // constructor(props) {
@@ -37,11 +37,9 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount(){
+    console.log(this.state.page)
     this.props.fetchPhotos(this.state.page)
-      .then( () => this.setState({
-        photos: this.props.photos
-      }
-        ))
+      .then( () => this.setState({ photos: this.props.photos}))
     // in container mSTP.
   }
 

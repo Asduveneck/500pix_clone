@@ -9,7 +9,7 @@ const mSTP = (state) => ({
 });
 
 const mDTP = (dispatch) => ({
-  fetchPhotos: () => dispatch(fetchPhotos()),
+  fetchPhotos: (page) => dispatch(fetchPhotos(page)),
 });
 
 export default connect(mSTP, mDTP)(IndexPage);
