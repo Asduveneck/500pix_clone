@@ -111,10 +111,7 @@ class photoManage extends React.Component {
     if (deletedPhoto.id !== undefined) { // If there is a photo ID
       this.props.deletePhoto(deletedPhoto.id);
       // Removing deleted photo from state
-      // previously:
-      // const delPIdx = this.state.photos.indexOf(deletedPhoto); // NOTE: expensive lookup
-      // newPhotos.splice(delPIdx, 1);
-      // Probably works consistently since we set the idx based upon the array in state when it's made...
+      // Probably works consistently since we set the idx based upon the array in state when it's made
       let newPhotos = this.state.photos;
       newPhotos.splice(this.state.chosenPhotoIdx, 1);
 
@@ -141,7 +138,6 @@ class photoManage extends React.Component {
 
   render() {
     if (!this.state.photos) return;
-    // {this.showOnUpdate()}
     return (
       <div className="photoCreate_Page">
         <h2>
