@@ -44,7 +44,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    if(!this.state.photos) return null; //
+    if(!this.state.photos) return null;
     return(
       <div className="index_page_all">
         <div className="index_page_header"> 
@@ -52,7 +52,7 @@ class IndexPage extends React.Component {
           <h2>See recently added photos with the highest reviews.</h2>
         </div>
         <div id="index_page_navBar">
-          <h3 id="placeholderNav">Placeholder NavBar</h3>
+          <h3 id="placeholderNav">Placeholder NavBar</h3> {/* TODO: Position Sticky */}
         </div>
         <div className="index_page_page">
           {this.state.photos.map((photo, idx) => (
@@ -66,14 +66,14 @@ class IndexPage extends React.Component {
           ))
           }
         </div>
-
-        <button onClick={e => { this.loadMore() }}>
+        {/* <button onClick={e => { this.loadMore() }}>
           Load More
-        </button>
+        </button> */}
 
       </div>
     );
   }
 }
+/* Replace button with infinite symbol? */ 
 
 export default IndexPage;
