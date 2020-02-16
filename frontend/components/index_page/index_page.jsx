@@ -33,8 +33,14 @@ class IndexPage extends React.Component {
   //   }
 
   //   // Binding Functions
-    // this.props.fetchPhotos = this.props.fetchPhotos.bind(this);
+    this.loadMore = this.loadMore.bind(this);
   }
+
+  loadMore() {
+    this.setState({page: this.state.page+1})
+    this.props.fetchPhotos(this.state.page)
+      .then( () => this.setState({ photos: this.props.photos }))
+  };
 
   componentDidMount(){
     console.log(this.state.page)
@@ -67,6 +73,11 @@ class IndexPage extends React.Component {
           ))
           }
         </div>
+
+        <button onClick={e => { this.loadMore() }}>
+          Load More
+        </button>
+
       </div>
     );
   }
