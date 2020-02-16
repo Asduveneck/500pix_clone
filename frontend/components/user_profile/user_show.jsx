@@ -15,25 +15,12 @@ class userShow extends React.Component {
     // if (!this.props.user) return null;
     // Change the URL, we update the user component, but we don't remount.
     // upon update, do something. So I should be looking into update 
-    // console.log("Component did mount")
-    // console.log(this.props.match.params.user_name);
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
       .then(res => { // missing one photo each time.
         // console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
         this.setState({user, photoIds});
-        // let userPhotos = [];
-      //   photoIds.map(photoId => {
-      //     this.props.fetchPhoto(photoId).then((res) => {
-      //       userPhotos.push(res.photo)
-      //     })
-      //   }
-      // )
-      // console.log("Still in success cb. About to set state");
-      // this.setState({photos: userPhotos})
-      // console.log("Still in success cb. State:");
-      // console.log(this.state);
 
       Promise.all(photoIds.map(photoId => {
         return this.props.fetchPhoto(photoId) // See if any of this is necessary because you set up props as you do this...
@@ -51,28 +38,6 @@ class userShow extends React.Component {
       });
   }
 
-  // componentDidUpdate() { // triggers infinite loop
-  //   console.log("Component did update")
-  //   // console.log(this.props.match.params.user_name);
-  //   this.props.fetchUser(this.props.match.params.userId) // see app.jsx
-  //     .then(res => {
-  //       console.log("In component did update fetched User success callback")
-  //       let user = res.user;
-  //       let photoIds = user.photos;
-  //       let userPhotos = [];
-  //       photoIds.map(photoId => {
-  //         this.props.fetchPhoto(photoId).then((res) => {
-  //           userPhotos.push(res.photo)
-  //         })
-  //       }
-  //       )
-  //       console.log("Still in success cb. About to set state");
-  //       this.setState({ photos: userPhotos })
-  //       console.log("Still in success cb. State:");
-  //       console.log(this.state);
-
-  //     })
-  // }
   // Stops infinite loop:
   shouldComponentUpdate(nextProps, nextState) { 
     let currentPath = this.props.location.pathname
@@ -104,38 +69,10 @@ class userShow extends React.Component {
     return true;
   }
 
-  // componentWillUnmount() {
-  //   this.props.clearUser();
-  // }
-
   render() {
-    // console.log("In render");
-    // console.log(this.props);
     let user = this.props.user;
     if (!user) return null;
-    // if (!this.state.photos) return null; // BREAKS code
-    // console.log(user);
     let { user_name, first_name, last_name, location_city, location_country, about, photos, photos_all } = user;
-
-    // let userPhotos = [];
-    // // loop over photoId and fetch each photo.
-
-    // photos.map(photoId => {
-    //   this.props.fetchPhoto(photoId).then((res) => {
-    //     // console.log("dispatched fetchPhoto. Now returning:");
-    //     userPhotos.push(res.photo)
-    //   })
-    // })
-    // console.log("userPhotos");
-    // console.log(userPhotos);
-
-    // console.log("state");
-    // console.log(this.state);
-    // this.setState({photos: userPhotos}) // not allowed
-    // console.log(this.state);
-
-    // console.log("Render State:");
-    // console.log(this.state);
 
     const displayPhotos = () => {
       if (this.state.photos) {
@@ -156,7 +93,6 @@ class userShow extends React.Component {
 
         )
       } else {
-        // console.log("No photos found")
         return "0 Photos were found"
       }
     }
