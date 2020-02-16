@@ -3,21 +3,6 @@ import IndvPhoto from './index_indv_photo';
 import InfiniteScroll from '../infinitescroll';
 import { Link } from 'react-router-dom'; // Eventually make clicking on each photo a link or render a container...
 
-
-
-// $(window).scroll(function () {
-//   let scroll = $(window).scrollTop();
-//   if (scroll >= 95) {
-//     console.log("hit target");
-//     $("#index_page_navBar").addClass("navBarNow");
-//   } else {
-//     $("#index_page_navBar").removeClass("navBarNow");
-//     console.log("no longer a nav bar")
-//   }
-// });
-
-
-
 class IndexPage extends React.Component {
 
   constructor(props) {
@@ -26,15 +11,20 @@ class IndexPage extends React.Component {
       page: 0, // trigger our offset parameter?
       photos: [],
     };
-  // }
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     photos: [] // Following along
-  //   }
 
-  //   // Binding Functions
+    // Binding Functions
     this.loadMore = this.loadMore.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  handleScroll() {
+    let lastPhoto = document.querySelector(".index_page_page > a:last-child");
+    let lastPhotoOffset = lastPhoto.offsetTop + lastPhoto.clientHeight;
+    let pageOffset = window.pageYOffset + window.innerHeight;
+
+    if (pageOffset > lastPhotoOffset) {
+      this.loadMore();
+    }
   }
 
   loadMore() {
@@ -43,18 +33,17 @@ class IndexPage extends React.Component {
     this.props.fetchPhotos(this.state.page)
       .then( () => this.setState({ 
         photos: [...prevPhotos, ...this.props.photos] 
-      })) // combine the photos
-      console.log(this.state);
+      }))
   };
 
   componentDidMount(){
     this.props.fetchPhotos(this.state.page)
       .then( () => this.setState({ photos: this.props.photos}))
-    // in container mSTP.
+    this.scrollListener = window.addEventListener("scroll", e => {this.handleScroll(e);
+    });
   }
 
   render() {
-    // console.log("render()");
     if(!this.state.photos) return null; //
     return(
       <div className="index_page_all">
@@ -85,7 +74,6 @@ class IndexPage extends React.Component {
       </div>
     );
   }
- //history.push?
 }
 
 export default IndexPage;
