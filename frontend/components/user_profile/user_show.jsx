@@ -6,10 +6,13 @@ class userShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      photos: []
+    };
   }
 
   componentDidMount() { 
+    // if (!this.props.user) return null;
     // Change the URL, we update the user component, but we don't remount.
     // upon update, do something. So I should be looking into update 
     // console.log("Component did mount")
@@ -19,6 +22,7 @@ class userShow extends React.Component {
         // console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
+        this.setState({user, photoIds});
         // let userPhotos = [];
       //   photoIds.map(photoId => {
       //     this.props.fetchPhoto(photoId).then((res) => {
@@ -70,41 +74,47 @@ class userShow extends React.Component {
   //     })
   // }
   // Stops infinite loop:
-  // shouldComponentUpdate(nextProps, nextState) { 
-    // console.log("in shouldComponentUpdate")
-    // console.log("this.props:")
-    // console.log(this.props)
-    // console.log("path:")
-    // // console.log(nextState)
-    // let currentPath = this.props.location.pathname
-    // let nextPath = nextProps.location.pathname
-    // console.log(currentPath)
-    // if (!this.props.user) return true; // rerender if there is no user
-  // //   if (!this.state.photos) return true; 
-  // //   // console.log(this.props.user.photos.length);
-  // //   // console.log(nextState.photos.length);
-  // //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
+  shouldComponentUpdate(nextProps, nextState) { 
+    let currentPath = this.props.location.pathname
+    let nextPath = nextProps.location.pathname
+    if (!this.props.user || !this.state.photos ) return true; // rerender if there is no user
+    if (currentPath !== nextPath) { // switching to another user.
+      // return true; // component is NOT updating though.
+      document.location.reload() // TODO: Refactor this out. Horrible patch for above bug: not updating state
+    } 
 
-  // //   // Stop user component re-rendering with each new photo being fetched
-  //   if (this.props.user.id === undefined) return true;
-  //   if (this.props.user.id === nextProps.user.id) { // CAUSING PROBLEMS?
-  //     return false
-  //   } else {
-  //     return true
+    if (this.props.user.photos.length !== nextState.photos.length) {
+      if (this.props.user.photos === 0 || !this.props.user.photos) return true;
+      return true; // infinite loop now?
+    }
+
+  //   // console.log(this.props.user.photos.length);
+  //   // console.log(nextState.photos.length);
+  //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
+
+    // Stop user component re-rendering with each new photo being fetched
+  //   if (this.props.user.id === undefined || !this.props.user.id) return true;
+  //   if (nextProps.user) { // if there is a user we can call ID on it...
+  //     if (this.props.user.id === nextProps.user.id) { // CAUSING PROBLEMS?
+  //       return false
+  //     } else {
+  //       return true
+  //     }
   //   }
-  // }
+    return true;
+  }
 
   // componentWillUnmount() {
   //   this.props.clearUser();
   // }
 
   render() {
-    console.log("In render");
-    console.log(this.props);
+    // console.log("In render");
+    // console.log(this.props);
     let user = this.props.user;
     if (!user) return null;
     // if (!this.state.photos) return null; // BREAKS code
-    console.log(user);
+    // console.log(user);
     let { user_name, first_name, last_name, location_city, location_country, about, photos, photos_all } = user;
 
     // let userPhotos = [];
