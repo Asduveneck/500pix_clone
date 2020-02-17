@@ -107,7 +107,7 @@ class userShow extends React.Component {
         <div className="temp user_prof_img">
           {/* profile image: round border, fixed size, negative margin of half */}
         </div>
-
+      <span className="setting_link">Settings</span>
       <h2 className="user_fl_name" key={`user_id_${user.id}`}>{first_name} {last_name}</h2>
 
       <p className="user_about">{about}</p>

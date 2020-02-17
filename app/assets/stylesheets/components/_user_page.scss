@@ -22,6 +22,26 @@
     background-color: $light_grey;
     // Replace with background image temporarily
   }
+
+  .setting_link {
+    background-color: #0099e5;
+    color: $background_white;
+    width: 60px;
+    letter-spacing: 0.5px;
+    margin-left: auto;
+    margin-right: 2.5vw;
+    margin-top: -58px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 28px;
+    border-radius: 5px;
+    transition: background-color 0.1s ease-in-out;
+  }
+  .setting_link:hover {
+    background-color: #00aaff;
+    cursor: pointer;
+  }
+
   h2 {
     text-align: center;
     margin: 32px 0 0;
