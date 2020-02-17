@@ -4,21 +4,11 @@ json.set! :photos, user.photos.ids
 # json.set! :photo_urls, user.all_photo_urls # TODO: not actual urls yet
 # current guest user: http://localhost:3000/api/users/8.json
 
-# def check_pic(pic) # apparently json out of scope.
-#   if pic.attached?()
-#     json.fileUrl polymorphic_url(pic)
-#   else
-#     json.fileUrl ""
-#   end
-# end
-
-
 if user.cover_pic.attached?()
   json.fileUrl polymorphic_url(user.cover_pic)
 else
   json.fileUrl ""
 end
-
 
 if user.profile_pic.attached?()
   json.fileUrl polymorphic_url(user.profile_pic)
