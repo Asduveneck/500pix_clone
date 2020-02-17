@@ -40,7 +40,11 @@ class Api::UsersController < ApplicationController
   end
 
   def user_updatable_params
-    params.require(:user).permit(:first_name, :last_name, :location_city, :location_country, :about, :website, :instagram_username, :facebook_address, :twitter) 
+    params.require(:user).permit(:first_name, :last_name,
+      :location_city, :location_country, :about, :website,
+      :instagram_username, :facebook_address, :twitter,
+      :cov_p_fileUrl, :prof_p_fileUrl
+    )
   end
 
 
