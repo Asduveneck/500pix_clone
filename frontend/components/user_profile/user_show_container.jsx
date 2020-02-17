@@ -8,7 +8,8 @@ import { fetchPhoto } from '../../actions/photo_actions';
 // TODO: import fetchPhoto or fetchPhotos so we can show off the users images
 const mSTP = (state, ownProps) => ({
   user: state.entities.users[ownProps.match.params.userId], 
-  photos: Object.values(state.entities.photos)
+  photos: Object.values(state.entities.photos),
+  currentUserId: Object.keys(state.entities.currentUser)[0]
 });
 
 const mDTP = dispatch => ({

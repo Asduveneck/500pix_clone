@@ -97,6 +97,15 @@ class userShow extends React.Component {
       }
     }
     
+    console.log(typeof this.props.user.id);
+    console.log(typeof this.props.currentUserId);
+
+    const displaySetting = () => {
+      if (this.props.user.id === parseInt(this.props.currentUserId)) {
+        return <span className="setting_link">Settings</span>
+      }
+    }
+    
 
     return (
       <div className="userShowPage" key={`user_${user_name}`}>
@@ -107,7 +116,7 @@ class userShow extends React.Component {
         <div className="temp user_prof_img">
           {/* profile image: round border, fixed size, negative margin of half */}
         </div>
-      <span className="setting_link">Settings</span>
+      {displaySetting()}
       <h2 className="user_fl_name" key={`user_id_${user.id}`}>{first_name} {last_name}</h2>
 
       <p className="user_about">{about}</p>
