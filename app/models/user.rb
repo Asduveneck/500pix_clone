@@ -38,7 +38,9 @@ class User < ApplicationRecord
     class_name: :Gallery, 
     dependent: :delete_all  
 
-
+  # Profile and Cover Photos
+  has_one_attached :cover_pic # association is user.cover_pic
+  has_one_attached :profile_pic # user.profile_pic
 
   # --------------- Validations ------------------ 
   
