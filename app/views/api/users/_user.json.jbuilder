@@ -5,13 +5,13 @@ json.set! :photos, user.photos.ids
 # current guest user: http://localhost:3000/api/users/8.json
 
 if user.cover_pic.attached?()
-  json.fileUrl polymorphic_url(user.cover_pic)
+  json.cov_p_fileUrl polymorphic_url(user.cover_pic)
 else
-  json.fileUrl ""
+  json.cov_p_fileUrl ""
 end
 
 if user.profile_pic.attached?()
-  json.fileUrl polymorphic_url(user.profile_pic)
+  json.prof_p_fileUrl polymorphic_url(user.profile_pic)
 else
-  json.fileUrl ""
+  json.prof_p_fileUrl ""
 end
