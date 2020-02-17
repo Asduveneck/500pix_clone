@@ -96,13 +96,10 @@ class userShow extends React.Component {
         return "0 Photos were found"
       }
     }
-    
-    console.log(typeof this.props.user.id);
-    console.log(typeof this.props.currentUserId);
 
     const displaySetting = () => {
       if (this.props.user.id === parseInt(this.props.currentUserId)) {
-        return <span className="setting_link">Settings</span>
+        return <span className="setting_link" onClick={this.props.openModal}>Settings</span>
       }
     }
     

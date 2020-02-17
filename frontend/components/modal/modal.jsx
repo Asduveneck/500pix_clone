@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-
+import userSettingContainer from '../user_profile/user_setting_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -9,8 +9,8 @@ function Modal({ modal, closeModal }) {
   }
   let component;
   switch (modal) {
-    case 'enlargePhoto':
-      component = <modPhoto />
+    case 'usrSetting':
+      component = <userSettingContainer />;
       break;
     default:
       return null;

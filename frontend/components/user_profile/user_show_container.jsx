@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import userShow from './user_show';
 import { fetchUser, clearUser } from '../../actions/user_actions'; // time to make user actions
 import { fetchPhoto } from '../../actions/photo_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 // TODO: Modify this and App.jsx so that we match by username FINDME
     // Will probably need to update our AJAX call too.
@@ -16,6 +17,8 @@ const mDTP = dispatch => ({
   fetchUser: userId => dispatch(fetchUser(userId)) ,
   clearUser: () => dispatch(clearUser()),
   fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
+  openModal: () => dispatch(openModal('usr_setting')),
+  closeModal: () => dispatch(closeModal()) // TODO: check this
 });
 
 export default connect(mSTP, mDTP)(userShow)
