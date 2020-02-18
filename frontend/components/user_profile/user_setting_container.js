@@ -5,7 +5,7 @@ import { fetchPhoto } from '../../actions/photo_actions';
 
 // stolen from user_show
 const mSTP = (state, ownProps) => ({
-  // user: state.entities.users[ownProps.match.params.userId],
+  user: Object.values(state.entities.currentUser)[0]
   // currentUserId: Object.keys(state.entities.currentUser)[0]
 });
 

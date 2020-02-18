@@ -51,4 +51,25 @@
     resize: none;
     width: calc(580px - 20px);
   } 
+
+  .header {
+    min-height: 130px;
+    background-color: rgba(0,0,0,0.7);
+    // border-bottom: 1px solid #eeeff2;
+    // margin-bottom: -104px;
+    .icon {
+      width: auto;
+      color: #fff;
+      padding-left: 20px;
+      display: inline-block;
+      text-align: center;
+      margin: 0 auto;
+      // background-color: aqua;
+    }
+
+  }
+
+  .footer {
+    padding: 20px;
+  }
 }
