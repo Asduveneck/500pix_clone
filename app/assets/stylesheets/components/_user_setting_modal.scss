@@ -1,6 +1,6 @@
 .usr_setting_page {
-  background-color: $background_white;
-  width: 40vw;
+  background-color: $background_grey;
+  width: 580px;
   min-height: 40vh;
 
   input {
@@ -17,7 +17,38 @@
     }
     label {
       width: 100%;
-      background-color: magenta;
+      font-size: 14px;
+      color: #0099e5;
+      margin-bottom: 10px;
+
+    }
+    input {
+      width: 265px;
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+
+    .input {
+      color: #525558;
+      border: 1px solid rgba(185,193,199,0.5);
+      box-sizing: border-box
     }
   }
+  .pseudoLabel {
+    width: 100%;
+    margin: 0 10px;
+    margin-bottom: -20px;
+    font-size: 14px;
+    color: #0099e5;
+  }
+  .blank {
+    height: 0.00001px;
+    font-size: 0.00001px;
+    background-color: maroon;
+  }
+
+  textarea { 
+    resize: none;
+    width: calc(580px - 20px);
+  } 
 }
