@@ -1,16 +1,21 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import userSettingContainer from '../user_profile/user_setting_container';
+import UserSettingContainer from '../user_profile/user_setting_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
+    // debugger;
     return null;
   }
   let component;
+  
+  // debugger;
+
   switch (modal) {
-    case 'usrSetting':
-      component = <userSettingContainer />;
+    case 'userSetting':
+      // debugger;
+      component = <UserSettingContainer />;
       break;
     default:
       return null;
@@ -26,6 +31,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => {
+  // debugger; // not even triggering!
   return {
     modal: state.ui.modal
   };

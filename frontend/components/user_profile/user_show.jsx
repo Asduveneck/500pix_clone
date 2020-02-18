@@ -99,7 +99,7 @@ class userShow extends React.Component {
 
     const displaySetting = () => {
       if (this.props.user.id === parseInt(this.props.currentUserId)) {
-        return <span className="setting_link" onClick={this.props.openModal}>Settings</span>
+        return this.props.openModal
       }
     }
     

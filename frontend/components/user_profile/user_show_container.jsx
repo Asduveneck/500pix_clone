@@ -1,3 +1,4 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import userShow from './user_show';
 import { fetchUser, clearUser } from '../../actions/user_actions'; // time to make user actions
@@ -17,7 +18,12 @@ const mDTP = dispatch => ({
   fetchUser: userId => dispatch(fetchUser(userId)) ,
   clearUser: () => dispatch(clearUser()),
   fetchPhoto: photoId => dispatch(fetchPhoto(photoId)),
-  openModal: () => dispatch(openModal('usr_setting')),
+  openModal: (
+    <span className="setting_link" 
+      onClick={ () => {dispatch(openModal('userSetting'))} } >
+      Settings
+    </span>
+  ),
   closeModal: () => dispatch(closeModal()) // TODO: check this
 });
 

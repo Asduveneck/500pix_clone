@@ -16,10 +16,12 @@ import PhotoShowContainer from './photo_show/photo_show_container';
 import UserShowContainer from './user_profile/user_show_container';
 import PhotoCreateContainer from './photo_upload/photo_post_container';
 import PhotoManageContainer from './photo_manage/photo_manage_container';
+import Modal from './modal/modal';
 
 const App = () => (
   <div className="entireApp_file"> {/* This wraps around entire page. Background white */}
-    <header>
+   <Modal/>
+   <header>
       <NavBarContainer />
     </header>
       <GreetingContainer />
