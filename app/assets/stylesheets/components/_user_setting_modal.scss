@@ -64,12 +64,34 @@
       display: inline-block;
       text-align: center;
       margin: 0 auto;
-      // background-color: aqua;
+      display: none; // fix this later
     }
 
   }
 
   .footer {
     padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      padding: 0 10px;
+      cursor: pointer;
+      height: 30px;
+      line-height: 28px;
+    }
+    // button {
+    //   cursor: pointer;
+    // }
+    .save {
+      color: #fff;
+      background-color: #34bf49;
+      border-color: #34bf49;
+    }
+
+    .cancel {
+      color: #525558;
+      border: none;
+      background-color: $background_grey;
+    }
   }
 }

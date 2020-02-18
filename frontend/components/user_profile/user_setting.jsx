@@ -16,11 +16,13 @@ class UserSetting extends React.Component {
       facebook_address: this.props.user.facebook_address || "",
       twitter: this.props.user.twitter || ""
     }
+    this.updateUserPOJO = this.updateUserPOJO.bind(this);
   }
 
   componentDidMount() {
     // if (!this.props.)
-    // console.log(this.props);
+    // console.log("testing");
+    // console.log(this.props.user);
   }
 
   update(field) {
@@ -29,10 +31,23 @@ class UserSetting extends React.Component {
     });
   }
 
+  updateUserPOJO() {
+    let updatedUser = this.state;
+    // do a check on first_name and last_name to be at least 3 characters each:
+    updatedUser.id = this.props.user.id
+    updatedUser.user_name = this.props.user.user_name
+    // console.log("updated user:", updatedUser)
+    // debugger;
+    this.props.updateUser(updatedUser)
+      .then(() => document.location.reload()) // Bug: horrible patch. 
+    // this.props.closeModal();
+  }
+
+
   render(){
-    console.log(this.state);
+    // console.log(this.state);
     return (
-      <div className="usr_setting_page">
+      <div className="usr_setting_page" >
         <div className="header">
           {/* Contains image for cover photo and user picture */}
           <div className="cover_photo">
@@ -117,6 +132,8 @@ class UserSetting extends React.Component {
 
         <div className="footer">
           {/* save or cancel buttons here. */}
+          <button type="button" className="cancel" onClick={() => this.props.closeModal()} >Cancel</button>
+          <button type="button" className="save" onClick={() => this.updateUserPOJO()}>Save</button>
         </div>
       </div>
 
