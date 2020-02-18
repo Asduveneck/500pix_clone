@@ -1,0 +1,23 @@
+.usr_setting_page {
+  background-color: $background_white;
+  width: 40vw;
+  min-height: 40vh;
+
+  input {
+    border: 1px solid black;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      width: 100%;
+      background-color: magenta;
+    }
+  }
+}
