@@ -4,7 +4,6 @@ class photoCreate extends React.Component {
 
   constructor(props) { // only valid in react class... 
     super(props);
-    // this.handleFile = this.handleFile.bind(this)
     this.state = {
       title: "",
       description: "",
@@ -16,12 +15,9 @@ class photoCreate extends React.Component {
     };
   }
 
-  // Use principles from: https://www.smashingmagazine.com/2018/01/drag-drop-file-uploader-vanilla-js/
-  // once you get a basic version going.
-
   handleFile(e) {
     const fileReader = new FileReader(); // file Reader for preview
-    const file = e.currentTarget.files[0] // Moved out of setState to later 
+    const file = e.currentTarget.files[0]
 
     const photoErrors = [];
     let bugFree = true;
@@ -38,7 +34,6 @@ class photoCreate extends React.Component {
 
     this.setState({photoErrors}); 
 
-    // If no bugs
     if (bugFree) {
       // default title will be the file name
       let fileName = file.name.split('.').slice(0, -1).join('.')
@@ -62,7 +57,6 @@ class photoCreate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    // Following works with our AJAX call if we say `photo` instead of `{photo}`
     if (this.state.title !== "" ) {
       formData.append('photo[title]', this.state.title);
     } else {
@@ -72,13 +66,10 @@ class photoCreate extends React.Component {
     formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
     formData.append('photo[user_id]', this.props.currentUserID);
 
-    // for (var pair of formData.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1]);
-    // }
     if (this.state.photoFile) {
-      this.props.createPhoto(formData) // does the ajax call request
-        .then( () => this.props.history.push("/manage_photos") ) // Bug: state not changing
-        .then( () => document.location.reload() ); // Horrible patch for above bug. TODO: Check the state or reducer...
+      this.props.createPhoto(formData)
+        .then( () => this.props.history.push("/manage_photos") )
+        .then( () => document.location.reload() );
     } else {
       this.setState({photoErrors: ["Please attach a valid image"]});
     }
