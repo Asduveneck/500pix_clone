@@ -2,9 +2,8 @@ import React from 'react';
 import IndvPhoto from '../index_page/index_indv_photo';
 class photoManage extends React.Component {
 
-  constructor(props) { // only valid in react class... 
+  constructor(props) {
     super(props);
-    // this.handleFile = this.handleFile.bind(this)
     this.state = { // we have our photos list here!
       photos: [],
       chosenPhoto: {},
@@ -21,10 +20,7 @@ class photoManage extends React.Component {
   }
 
   componentDidMount() {
-    // if (!this.props.currentUser.photos) return null; // Handle case where no photo // errors out here too?!?
-    let photoIds = this.props.currentUser.photos; // BUG: doesn't refresh in time from photo Upload
-    // console.log(photoIds) // BUG: errors out if I include this line. Error in reducer?!?
-    // NOTE: look into  getDerivedStateFromProps and componentDidUpdate
+    let photoIds = this.props.currentUser.photos;
     Promise.all(photoIds.map(photoId => {
       return this.props.fetchPhoto(photoId)
     })).then(res => {
@@ -38,8 +34,6 @@ class photoManage extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevProps, prevState) { // TODO: potential fix // does not detect incoming photo..,
-  // }
 
   update(field) {
     return e => this.setState({
@@ -51,14 +45,9 @@ class photoManage extends React.Component {
   handleSubmit(e) { // NOT USED
     e.preventDefault();
     const formData = new FormData();
-    // Following works with our AJAX call if we say `photo` instead of `{photo}`
     formData.append('photo[description]', this.state.description);
-    formData.append('photo[file]', this.state.photoFile); // QUESTION: will this be restricted by my routes / model?
+    formData.append('photo[file]', this.state.photoFile);
     formData.append('photo[user_id]', this.props.currentUserID);
-
-    // for (var pair of formData.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1]);
-    // }
   }
 
   displayPhotos() {
@@ -86,7 +75,6 @@ class photoManage extends React.Component {
   }
 
   updatePhotoPOJO() { // done to distinguish between actual POJO
-    // updating the photo
     let updatedPhoto = this.state.chosenPhoto;
     updatedPhoto.title = this.state.title;
     updatedPhoto.description = this.state.description;
@@ -94,7 +82,7 @@ class photoManage extends React.Component {
       .then(() => this.clearChosenPhoto())
   }
 
-  clearChosenPhoto() { // TODO: future: add this to surrounding the photos and make it work onClick.
+  clearChosenPhoto() {
     this.setState({
       chosenPhoto: {}, chosenPhotoIdx: "", title: "", description: ""})
   }
@@ -108,10 +96,8 @@ class photoManage extends React.Component {
 
   deletePhotoPOJO() {
     let deletedPhoto = this.state.chosenPhoto;
-    if (deletedPhoto.id !== undefined) { // If there is a photo ID
+    if (deletedPhoto.id !== undefined) {
       this.props.deletePhoto(deletedPhoto.id);
-      // Removing deleted photo from state
-      // Probably works consistently since we set the idx based upon the array in state when it's made
       let newPhotos = this.state.photos;
       newPhotos.splice(this.state.chosenPhotoIdx, 1);
 
@@ -121,9 +107,8 @@ class photoManage extends React.Component {
   }
 
   showOnUpdate() {
-    if (this.state.chosenPhoto.title !== undefined) { // if there is a chosenPhoto
+    if (this.state.chosenPhoto.title !== undefined) {
       let {chosenPhoto, title, description} = this.state;
-      // if there is a change
       if (chosenPhoto.title !== title || chosenPhoto.description !== description) {
         return(
           <div className="update_buttons">
@@ -175,11 +160,6 @@ class photoManage extends React.Component {
                     placeholder="e.g. A sunset taken at a port in Kaohsiung, Taiwan."
                   />
                 </div>
-
-                {/* <span>Or drag and drop photos anywhere on this page</span> */}
-
-                {/* <button className="blueButton" type="button" onClick={() => console.log("do nothing")}>Upload Photo</button> */}
-                
                 <button type="button" onClick={() => this.deletePhotoPOJO() } className="delete">Delete photo</button>
                 {this.showOnUpdate()}
               </div>
