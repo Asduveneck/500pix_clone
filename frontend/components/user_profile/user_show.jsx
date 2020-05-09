@@ -17,15 +17,14 @@ class userShow extends React.Component {
     // upon update, do something. So I should be looking into update 
     this.props.fetchUser(this.props.match.params.userId) // see app.jsx
       .then(res => { // missing one photo each time.
-        // console.log("In component did mount fetched User success callback")
         let user = res.user;
         let photoIds = user.photos;
         this.setState({user, photoIds});
 
       Promise.all(photoIds.map(photoId => {
-        return this.props.fetchPhoto(photoId) // See if any of this is necessary because you set up props as you do this...
+        return this.props.fetchPhoto(photoId)
       })).then(res => {
-        let userPhotos = []; // TODO: For loop dispatching setState puts the photos in props already.
+        let userPhotos = [];
         for(let i = 0; i < res.length; i++) {
           userPhotos.push(res[i].photo)
         }
@@ -44,28 +43,13 @@ class userShow extends React.Component {
     let nextPath = nextProps.location.pathname
     if (!this.props.user || !this.state.photos ) return true; // rerender if there is no user
     if (currentPath !== nextPath) { // switching to another user.
-      // return true; // component is NOT updating though.
       document.location.reload() // TODO: Refactor this out. Horrible patch for above bug: not updating state
     } 
 
     if (this.props.user.photos.length !== nextState.photos.length) {
       if (this.props.user.photos === 0 || !this.props.user.photos) return true;
-      return true; // infinite loop now?
+      return true;
     }
-
-  //   // console.log(this.props.user.photos.length);
-  //   // console.log(nextState.photos.length);
-  //   // if(this.props.user.photos.length !== nextState.photos.length) return true; // INFINITE LOOP LOGIC HERE
-
-    // Stop user component re-rendering with each new photo being fetched
-  //   if (this.props.user.id === undefined || !this.props.user.id) return true;
-  //   if (nextProps.user) { // if there is a user we can call ID on it...
-  //     if (this.props.user.id === nextProps.user.id) { // CAUSING PROBLEMS?
-  //       return false
-  //     } else {
-  //       return true
-  //     }
-  //   }
     return true;
   }
 
@@ -76,11 +60,7 @@ class userShow extends React.Component {
 
     const displayPhotos = () => {
       if (this.state.photos) {
-        // console.log("Found some photos. this.state.photos:");
-        // console.log(this.state.photos);
         return this.state.photos.map((photo, idx) => {
-          // console.log(idx); // already missing one! Don't know why but oh well
-          // console.log(photo);
           return (
             <Link to={`/photo/${photo.id}`} key={`link_photo_${photo.id}`} style={{ height: "fit-content" }} > {/* FINDME TODO move link to within the indvPhoto, and remove this inline styling */}
             <IndvPhoto
@@ -126,11 +106,7 @@ class userShow extends React.Component {
         <div className="user_photos index_page_page">
           {/* Another image gallery. Reusing previous class for now */}
           {/* May make this responsive to above link so we display different ones like tabs */}
-          {/* {console.log("IN DIV HERE. State")} */}
-          {/* {console.log(userPhotos)}
-          {console.log(userPhotos.map)} */}
-          {/* {console.log(this.state)} */}
-          {/* {console.log(this.state.photos)} */}
+
           {displayPhotos()}
         </div>
 
