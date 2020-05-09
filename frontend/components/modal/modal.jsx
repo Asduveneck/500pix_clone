@@ -5,12 +5,10 @@ import UserSettingContainer from '../user_profile/user_setting_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
-    // debugger;
     return null;
   }
   let component;
-  
-  // debugger;
+
 
   switch (modal) {
     case 'userSetting':
@@ -31,7 +29,6 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => {
-  // debugger; // not even triggering!
   return {
     modal: state.ui.modal
   };
