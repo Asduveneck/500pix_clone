@@ -38,7 +38,7 @@ const NavBar = ({ currentUser, logout}) => {
       logoLink = <Link to="/index" className="logged_in_logo">1000px</Link>
     }
     return(
-    <div className="nb_l"> {/* Refactor or replace the other `.nb_l` with this const... */}
+    <div className="nb_l"> {
       <nav>
         {logoLink}
         <a href="https://github.com/Asduveneck" target="_blank" className="fab fa-github"></a>
