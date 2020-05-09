@@ -7,9 +7,3 @@ class InfiniteScroll extends React.Component {
 }
 
 export default InfiniteScroll;
-
-/*
-Follow this tutorial:
-https://www.youtube.com/watch?v=NZKUirTtxcg
-https://github.com/WebDevSimplified/React-Infinite-Scrolling/tree/master/src
-*/
