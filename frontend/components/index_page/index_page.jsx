@@ -1,7 +1,7 @@
 import React from 'react';
 import IndvPhoto from './index_indv_photo';
 import InfiniteScroll from '../infinitescroll';
-import { Link } from 'react-router-dom'; // Eventually make clicking on each photo a link or render a container...
+import { Link } from 'react-router-dom';
 
 class IndexPage extends React.Component {
 
@@ -74,6 +74,5 @@ class IndexPage extends React.Component {
     );
   }
 }
-/* Replace button with infinite symbol? */ 
 
 export default IndexPage;
